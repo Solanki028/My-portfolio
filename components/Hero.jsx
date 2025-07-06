@@ -43,9 +43,9 @@ export default function Hero() {
   };
 
   return (
-    <section 
+    <section
       ref={heroRef}
-      id="home" 
+      id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
       {/* Dynamic Background */}
@@ -67,20 +67,20 @@ export default function Hero() {
         <div className="absolute top-40 right-32 w-24 h-24 border border-green-400/20 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
         <div className="absolute bottom-32 left-32 w-20 h-20 border border-orange-400/20 rounded-lg rotate-12 animate-pulse" style={{ animationDelay: '2s' }} />
         <div className="absolute bottom-20 right-20 w-28 h-28 border border-cyan-400/20 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }} />
-        
+
         {/* Code Symbols */}
         <div className="absolute top-32 left-1/4 text-cyan-400/20 text-6xl font-mono animate-float">{'<>'}</div>
         <div className="absolute bottom-40 right-1/4 text-green-400/20 text-4xl font-mono animate-float" style={{ animationDelay: '1.5s' }}>{'{ }'}</div>
         <div className="absolute top-1/2 left-16 text-orange-400/20 text-5xl font-mono animate-float" style={{ animationDelay: '0.8s' }}>{'</>'}</div>
       </div>
-      
+
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Status Badge */}
           <div className="slide-in-up mb-8">
             <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-green-500/10 border border-cyan-400/30 rounded-full backdrop-blur-sm hover:scale-105 transition-transform duration-300 cursor-pointer">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-  
+
             </div>
           </div>
 
@@ -118,7 +118,7 @@ export default function Hero() {
             {/* Enhanced Description */}
             <div className="slide-in-up">
               <p className="text-gray-300 text-xl md:text-2xl max-w-4xl mx-auto mb-12 leading-relaxed">
-                Transforming ideas into <span className="text-cyan-400 font-semibold">intelligent solutions</span> through 
+                Transforming ideas into <span className="text-cyan-400 font-semibold">intelligent solutions</span> through
                 cutting-edge technology, innovative design, and <span className="text-green-400 font-semibold">scalable architecture</span>.
               </p>
             </div>
@@ -126,8 +126,8 @@ export default function Hero() {
             {/* Tech Stack Preview */}
             <div className="slide-in-up mb-12">
               <div className="flex flex-wrap justify-center gap-4 mb-8">
-                {['React', 'Next.js', 'JavaScript','C++', 'Node.js', 'Express.js',  'MongoDB', 'SQL','Python', 'AWS'].map((tech, index) => (
-                  <div 
+                {['React', 'Next.js', 'JavaScript', 'C++', 'Node.js', 'Express.js', 'MongoDB', 'SQL', 'Python', 'AWS'].map((tech, index) => (
+                  <div
                     key={tech}
                     className="px-4 py-2 bg-slate-800/50 border border-cyan-400/20 rounded-lg backdrop-blur-sm hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 hover:bg-slate-800/70 cursor-pointer"
                     style={{ animationDelay: `${index * 0.1}s` }}
@@ -140,7 +140,7 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="slide-in-up flex flex-col sm:flex-row gap-6 justify-center mb-16">
-              <button 
+              <button
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-green-500 text-slate-900 font-bold rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 cursor-pointer"
               >
@@ -151,18 +151,18 @@ export default function Hero() {
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
-              
-<a
-  href="https://drive.google.com/file/d/1OZuXHtMcKXYa97-oIsewYCixdqGENtIz/view?usp=drive_link"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="group px-8 py-4 border-2 border-cyan-400/50 text-cyan-400 font-bold rounded-xl hover:bg-cyan-400/10 transition-all duration-300 hover:scale-105 hover:border-cyan-400 cursor-pointer"
->
-  <span className="flex items-center space-x-2">
-    <Download className="w-5 h-5" />
-    <span>Download Resume</span>
-  </span>
-</a>
+
+              <a
+                href="https://drive.google.com/file/d/1OZuXHtMcKXYa97-oIsewYCixdqGENtIz/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group px-8 py-4 border-2 border-cyan-400/50 text-cyan-400 font-bold rounded-xl hover:bg-cyan-400/10 transition-all duration-300 hover:scale-105 hover:border-cyan-400 cursor-pointer"
+              >
+                <span className="flex items-center space-x-2">
+                  <Download className="w-5 h-5" />
+                  <span>Download Resume</span>
+                </span>
+              </a>
             </div>
 
             {/* Social Links */}
@@ -187,7 +187,7 @@ export default function Hero() {
             </div>
 
             {/* Scroll Indicator */}
-            <button 
+            <button
               onClick={scrollToAbout}
               className="group mx-auto block animate-bounce hover:animate-none transition-all duration-300"
             >
@@ -204,15 +204,15 @@ export default function Hero() {
         <div className="space-y-2 text-xs text-gray-500">
           <div className="flex items-center space-x-2">
             <Cpu className="w-3 h-3" />
-            <span>Performance: 98%</span>
+
           </div>
           <div className="flex items-center space-x-2">
             <Zap className="w-3 h-3" />
-            <span>Load Time: 0.8s</span>
+
           </div>
           <div className="flex items-center space-x-2">
             <Code2 className="w-3 h-3" />
-            <span>Code Quality: A+</span>
+
           </div>
         </div>
       </div>
