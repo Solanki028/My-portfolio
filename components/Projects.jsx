@@ -95,7 +95,7 @@ export default function Projects() {
     : projects.filter(project => project.category === activeFilter);
 
   return (
-    <section id="projects" className="py-20 relative overflow-hidden">
+    <div id="projects" className="py-20 relative ">
       <div className="absolute inset-0 grid-bg opacity-10" />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -209,6 +209,6 @@ export default function Projects() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
