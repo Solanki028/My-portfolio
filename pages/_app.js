@@ -1,10 +1,10 @@
 import '../app/globals.css';
-import GlobalMouseEffect from '../components/GlobalMouseEffect';
+// import GlobalMouseEffect from '../components/GlobalMouseEffect';
 
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <GlobalMouseEffect />
+      {/* <GlobalMouseEffect /> */}
       <Component {...pageProps} />
     </>
   );

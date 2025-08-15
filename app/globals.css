@@ -109,6 +109,17 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
   }
 }
 
+@keyframes fade-in-up {
+  0% { 
+    transform: translateY(30px); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
 @keyframes matrix-rain {
   0% { transform: translateY(-100vh); }
   100% { transform: translateY(100vh); }
@@ -213,6 +224,10 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
   animation: slide-in-up 0.8s ease-out;
 }
 
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out;
+}
+
 .animate-float {
   animation: float 8s ease-in-out infinite;
 }
@@ -240,6 +255,28 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   animation: shimmer 2s infinite;
+}
+
+/* Text truncation utilities */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 /* Particles background */
@@ -294,7 +331,7 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Responsive design */
+/* Responsive design improvements */
 @media (max-width: 768px) {
   .tech-button {
     padding: 10px 20px;
@@ -303,6 +340,24 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
   
   .floating {
     animation-duration: 4s;
+  }
+
+  /* Ensure projects are visible on mobile */
+  #projects .opacity-0 {
+    opacity: 1 !important;
+  }
+
+  .animate-fade-in-up {
+    animation: none;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Force visibility fallback */
+@media (max-width: 1024px) {
+  #projects [class*="opacity-0"] {
+    opacity: 1 !important;
   }
 }
 
@@ -326,7 +381,14 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
   .animate-float,
   .animate-text-glow,
   .animate-border-flow,
-  .animate-shimmer {
-    animation: none;
+  .animate-shimmer,
+  .animate-fade-in-up {
+    animation: none !important;
+  }
+
+  /* Ensure content is still visible */
+  * {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

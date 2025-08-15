@@ -48,7 +48,7 @@ export default function Header() {
               <Code className="w-8 h-8 text-cyan-400" />
               <Zap className="w-4 h-4 text-green-400 absolute -top-1 -right-1" />
             </div>
-            <span className="text-xl font-bold tech-gradient">MyPortfolio</span>
+            {/* <span className="text-xl font-bold tech-gradient">MyPortfolio</span> */}
           </div>
 
           {/* Desktop Navigation */}
