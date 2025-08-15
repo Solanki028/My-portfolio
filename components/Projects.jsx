@@ -53,7 +53,7 @@ export default function Projects() {
       tech: ['React.js', 'Redux', 'Express.js', 'Node.js', 'Tailwind CSS', 'MongoDB', 'Material-UI'],
       category: 'web',
       github: 'https://github.com/Solanki028/Netflix_',
-      demo: '#',
+      demo: 'https://flixchillv1.netlify.app/',
     },
     {
       title: 'Multiple Page React Website',
