@@ -50,7 +50,7 @@ export default function About() {
   return (
     <section id="about" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-10" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -59,7 +59,7 @@ export default function About() {
               About Me
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              Passionate software developer with expertise in building scalable applications 
+              Passionate software developer with expertise in building scalable applications
               and innovative solutions that drive business growth.
             </p>
           </div>
@@ -84,11 +84,11 @@ export default function About() {
                     {/* Overlay gradient for better integration */}
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
                   </div>
-                  
+
                   {/* Decorative Elements */}
                   <div className="absolute top-4 right-4 w-20 h-20 border border-cyan-400/30 rounded-full rotating" />
                   <div className="absolute bottom-4 left-4 w-16 h-16 border border-green-400/30 rounded-lg rotating" style={{ animationDelay: '1s' }} />
-                  
+
                   {/* Tech Icons Overlay */}
                   <div className="absolute top-6 left-6 p-2 bg-slate-900/80 rounded-lg backdrop-blur-sm">
                     <Code className="w-4 h-4 text-cyan-400" />
@@ -115,10 +115,9 @@ export default function About() {
             <div className={`space-y-6 ${isVisible ? 'slide-in-right' : 'opacity-0'}`}>
               <div className="prose prose-lg text-gray-300 max-w-none">
                 <p className="text-xl leading-relaxed mb-6">
-           I'm a passionate Full Stack Web Developer with a strong foundation in building responsive and scalable web applications. Though a fresher, I've gained hands-on experience through projects using MERN stack and love turning ideas into real-world solutions. I'm always eager to learn, grow, and contribute to impactful digital experiences
-                </p>
-                
-     
+                  I'm a passionate Full Stack Web Developer with a solid foundation in building responsive, scalable, and user-friendly web applications. With 1 year of hands-on experience in the MERN stack, I’ve brought ideas to life through real-world projects that deliver impactful digital solutions. I’m driven by curiosity, committed to continuous learning, and eager to contribute to innovative products that make a difference.                </p>
+
+
               </div>
 
               {/* Highlights */}
