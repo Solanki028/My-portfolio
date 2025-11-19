@@ -9,6 +9,7 @@ import {
   Brain, 
   GitBranch,
   Server,
+  Wrench,
   Palette
 } from 'lucide-react';
 
@@ -49,8 +50,22 @@ export default function Skills() {
       { name: 'Node.js', level: 92 },
       { name: 'Python', level: 88 },
       { name: 'Express.js', level: 90 },
+      { name: 'REST API', level: 95 },
     ],
   },
+
+
+  {
+    title: "Tools",
+    icon: Wrench,
+    skills: [
+      { name: "AWS", level: 92 },
+      { name: "Git", level: 88 },
+      { name: "CI/CD", level: 90 },
+    ],
+  },
+  
+
   {
     title: 'Database',
     icon: Database,
@@ -61,11 +76,7 @@ export default function Skills() {
   }, // Added closing brace for skillCategories array element
 ]; // Added closing bracket for skillCategories array
 
-const tools = [
-  { name: 'Git', icon: GitBranch },
-  { name: 'VS Code', icon: Code },
-  { name: 'Android Studio', icon: Palette },
-]; // Added closing bracket for tools array
+  // Added closing bracket for tools array
 
   return (
     <section id="skills" className="py-20 relative overflow-hidden bg-slate-900/50">
@@ -124,7 +135,7 @@ const tools = [
           </div>
 
           {/* Tools & Technologies */}
-          <div className="text-center">
+          {/* <div className="text-center">
             <h3 className="text-2xl font-semibold text-white mb-8">Tools & Technologies</h3>
             <div className="flex flex-wrap justify-center gap-4">
               {tools.map((tool, index) => (
@@ -142,7 +153,7 @@ const tools = [
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

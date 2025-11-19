@@ -106,6 +106,21 @@ export default function Projects() {
       github: 'https://github.com/Solanki028/Todo-App-react',
       demo: '#',
     },
+
+
+    {
+      title: "Vellora Spa & Massage",
+      description:
+        "A modern, full-stack wellness website for authentic Thai massage and spa services. Features a beautiful frontend for customers and a comprehensive CMS system for content management.",
+      image:
+        "https://media.istockphoto.com/id/117145821/photo/woman-getting-a-massage-at-tropical-spa.jpg?s=2048x2048&w=is&k=20&c=T-GVeeRSNyTOTb8ahGwhpWwZ7s8oA4DD7gTuBjeSQe0=",
+      tech: ["Next.js", "Express.js", "MongoDB", "Node.js", "Talwind CSS"," Framer Motion"],
+      category: "web",
+      github: "https://github.com/Solanki028/serene-zen-booking",
+      demo: "https://veloraaspa.netlify.app/",
+    }
+    
+
   ];
 
   const filters = [
