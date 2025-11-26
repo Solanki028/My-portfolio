@@ -126,7 +126,7 @@ export default function Hero() {
             {/* Tech Stack Preview */}
             <div className="slide-in-up mb-12">
               <div className="flex flex-wrap justify-center gap-4 mb-8">
-                {['React', 'Next.js', 'JavaScript', 'C++', 'Node.js', 'Express.js', 'MongoDB', 'SQL', 'Python', 'AWS'].map((tech, index) => (
+                {['React', 'Next.js', 'JavaScript','TypeScript','Talwind CSS',' REST API', 'C++', 'Node.js', 'Express.js', 'MongoDB', 'SQL', 'Python', 'AWS'].map((tech, index) => (
                   <div
                     key={tech}
                     className="px-4 py-2 bg-slate-800/50 border border-cyan-400/20 rounded-lg backdrop-blur-sm hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 hover:bg-slate-800/70 cursor-pointer"
@@ -153,7 +153,7 @@ export default function Hero() {
               </button>
 
               <a
-                href="https://drive.google.com/file/d/1p6elxrIRoWwo3RuSz268glR1pnbRYwL2/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1ZZlASdw2fAi5TdywxTdMKXQ56Q4ZRCzP/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group px-8 py-4 border-2 border-cyan-400/50 text-cyan-400 font-bold rounded-xl hover:bg-cyan-400/10 transition-all duration-300 hover:scale-105 hover:border-cyan-400 cursor-pointer"

@@ -23,7 +23,7 @@ export default function About() {
   }, []);
 
   const stats = [
-    { number: '6+', label: 'months Experience', icon: Award },
+    { number: '1+', label: 'months Experience', icon: Award },
     { number: '50+', label: 'Projects Completed', icon: Code },
     { number: '100%', label: 'Client Satisfaction', icon: Target },
     { number: '24/7', label: 'Available Support', icon: Zap },
@@ -73,7 +73,7 @@ export default function About() {
                   {/* Profile Image */}
                   <div className="absolute inset-4 rounded-xl overflow-hidden">
                     <img
-                      src="/images/me.jpg"
+                      src="/images/me pic.png"
                       alt="Priyanshu Solanki - Full Stack Developer"
                       className="w-full h-full object-cover rounded-xl hover:scale-105 transition-transform duration-300"
                       onError={(e) => {

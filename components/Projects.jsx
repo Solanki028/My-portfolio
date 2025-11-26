@@ -37,34 +37,6 @@ export default function Projects() {
   }, []);
 
   const projects = [
-    {
-      title: 'Insider Jobs',
-      description: 'Insider Jobs is a job portal web application that connects job seekers with recruiters. Built with the MERN stack, it features secure authentication, user and recruiter dashboards, job posting, and application tracking. The platform simplifies the hiring process with an intuitive UI and real-time updates.',
-      image: 'https://www.templateshub.net/uploads/1539959384%20job%20Board.jpg',
-      tech: ['React', 'Material-UI', 'Redux', 'Node.js', 'Express.js', 'Clerk', 'MongoDB'],
-      category: 'web',
-      github: 'https://github.com/Solanki028/InsiderJobs',
-      demo: '#',
-    },
-    {
-      title: 'Flix-Chill (Video Streaming Platform)',
-      description: 'Video Streaming Platform is a MERN-based web app for seamless video playback with user authentication and a clean, responsive UI.',
-      image: 'https://filedb.experts-exchange.com/incoming/2015/06_w27/921333/Netflix.jpg',
-      tech: ['React.js', 'Redux', 'Express.js', 'Node.js', 'Tailwind CSS', 'MongoDB', 'Material-UI'],
-      category: 'web',
-      github: 'https://github.com/Solanki028/Netflix_',
-      demo: 'https://flixchillv1.netlify.app/',
-    },
-    {
-      title: 'Multiple Page React Website',
-      description: 'Multiple Page React Website is a responsive, multi-route web app built with React Router, featuring clean navigation and dynamic content across pages.',
-      image: 'https://i.ytimg.com/vi/0dOSLhPzSGI/maxresdefault.jpg',
-      tech: ['React', 'Redux', 'Material-UI'],
-      category: 'web',
-      github: 'https://github.com/Solanki028/Multipage-react-dynamic-website',
-      demo: '#',
-    },
-
 
 
 
@@ -79,6 +51,70 @@ export default function Projects() {
       demo: 'https://www.innvibs.com', // <-- REPLACE WITH YOUR ACTUAL LIVE DEMO URL
     },
 
+
+ 
+
+
+    {
+      title: "Velora Spa & Massage",
+      description:
+        "A modern, full-stack wellness website for authentic Thai massage and spa services. Features a beautiful frontend for customers and a comprehensive CMS system for content management.",
+      image:
+        "https://media.istockphoto.com/id/117145821/photo/woman-getting-a-massage-at-tropical-spa.jpg?s=2048x2048&w=is&k=20&c=T-GVeeRSNyTOTb8ahGwhpWwZ7s8oA4DD7gTuBjeSQe0=",
+      tech: ["Next.js", "Express.js", "MongoDB", "Node.js", "Talwind CSS"," Framer Motion"],
+      category: "web",
+      github: "https://github.com/Solanki028/serene-zen-booking",
+      demo: "https://veloraaspa.netlify.app/",
+    },
+
+    {
+      title: "TaskFlow  : AI-Powered Trello Clone",
+      description:
+        "A modern, full-stack task management platform with intelligent AI recommendations. Features drag-and-drop Kanban boards, real-time collaboration, and smart suggestions that analyze card content to recommend due dates, list movements, and related task groupings.",
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      tech: ["React", "TypeScript", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "@dnd-kit"],
+      category: "web",
+      github: "https://github.com/Solanki028/TaskFlow",
+      demo: "https://trellox.netlify.app/"
+    },
+
+
+    {
+      title: 'Flix-Chill (Video Streaming Platform)',
+      description: 'Video Streaming Platform is a MERN-based web app for seamless video playback with user authentication and a clean, responsive UI.',
+      image: 'https://filedb.experts-exchange.com/incoming/2015/06_w27/921333/Netflix.jpg',
+      tech: ['React.js', 'Redux', 'Express.js', 'Node.js', 'Tailwind CSS', 'MongoDB', 'Material-UI'],
+      category: 'web',
+      github: 'https://github.com/Solanki028/Netflix_',
+      demo: 'https://flixchillv1.netlify.app/',
+    },
+    
+    {
+      title: 'Insider Jobs',
+      description: 'Insider Jobs is a job portal web application that connects job seekers with recruiters. Built with the MERN stack, it features secure authentication, user and recruiter dashboards, job posting, and application tracking. The platform simplifies the hiring process with an intuitive UI and real-time updates.',
+      image: 'https://www.templateshub.net/uploads/1539959384%20job%20Board.jpg',
+      tech: ['React', 'Material-UI', 'Redux', 'Node.js', 'Express.js', 'Clerk', 'MongoDB'],
+      category: 'web',
+      github: 'https://github.com/Solanki028/InsiderJobs',
+      demo: '#',
+    },
+
+
+    {
+      title: 'Multiple Page React Website',
+      description: 'Multiple Page React Website is a responsive, multi-route web app built with React Router, featuring clean navigation and dynamic content across pages.',
+      image: 'https://i.ytimg.com/vi/0dOSLhPzSGI/maxresdefault.jpg',
+      tech: ['React', 'Redux', 'Material-UI'],
+      category: 'web',
+      github: 'https://github.com/Solanki028/Multipage-react-dynamic-website',
+      demo: '#',
+    },
+
+
+
+
+   
     {
       title: 'Expense-Tracker Application',
       description: 'Expense Tracker is a full-stack web app built with the MERN stack that helps users manage budgets, track expenses, and visualize spending with interactive charts.',
@@ -108,17 +144,7 @@ export default function Projects() {
     },
 
 
-    {
-      title: "Vellora Spa & Massage",
-      description:
-        "A modern, full-stack wellness website for authentic Thai massage and spa services. Features a beautiful frontend for customers and a comprehensive CMS system for content management.",
-      image:
-        "https://media.istockphoto.com/id/117145821/photo/woman-getting-a-massage-at-tropical-spa.jpg?s=2048x2048&w=is&k=20&c=T-GVeeRSNyTOTb8ahGwhpWwZ7s8oA4DD7gTuBjeSQe0=",
-      tech: ["Next.js", "Express.js", "MongoDB", "Node.js", "Talwind CSS"," Framer Motion"],
-      category: "web",
-      github: "https://github.com/Solanki028/serene-zen-booking",
-      demo: "https://veloraaspa.netlify.app/",
-    }
+    
     
 
   ];
