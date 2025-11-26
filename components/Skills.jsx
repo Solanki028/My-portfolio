@@ -1,161 +1,218 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { 
   Code, 
   Database, 
   Cloud, 
-  Smartphone, 
-  Brain, 
-  GitBranch,
   Server,
   Wrench,
-  Palette
+  Brain,
+  Zap,
+  Layers,
+  Globe,
+  Cpu,
+  Smartphone,
+  GitBranch
 } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function Skills() {
-  const [isVisible, setIsVisible] = useState(false);
+  const { ref, isVisible } = useScrollAnimation(0.2, '-50px');
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
+  const skillCategories = [
+    {
+      title: 'Frontend Development',
+      icon: Code,
+      color: 'from-violet-500 to-purple-500',
+      skills: [
+        { name: 'React/Next.js', level: 95, icon: Layers },
+        { name: 'TypeScript', level: 92, icon: Code },
+        { name: 'Tailwind CSS', level: 95, icon: Smartphone },
+        { name: 'HTML/CSS', level: 90, icon: Globe },
+      ],
+    },
+    {
+      title: 'Backend Development',
+      icon: Server,
+      color: 'from-blue-500 to-cyan-500',
+      skills: [
+        { name: 'Node.js', level: 92, icon: Server },
+        { name: 'Express.js', level: 90, icon: Zap },
+        { name: 'Python', level: 88, icon: Brain },
+        { name: 'REST APIs', level: 95, icon: Cpu },
+      ],
+    },
+    {
+      title: 'Database & Cloud',
+      icon: Database,
+      color: 'from-emerald-500 to-green-500',
+      skills: [
+        { name: 'MongoDB', level: 88, icon: Database },
+        { name: 'PostgreSQL', level: 85, icon: Database },
+        { name: 'AWS', level: 90, icon: Cloud },
+        { name: 'Docker', level: 87, icon: GitBranch },
+      ],
+    },
+    {
+      title: 'Tools & Technologies',
+      icon: Wrench,
+      color: 'from-orange-500 to-red-500',
+      skills: [
+        { name: 'Git/GitHub', level: 92, icon: GitBranch },
+        { name: 'CI/CD', level: 88, icon: Zap },
+        { name: 'Testing', level: 85, icon: Brain },
+        { name: 'Agile', level: 90, icon: Wrench },
+      ],
+    },
+  ];
 
-    const element = document.getElementById('skills');
-    if (element) observer.observe(element);
-
-    return () => observer.disconnect();
-  }, []);
-
- const skillCategories = [
-  {
-    title: 'Frontend Development',
-    icon: Code,
-    skills: [
-      { name: 'React/Next.js', level: 95 },
-      { name: 'JavaScript', level: 90 },
-      { name: 'Tailwind CSS', level: 95 },
-      { name: 'HTML CSS', level: 85 },
-    ],
-  },
-  {
-    title: 'Backend Development',
-    icon: Server,
-    skills: [
-      { name: 'Node.js', level: 92 },
-      { name: 'Python', level: 88 },
-      { name: 'Express.js', level: 90 },
-      { name: 'REST API', level: 95 },
-    ],
-  },
-
-
-  {
-    title: "Tools",
-    icon: Wrench,
-    skills: [
-      { name: "AWS", level: 92 },
-      { name: "Git", level: 88 },
-      { name: "CI/CD", level: 90 },
-    ],
-  },
-  
-
-  {
-    title: 'Database',
-    icon: Database,
-    skills: [
-      { name: 'SQL', level: 88 },
-      { name: 'MongoDB', level: 85 },
-    ],
-  }, // Added closing brace for skillCategories array element
-]; // Added closing bracket for skillCategories array
-
-  // Added closing bracket for tools array
+  const tools = [
+    { name: 'VS Code', icon: Code },
+    { name: 'Figma', icon: Layers },
+    { name: 'Postman', icon: Zap },
+    { name: 'MongoDB Compass', icon: Database },
+    { name: 'Docker Desktop', icon: GitBranch },
+    { name: 'AWS Console', icon: Cloud },
+  ];
 
   return (
-    <section id="skills" className="py-20 relative overflow-hidden bg-slate-900/50">
-      <div className="absolute inset-0 grid-bg opacity-10" />
+    <section ref={ref} id="skills" className="py-32 relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-950 to-indigo-950">
+      {/* Enhanced Background Effects */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
       
+      {/* Floating Elements */}
+      <div className="absolute top-32 left-10 w-20 h-20 border border-violet-500/20 rotate-45 animate-spin-slow" />
+      <div className="absolute bottom-40 right-20 w-16 h-16 border border-blue-500/20 rounded-full animate-pulse" />
+      <div className="absolute top-1/2 right-1/4 w-12 h-12 border border-cyan-500/20 rotate-12 animate-bounce-subtle" />
+
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 tech-gradient">
-              Skills & Expertise
+        <div className="max-w-7xl mx-auto">
+          {/* Enhanced Section Header */}
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6">
+              <span className="bg-gradient-to-r from-violet-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-gradient-x bg-[length:200%_200%]">
+                Skills & Expertise
+              </span>
             </h2>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              Constantly learning and mastering new technologies to deliver cutting-edge solutions.
+            <div className="w-32 h-1 bg-gradient-to-r from-violet-500 via-blue-500 to-cyan-500 mx-auto rounded-full mb-6" />
+            <p className="text-slate-300 text-xl max-w-3xl mx-auto">
+              Constantly learning and mastering new technologies to deliver cutting-edge solutions
+              that drive innovation and excellence.
             </p>
           </div>
 
-          {/* Skills Grid */}
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {/* Enhanced Skills Grid */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-20">
             {skillCategories.map((category, index) => (
               <div 
                 key={index}
-                className={`tech-border rounded-xl p-6 hover:tech-glow transition-all duration-300 ${
-                  isVisible ? 'slide-in-up' : 'opacity-0'
+                className={`group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-violet-400/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-violet-500/10 ${
+                  isVisible ? 'animate-fade-in-up' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="p-3 bg-gradient-to-br from-cyan-500/20 to-green-500/20 rounded-lg">
-                    <category.icon className="w-6 h-6 text-cyan-400" />
+                {/* Category Header */}
+                <div className="flex items-center space-x-4 mb-8">
+                  <div className={`p-4 bg-gradient-to-r ${category.color} rounded-2xl group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <category.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white">{category.title}</h3>
+                  <h3 className="text-2xl font-bold text-white group-hover:text-violet-300 transition-colors duration-300">
+                    {category.title}
+                  </h3>
                 </div>
 
-                <div className="space-y-4">
+                {/* Skills List */}
+                <div className="space-y-6">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="space-y-2">
+                    <div key={skillIndex} className="space-y-3">
                       <div className="flex justify-between items-center">
-                        <span className="text-gray-300 font-medium">{skill.name}</span>
-                        <span className="text-cyan-400 font-semibold">{skill.level}%</span>
+                        <div className="flex items-center gap-3">
+                          <skill.icon className="w-5 h-5 text-slate-400 group-hover:text-violet-400 transition-colors duration-300" />
+                          <span className="text-slate-300 font-medium group-hover:text-white transition-colors duration-300">
+                            {skill.name}
+                          </span>
+                        </div>
+                        <span className="text-violet-400 font-bold text-lg">
+                          {skill.level}%
+                        </span>
                       </div>
-                      <div className="w-full bg-slate-700 rounded-full h-2">
+                      
+                      {/* Enhanced Progress Bar */}
+                      <div className="relative">
+                        <div className="w-full bg-slate-800/50 rounded-full h-3 overflow-hidden">
+                          <div 
+                            className={`h-full bg-gradient-to-r ${category.color} rounded-full transition-all duration-1000 ease-out relative overflow-hidden`}
+                            style={{ 
+                              width: isVisible ? `${skill.level}%` : '0%',
+                              transitionDelay: `${(index * 0.2) + (skillIndex * 0.1)}s`
+                            }}
+                          >
+                            {/* Shimmer Effect */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
+                          </div>
+                        </div>
+                        
+                        {/* Skill Level Glow */}
                         <div 
-                          className="bg-gradient-to-r from-cyan-500 to-green-500 h-2 rounded-full transition-all duration-1000 ease-out"
+                          className={`absolute top-0 w-1 h-3 bg-gradient-to-t ${category.color} rounded-full opacity-80`}
                           style={{ 
-                            width: isVisible ? `${skill.level}%` : '0%',
-                            transitionDelay: `${(index * 0.2) + (skillIndex * 0.1)}s`
+                            left: isVisible ? `${skill.level}%` : '0%',
+                            transform: 'translateX(-50%)',
+                            transitionDelay: `${(index * 0.2) + (skillIndex * 0.1) + 0.5}s`
                           }}
                         />
                       </div>
                     </div>
                   ))}
                 </div>
+
+                {/* Category Glow Effect */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${category.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500 -z-10`} />
               </div>
             ))}
           </div>
 
-          {/* Tools & Technologies */}
-          {/* <div className="text-center">
-            <h3 className="text-2xl font-semibold text-white mb-8">Tools & Technologies</h3>
-            <div className="flex flex-wrap justify-center gap-4">
+          {/* Enhanced Tools & Technologies Section */}
+          <div className={`text-center ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '1s' }}>
+            <h3 className="text-3xl font-bold text-white mb-8">Tools & Technologies</h3>
+            <p className="text-slate-400 mb-12 max-w-2xl mx-auto">
+              The modern toolkit I use to bring ideas to life with efficiency and precision
+            </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
               {tools.map((tool, index) => (
                 <div 
                   key={index}
-                  className={`tech-border rounded-lg p-4 hover:tech-glow transition-all duration-300 group ${
-                    isVisible ? 'slide-in-up' : 'opacity-0'
-                  }`}
+                  className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-violet-400/30 hover:bg-white/10 transition-all duration-500 hover:scale-110 hover:shadow-lg hover:shadow-violet-500/20"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <tool.icon className="w-8 h-8 text-gray-400 group-hover:text-cyan-400 transition-colors duration-300 mx-auto mb-2" />
-                  <span className="text-sm text-gray-300 group-hover:text-white transition-colors duration-300">
+                  <tool.icon className="w-10 h-10 text-slate-400 group-hover:text-violet-400 transition-colors duration-300 mx-auto mb-3" />
+                  <span className="text-sm text-slate-300 group-hover:text-white transition-colors duration-300 font-medium">
                     {tool.name}
                   </span>
                 </div>
               ))}
             </div>
-          </div> */}
+          </div>
+
+          {/* Learning Philosophy */}
+          <div className={`mt-20 text-center ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '1.2s' }}>
+            <div className="bg-gradient-to-r from-violet-500/10 to-blue-500/10 backdrop-blur-xl border border-violet-400/20 rounded-3xl p-8 max-w-4xl mx-auto">
+              <Brain className="w-12 h-12 text-violet-400 mx-auto mb-4" />
+              <h4 className="text-2xl font-bold text-white mb-4">Continuous Learning</h4>
+              <p className="text-slate-300 leading-relaxed">
+                Technology evolves rapidly, and so do I. I believe in staying ahead of the curve by constantly 
+                exploring new frameworks, tools, and methodologies. Whether it's emerging AI technologies, 
+                cutting-edge frameworks, or innovative design patterns, I'm always ready to learn and adapt 
+                to deliver the best solutions.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* Bottom Gradient Line */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
     </section>
   );
 }
