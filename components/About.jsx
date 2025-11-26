@@ -7,7 +7,7 @@ export default function About() {
   const { ref, isVisible } = useScrollAnimation(0.2, '-50px');
 
   const stats = [
-    { number: '1+', label: 'Years Experience', icon: Award, color: 'from-violet-500 to-purple-500' },
+    { number: '1.5+', label: 'Years Experience', icon: Award, color: 'from-violet-500 to-purple-500' },
     { number: '50+', label: 'Projects Completed', icon: Code, color: 'from-blue-500 to-cyan-500' },
     { number: '100%', label: 'Client Satisfaction', icon: Target, color: 'from-emerald-500 to-green-500' },
     { number: '24/7', label: 'Available Support', icon: Zap, color: 'from-orange-500 to-red-500' },
