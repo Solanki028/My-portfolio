@@ -11,11 +11,11 @@ export const metadata = {
   openGraph: {
     title: 'Priyanshu Solanki - Full Stack Developer',
     description: 'Modern portfolio website showcasing software development skills, AI engineering, and innovative web solutions.',
-    url: 'https://priyanshuxfolio.netlify.app/', // Replace with your actual domain
+    url: 'https://priyanshuxfolio.netlify.app/',
     siteName: 'Priyanshu Solanki Portfolio',
     images: [
       {
-        url: '/images/me pic.png',
+        url: 'https://priyanshuxfolio.netlify.app/images/me.jpg',
         width: 1200,
         height: 630,
         alt: 'Priyanshu Solanki - Full Stack Developer',
@@ -28,7 +28,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Priyanshu Solanki - Full Stack Developer',
     description: 'Modern portfolio website showcasing software development skills, AI engineering, and innovative web solutions.',
-    images: ['/images/me pic.png'],
+    images: ['https://priyanshuxfolio.netlify.app/images/me.jpg'],
     creator: '@your-twitter-handle', // Replace with your Twitter handle if you have one
   },
   robots: {
