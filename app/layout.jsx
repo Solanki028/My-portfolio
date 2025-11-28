@@ -28,7 +28,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Priyanshu Solanki - Full Stack Developer',
     description: 'Modern portfolio website showcasing software development skills, AI engineering, and innovative web solutions.',
-    images: ['/images/me.jpg'],
+    images: ['/images/me pic.png'],
     creator: '@your-twitter-handle', // Replace with your Twitter handle if you have one
   },
   robots: {
