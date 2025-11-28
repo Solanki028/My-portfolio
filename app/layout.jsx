@@ -3,14 +3,14 @@ import GlobalMouseEffect from '@/components/GlobalMouseEffect';
 
 export const metadata = {
   title: 'Priyanshu Solanki - Full Stack Developer',
-  description: 'Modern portfolio website showcasing software development skills, AI engineering, and innovative web solutions. Explore my projects and get in touch.',
+  description: 'Focused on code that feels smooth, UI that speaks clearly, and tech that scales. MERN, AI workflows, and zero fluff — just real work.',
   keywords: ['Full Stack Developer', 'AI Engineer', 'React', 'Next.js', 'Node.js', 'MongoDB', 'Priyanshu Solanki'],
   authors: [{ name: 'Priyanshu Solanki' }],
   creator: 'Priyanshu Solanki',
   publisher: 'Priyanshu Solanki',
   openGraph: {
     title: 'Priyanshu Solanki - Full Stack Developer',
-    description: 'Modern portfolio website showcasing software development skills, AI engineering, and innovative web solutions.',
+    description: 'Focused on code that feels smooth, UI that speaks clearly, and tech that scales. MERN, AI workflows, and zero fluff — just real work.',
     url: 'https://priyanshuxfolio.netlify.app/',
     siteName: 'Priyanshu Solanki Portfolio',
     images: [
@@ -27,7 +27,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Priyanshu Solanki - Full Stack Developer',
-    description: 'Modern portfolio website showcasing software development skills, AI engineering, and innovative web solutions.',
+    description: 'Focused on code that feels smooth, UI that speaks clearly, and tech that scales. MERN, AI workflows, and zero fluff — just real work.',
     images: ['https://priyanshuxfolio.netlify.app/images/me pic.png'],
     creator: '@your-twitter-handle', // Replace with your Twitter handle if you have one
   },
