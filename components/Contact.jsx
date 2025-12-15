@@ -67,11 +67,11 @@ export default function Contact() {
     },
     {
       icon: Phone,
-      title: 'Phone',
+      title: 'WhatsApp',
       value: '+91 9996973755',
-      href: 'tel:+91 9996973755',
+      href: 'https://wa.me/919996973755',
       color: 'from-blue-500 to-cyan-500',
-      description: 'Call me during business hours'
+      description: 'Chat with me on WhatsApp'
     },
     {
       icon: MapPin,

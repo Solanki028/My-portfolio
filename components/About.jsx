@@ -23,8 +23,8 @@ export default function About() {
     },
     {
       icon: Brain,
-      title: 'AI & Machine Learning',
-      description: 'Implementing intelligent solutions with cutting-edge AI technologies. Passionate about leveraging machine learning to solve real-world problems.',
+      title: 'Generative AI',
+      description: 'Building generative AI copilots, agents, and automations that ship faster, reduce manual work, and feel like magic for end users.',
       color: 'from-blue-500 to-cyan-500',
       delay: '0.2s'
     },

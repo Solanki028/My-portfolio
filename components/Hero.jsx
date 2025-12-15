@@ -12,8 +12,7 @@ export default function Hero() {
   const heroRef = useRef(null);
 
   const titles = [
-    'Full Stack Developer',
-    'AI Engineer', 
+    'Full Stack Developer', 
     'Tech Innovator',
     'Problem Solver'
   ];
