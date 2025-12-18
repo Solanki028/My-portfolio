@@ -31,6 +31,21 @@ export default function Projects() {
       featured: true,
       color: 'from-emerald-500 to-teal-500'
     },
+
+    {
+      title: "ILP: Internship Learning Platform",
+      description: "A comprehensive Learning Management System (LMS) designed to bridge the gap between students and mentors. Features role-based access control, interactive course management, automated PDF certification, and a secure admin dashboard for total platform oversight.",
+      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Education/Learning themed image
+      tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT Auth", "PDFKit"],
+      category: "web",
+      github: "https://github.com/Solanki028/TDD-intersnhip-learning-platform",
+      demo: "https://mytutorx.netlify.app/", // Replace if you have a different deployment URL
+      featured: true,
+      color: 'from-indigo-500 to-purple-500' 
+    },
+
+
+
     {
       title: "TaskFlow: AI-Powered Trello Clone",
       description: "A modern, full-stack task management platform with intelligent AI recommendations. Features drag-and-drop Kanban boards, real-time collaboration, and smart suggestions that analyze card content to recommend due dates, list movements, and related task groupings.",
@@ -39,9 +54,10 @@ export default function Projects() {
       category: "web",
       github: "https://github.com/Solanki028/TaskFlow",
       demo: "https://trellox.netlify.app/",
-      featured: true,
+      featured: false,
       color: 'from-blue-500 to-cyan-500'
     },
+
     {
       title: 'Flix-Chill Video Streaming Platform',
       description: 'Netflix-inspired video streaming platform built with MERN stack. Features user authentication, video playback, content management, and responsive UI design with Material-UI components.',
