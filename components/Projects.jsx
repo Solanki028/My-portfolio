@@ -41,7 +41,7 @@ export default function Projects() {
       github: "https://github.com/Solanki028/TDD-intersnhip-learning-platform",
       demo: "https://mytutorx.netlify.app/", // Replace if you have a different deployment URL
       featured: true,
-      color: 'from-indigo-500 to-purple-500' 
+      color: 'from-indigo-500 to-purple-500'
     },
 
 
@@ -68,6 +68,18 @@ export default function Projects() {
       demo: 'https://flixchillv1.netlify.app/',
       featured: false,
       color: 'from-red-500 to-pink-500'
+    },
+
+    {
+      title: 'JK Designs Portfolio',
+      description: 'A premium, high-performance portfolio for a creative design studio. Features a fully custom Admin Dashboard for managing site content and images in real-time, dynamic multi-image carousels, and a sleek dark-mode aesthetic with red accents, all optimized for SEO and speed.',
+      image: '/images/jk_digital.png', // One of the branded images we generated
+      tech: ['Next.js', 'React', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB'],
+      category: 'web',
+      github: 'https://github.com/Solanki028/client-porfolio',
+      demo: 'https://zencraftx.netlify.app/',
+      featured: false,
+      color: 'from-red-600 to-red-900'
     },
     {
       title: 'Insider Jobs Portal',
@@ -130,7 +142,7 @@ export default function Projects() {
     <section ref={ref} id="projects" className="py-32 relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950">
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:120px_120px]" />
-      
+
       {/* Floating Geometric Elements */}
       <div className="absolute top-20 right-20 w-32 h-32 border border-violet-500/20 rotate-45 animate-spin-slow" />
       <div className="absolute bottom-32 left-20 w-24 h-24 border border-blue-500/20 rounded-full animate-pulse" />
@@ -165,9 +177,8 @@ export default function Projects() {
               {featuredProjects.map((project, index) => (
                 <div
                   key={project.title}
-                  className={`group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:border-violet-400/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-violet-500/20 ${
-                    isVisible ? 'animate-fade-in-up' : 'opacity-0'
-                  }`}
+                  className={`group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:border-violet-400/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-violet-500/20 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'
+                    }`}
                   style={{
                     animationDelay: `${index * 0.2}s`,
                     animationFillMode: 'forwards'
@@ -181,10 +192,10 @@ export default function Projects() {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       loading="lazy"
                     />
-                    
+
                     {/* Overlay Gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
-                    
+
                     {/* Featured Badge */}
                     <div className="absolute top-4 left-4 px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full">
                       <Star className="w-4 h-4 text-white" />
@@ -290,11 +301,10 @@ export default function Projects() {
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`group inline-flex items-center space-x-3 px-6 py-4 rounded-2xl transition-all duration-500 font-semibold ${
-                  activeFilter === filter.id
-                    ? `bg-gradient-to-r ${filter.color} text-white shadow-lg shadow-violet-500/25`
-                    : 'bg-white/5 backdrop-blur-lg border border-white/10 text-slate-300 hover:bg-white/10 hover:border-violet-400/30 hover:text-white'
-                }`}
+                className={`group inline-flex items-center space-x-3 px-6 py-4 rounded-2xl transition-all duration-500 font-semibold ${activeFilter === filter.id
+                  ? `bg-gradient-to-r ${filter.color} text-white shadow-lg shadow-violet-500/25`
+                  : 'bg-white/5 backdrop-blur-lg border border-white/10 text-slate-300 hover:bg-white/10 hover:border-violet-400/30 hover:text-white'
+                  }`}
               >
                 <filter.icon className="w-5 h-5" />
                 <span>{filter.label}</span>
@@ -307,9 +317,8 @@ export default function Projects() {
             {filteredProjects.map((project, index) => (
               <div
                 key={project.title}
-                className={`group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-violet-400/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-violet-500/10 ${
-                  isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'
-                }`}
+                className={`group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-violet-400/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-violet-500/10 ${isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'
+                  }`}
                 style={{
                   animationDelay: `${index * 150}ms`,
                   animationFillMode: 'forwards'

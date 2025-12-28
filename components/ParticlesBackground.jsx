@@ -27,7 +27,7 @@ export default function ParticlesBackground() {
         this.vy = (Math.random() - 0.5) * 0.8;
         this.radius = Math.random() * 3 + 1;
         this.opacity = Math.random() * 0.8 + 0.2;
-        
+
         // Enhanced color palette
         const colors = [
           'rgba(139, 92, 246,', // violet
@@ -37,9 +37,9 @@ export default function ParticlesBackground() {
           'rgba(245, 158, 11,', // orange
           'rgba(236, 72, 153,', // pink
         ];
-        
+
         this.color = colors[Math.floor(Math.random() * colors.length)];
-        
+
         // Enhanced movement
         this.baseVx = this.vx;
         this.baseVy = this.vy;
@@ -65,8 +65,8 @@ export default function ParticlesBackground() {
         const dx = mouse.x - this.x;
         const dy = mouse.y - this.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        if (distance < 150) {
+
+        if (distance < 150 && distance > 0) {
           const force = (150 - distance) / 150;
           this.vx += (dx / distance) * force * 0.01;
           this.vy += (dy / distance) * force * 0.01;
@@ -88,16 +88,18 @@ export default function ParticlesBackground() {
         ctx.arc(this.x, this.y, this.currentRadius, 0, Math.PI * 2);
         ctx.fillStyle = this.color + this.opacity + ')';
         ctx.fill();
-        
+
         // Add glow effect
-        const gradient = ctx.createRadialGradient(
-          this.x, this.y, 0,
-          this.x, this.y, this.currentRadius * 3
-        );
-        gradient.addColorStop(0, this.color + (this.opacity * 0.5) + ')');
-        gradient.addColorStop(1, this.color + '0)');
-        ctx.fillStyle = gradient;
-        ctx.fill();
+        if (Number.isFinite(this.x) && Number.isFinite(this.y) && Number.isFinite(this.currentRadius)) {
+          const gradient = ctx.createRadialGradient(
+            this.x, this.y, 0,
+            this.x, this.y, Math.max(0, this.currentRadius * 3)
+          );
+          gradient.addColorStop(0, this.color + (this.opacity * 0.5) + ')');
+          gradient.addColorStop(1, this.color + '0)');
+          ctx.fillStyle = gradient;
+          ctx.fill();
+        }
         ctx.restore();
       }
 
@@ -120,13 +122,13 @@ export default function ParticlesBackground() {
 
           if (distance < 120) {
             const opacity = (120 - distance) / 120 * 0.3;
-            
+
             ctx.save();
             ctx.globalAlpha = opacity;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            
+
             // Gradient line
             const gradient = ctx.createLinearGradient(
               particles[i].x, particles[i].y,
@@ -154,7 +156,7 @@ export default function ParticlesBackground() {
     const init = () => {
       resizeCanvas();
       particles.length = 0;
-      
+
       for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle());
       }
@@ -183,7 +185,7 @@ export default function ParticlesBackground() {
         mouseGradient.addColorStop(0, 'rgba(139, 92, 246, 0.1)');
         mouseGradient.addColorStop(0.5, 'rgba(99, 102, 241, 0.05)');
         mouseGradient.addColorStop(1, 'rgba(6, 182, 212, 0)');
-        
+
         ctx.fillStyle = mouseGradient;
         ctx.beginPath();
         ctx.arc(mouse.x, mouse.y, 100, 0, Math.PI * 2);
@@ -201,12 +203,12 @@ export default function ParticlesBackground() {
     const performanceCheck = () => {
       frameCount++;
       const currentTime = performance.now();
-      
+
       if (currentTime - lastTime >= 1000) {
         const fps = frameCount;
         frameCount = 0;
         lastTime = currentTime;
-        
+
         // Adjust particle count based on performance
         if (fps < 30 && particles.length > 50) {
           particles.splice(0, 10);
@@ -216,7 +218,7 @@ export default function ParticlesBackground() {
           }
         }
       }
-      
+
       requestAnimationFrame(performanceCheck);
     };
 
@@ -246,7 +248,7 @@ export default function ParticlesBackground() {
       cancelAnimationFrame(animationId);
       window.removeEventListener('resize', resizeCanvas);
       window.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('visibilitychange', () => {});
+      document.removeEventListener('visibilitychange', () => { });
     };
   }, []);
 
@@ -254,7 +256,7 @@ export default function ParticlesBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ 
+      style={{
         background: 'transparent',
         mixBlendMode: 'screen'
       }}
