@@ -28,14 +28,14 @@ export default function ParticlesBackground() {
         this.radius = Math.random() * 3 + 1;
         this.opacity = Math.random() * 0.8 + 0.2;
 
-        // Enhanced color palette
+        // Premium Red & Black aesthetic
         const colors = [
-          'rgba(139, 92, 246,', // violet
-          'rgba(99, 102, 241,', // blue
-          'rgba(6, 182, 212,',  // cyan
-          'rgba(16, 185, 129,', // emerald
-          'rgba(245, 158, 11,', // orange
-          'rgba(236, 72, 153,', // pink
+          'rgba(229, 9, 20,',   // Premium Red
+          'rgba(180, 7, 16,',   // Darker Red
+          'rgba(255, 30, 30,',  // Bright Red
+          'rgba(60, 60, 60,',   // Dark Gray (Matte)
+          'rgba(100, 100, 100,', // Light Gray
+          'rgba(255, 0, 50,',   // Neon Red
         ];
 
         this.color = colors[Math.floor(Math.random() * colors.length)];
@@ -85,7 +85,7 @@ export default function ParticlesBackground() {
         ctx.save();
         ctx.globalAlpha = this.opacity;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.currentRadius, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, Math.max(0, this.currentRadius), 0, Math.PI * 2);
         ctx.fillStyle = this.color + this.opacity + ')';
         ctx.fill();
 
@@ -112,7 +112,7 @@ export default function ParticlesBackground() {
       }
     }
 
-    // Enhanced constellation lines
+    // Enhanced constellation lines with Red Gradient
     function drawConstellation() {
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
@@ -129,14 +129,14 @@ export default function ParticlesBackground() {
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
 
-            // Gradient line
+            // Red Gradient line
             const gradient = ctx.createLinearGradient(
               particles[i].x, particles[i].y,
               particles[j].x, particles[j].y
             );
-            gradient.addColorStop(0, `rgba(139, 92, 246, ${opacity})`);
-            gradient.addColorStop(0.5, `rgba(99, 102, 241, ${opacity})`);
-            gradient.addColorStop(1, `rgba(6, 182, 212, ${opacity})`);
+            gradient.addColorStop(0, `rgba(229, 9, 20, ${opacity})`);   // Premium Red
+            gradient.addColorStop(0.5, `rgba(180, 7, 16, ${opacity})`); // Darker Red
+            gradient.addColorStop(1, `rgba(255, 30, 30, ${opacity})`);  // Bright Red
             ctx.strokeStyle = gradient;
             ctx.lineWidth = 1;
             ctx.stroke();
@@ -174,24 +174,6 @@ export default function ParticlesBackground() {
         particle.update();
         particle.draw();
       });
-
-      // Mouse glow effect
-      if (mouse.x !== 0 || mouse.y !== 0) {
-        ctx.save();
-        const mouseGradient = ctx.createRadialGradient(
-          mouse.x, mouse.y, 0,
-          mouse.x, mouse.y, 100
-        );
-        mouseGradient.addColorStop(0, 'rgba(139, 92, 246, 0.1)');
-        mouseGradient.addColorStop(0.5, 'rgba(99, 102, 241, 0.05)');
-        mouseGradient.addColorStop(1, 'rgba(6, 182, 212, 0)');
-
-        ctx.fillStyle = mouseGradient;
-        ctx.beginPath();
-        ctx.arc(mouse.x, mouse.y, 100, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-      }
 
       animationId = requestAnimationFrame(animate);
     };

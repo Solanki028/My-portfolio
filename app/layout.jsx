@@ -1,5 +1,4 @@
 import './globals.css';
-import GlobalMouseEffect from '@/components/GlobalMouseEffect';
 
 export const metadata = {
   title: 'Priyanshu Solanki - Full Stack Developer',
@@ -53,8 +52,7 @@ export default function RootLayout({ children }) {
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="cursor-none">
-        <GlobalMouseEffect />
+      <body>
         {children}
       </body>
     </html>

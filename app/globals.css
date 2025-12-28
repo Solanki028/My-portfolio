@@ -3,47 +3,57 @@
 @tailwind utilities;
 
 :root {
-  /* Premium Modern Color Scheme */
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #0f0f23;
-  --bg-tertiary: #1a1a2e;
-  --bg-card: #16213e;
-  
-  /* Enhanced Accent Colors */
-  --accent-primary: #8b5cf6;
-  --accent-secondary: #6366f1;
-  --accent-tertiary: #a78bfa;
-  --accent-glow: rgba(139, 92, 246, 0.6);
-  
-  /* Extended Color Palette */
-  --accent-violet: #8b5cf6;
-  --accent-blue: #3b82f6;
-  --accent-cyan: #06b6d4;
-  --accent-emerald: #10b981;
-  --accent-orange: #f59e0b;
-  --accent-pink: #ec4899;
-  
+  /* Premium Modern Color Scheme - Z Black & Red */
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #111111;
+  --bg-card: #0f0f0f;
+  /* Matte Black */
+
+  /* Enhanced Accent Colors - Premium Red */
+  --accent-primary: #E50914;
+  /* Premium Red */
+  --accent-secondary: #B20710;
+  /* Darker Red */
+  --accent-tertiary: #FF1E1E;
+  /* Bright Red */
+  --accent-glow: rgba(229, 9, 20, 0.6);
+
+  /* Extended Color Palette - Monochrome & Red */
+  --accent-violet: #E50914;
+  /* Replaced with Red */
+  --accent-blue: #B20710;
+  /* Replaced with Dark Red */
+  --accent-cyan: #FF1E1E;
+  /* Replaced with Bright Red */
+  --accent-emerald: #333333;
+  /* Dark Gray */
+  --accent-orange: #666666;
+  /* Gray */
+  --accent-pink: #E50914;
+  /* Red */
+
   /* Text Colors */
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #64748b;
-  --text-accent: #e2e8f0;
-  
-  /* Modern Gradients */
-  --gradient-primary: linear-gradient(135deg, #8b5cf6, #6366f1, #06b6d4);
-  --gradient-secondary: linear-gradient(135deg, #3b82f6, #06b6d4, #10b981);
-  --gradient-accent: linear-gradient(135deg, #ec4899, #f59e0b, #10b981);
-  
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-muted: #525252;
+  --text-accent: #ffcccc;
+
+  /* Modern Gradients - Red & Black */
+  --gradient-primary: linear-gradient(135deg, #E50914, #B20710, #7d040a);
+  --gradient-secondary: linear-gradient(135deg, #FF1E1E, #E50914, #B20710);
+  --gradient-accent: linear-gradient(135deg, #E50914, #FF1E1E, #B20710);
+
   /* Borders & Surfaces */
-  --border-subtle: rgba(203, 213, 225, 0.1);
-  --border-accent: rgba(139, 92, 246, 0.3);
-  --surface-glass: rgba(16, 21, 53, 0.8);
-  --surface-card: rgba(22, 33, 62, 0.9);
-  
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-accent: rgba(229, 9, 20, 0.4);
+  --surface-glass: rgba(10, 10, 10, 0.8);
+  --surface-card: rgba(15, 15, 15, 0.9);
+
   /* Enhanced Shadows */
-  --shadow-glow: 0 0 80px rgba(139, 92, 246, 0.3);
-  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.6);
-  --shadow-hover: 0 16px 64px rgba(139, 92, 246, 0.2);
+  --shadow-glow: 0 0 80px rgba(229, 9, 20, 0.4);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.8);
+  --shadow-hover: 0 16px 64px rgba(229, 9, 20, 0.25);
 }
 
 * {
@@ -66,14 +76,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Enhanced Cursor System */
-* {
-  cursor: none !important;
-}
-
-button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-1"]) {
-  cursor: pointer !important;
-}
 
 /* Modern Scrollbar */
 ::-webkit-scrollbar {
@@ -110,131 +112,203 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
 
 /* Core Animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(2deg); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
 }
 
 @keyframes pulse-slow {
-  0%, 100% { 
+
+  0%,
+  100% {
     box-shadow: 0 0 40px var(--accent-glow);
     opacity: 1;
   }
-  50% { 
+
+  50% {
     box-shadow: 0 0 80px var(--accent-glow), 0 0 120px var(--accent-glow);
     opacity: 0.8;
   }
 }
 
 @keyframes gradient-x {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 @keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes slide-up {
-  0% { 
-    transform: translateY(60px); 
-    opacity: 0; 
+  0% {
+    transform: translateY(60px);
+    opacity: 0;
   }
-  100% { 
-    transform: translateY(0); 
-    opacity: 1; 
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @keyframes slide-down {
-  0% { 
-    transform: translateY(-60px); 
-    opacity: 0; 
+  0% {
+    transform: translateY(-60px);
+    opacity: 0;
   }
-  100% { 
-    transform: translateY(0); 
-    opacity: 1; 
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @keyframes slide-left {
-  0% { 
-    transform: translateX(80px); 
-    opacity: 0; 
+  0% {
+    transform: translateX(80px);
+    opacity: 0;
   }
-  100% { 
-    transform: translateX(0); 
-    opacity: 1; 
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes slide-right {
-  0% { 
-    transform: translateX(-80px); 
-    opacity: 0; 
+  0% {
+    transform: translateX(-80px);
+    opacity: 0;
   }
-  100% { 
-    transform: translateX(0); 
-    opacity: 1; 
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes fade-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes scale-in {
-  0% { 
-    transform: scale(0.8); 
-    opacity: 0; 
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
   }
-  100% { 
-    transform: scale(1); 
-    opacity: 1; 
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes border-dance {
-  0%, 100% { 
+
+  0%,
+  100% {
     border-color: var(--accent-primary);
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 30px rgba(229, 9, 20, 0.3);
   }
-  50% { 
+
+  50% {
     border-color: var(--accent-secondary);
-    box-shadow: 0 0 50px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 0 50px rgba(180, 7, 16, 0.4);
   }
 }
 
 @keyframes text-shimmer {
-  0% { background-position: -100% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -100% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes rotate-slow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes bounce-subtle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @keyframes pan {
-  0% { background-position: 0 0; }
-  100% { background-position: 100px 100px; }
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 100px 100px;
+  }
 }
 
 /* Enhanced Animation Classes */
@@ -427,7 +501,7 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
 }
 
 .btn-secondary:hover {
-  background: rgba(139, 92, 246, 0.1);
+  background: rgba(229, 9, 20, 0.1);
   border-color: var(--accent-primary);
   transform: translateY(-2px);
   box-shadow: 0 8px 32px var(--accent-glow);
@@ -441,19 +515,19 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
   font-weight: 600;
   border: none;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 32px rgba(236, 72, 153, 0.3);
+  box-shadow: 0 8px 32px rgba(255, 30, 30, 0.3);
 }
 
 .btn-warm:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 64px rgba(236, 72, 153, 0.4);
+  box-shadow: 0 16px 64px rgba(255, 30, 30, 0.4);
 }
 
 /* Modern Borders */
 .border-gradient {
   border: 2px solid transparent;
   background: linear-gradient(var(--surface-card), var(--surface-card)) padding-box,
-              var(--gradient-primary) border-box;
+    var(--gradient-primary) border-box;
   border-radius: 24px;
 }
 
@@ -468,7 +542,7 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
 }
 
 .glow-warm {
-  box-shadow: 0 0 80px rgba(236, 72, 153, 0.5);
+  box-shadow: 0 0 80px rgba(255, 30, 30, 0.5);
 }
 
 .text-glow {
@@ -548,14 +622,14 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
 
 /* Enhanced Background Patterns */
 .bg-grid {
-  background-image: 
-    linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgba(229, 9, 20, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(229, 9, 20, 0.05) 1px, transparent 1px);
   background-size: 80px 80px;
 }
 
 .bg-dots {
-  background-image: radial-gradient(rgba(139, 92, 246, 0.2) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(229, 9, 20, 0.2) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
@@ -564,10 +638,10 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
 }
 
 .bg-gradient-hero {
-  background: 
-    radial-gradient(ellipse at 20% 20%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, rgba(167, 139, 250, 0.1) 0%, transparent 70%),
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(229, 9, 20, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(180, 7, 16, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(100, 0, 0, 0.1) 0%, transparent 70%),
     var(--bg-primary);
 }
 
@@ -609,7 +683,7 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
 }
 
 .tech-button:hover {
-  background: rgba(139, 92, 246, 0.1);
+  background: rgba(229, 9, 20, 0.1);
   border-color: var(--accent-primary);
   box-shadow: 0 8px 32px var(--accent-glow);
   transform: translateY(-2px);
@@ -648,14 +722,14 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
   .section-padding {
     padding: 80px 0;
   }
-  
+
   .btn-primary,
   .btn-secondary,
   .btn-warm {
     padding: 14px 28px;
     font-size: 14px;
   }
-  
+
   .animate-float,
   .animate-float-slow,
   .animate-pulse-slow {
@@ -673,7 +747,7 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
     opacity: 1 !important;
     transform: none !important;
   }
-  
+
   .glass,
   .glass-strong {
     backdrop-filter: blur(10px);
@@ -685,7 +759,7 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
   [class*="opacity-0"] {
     opacity: 1 !important;
   }
-  
+
   .card-modern,
   .card-glass,
   .tech-border {
@@ -695,6 +769,7 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
 
 /* High Contrast Mode */
 @media (prefers-contrast: high) {
+
   .gradient-text,
   .gradient-text-warm,
   .gradient-text-static,
@@ -704,7 +779,7 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
   .card-modern,
   .card-glass {
     border-width: 3px;
@@ -713,6 +788,7 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -720,7 +796,7 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  
+
   .animate-float,
   .animate-float-slow,
   .animate-pulse-slow,
@@ -732,7 +808,7 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
   .animate-pan {
     animation: none !important;
   }
-  
+
   * {
     opacity: 1 !important;
     transform: none !important;
@@ -752,7 +828,7 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
     background: white;
     color: black;
   }
-  
+
   .glass,
   .glass-strong,
   .card-modern,
@@ -762,7 +838,7 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
     border: 2px solid #ccc;
     box-shadow: none;
   }
-  
+
   .gradient-text,
   .gradient-text-warm,
   .gradient-text-static,
@@ -777,21 +853,51 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
 /* ============================================
    CUSTOM ANIMATION DELAYS
    ============================================ */
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
-.delay-600 { animation-delay: 600ms; }
-.delay-700 { animation-delay: 700ms; }
-.delay-800 { animation-delay: 800ms; }
-.delay-900 { animation-delay: 900ms; }
-.delay-1000 { animation-delay: 1000ms; }
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-600 {
+  animation-delay: 600ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+.delay-800 {
+  animation-delay: 800ms;
+}
+
+.delay-900 {
+  animation-delay: 900ms;
+}
+
+.delay-1000 {
+  animation-delay: 1000ms;
+}
 
 /* ============================================
    BACKDROP FILTERS SUPPORT
    ============================================ */
 @supports (backdrop-filter: blur(20px)) {
+
   .glass,
   .glass-strong,
   .card-glass,
@@ -802,6 +908,7 @@ button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-
 }
 
 @supports not (backdrop-filter: blur(20px)) {
+
   .glass,
   .glass-strong,
   .card-glass,

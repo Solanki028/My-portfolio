@@ -18,7 +18,7 @@ export default function Projects() {
       github: 'https://github.com/Solanki028/Astroxhub-Blogs',
       demo: 'https://www.innvibs.com',
       featured: true,
-      color: 'from-violet-500 to-purple-500'
+      color: 'from-red-600 to-red-900'
     },
     {
       title: "Velora Spa & Massage",
@@ -29,23 +29,19 @@ export default function Projects() {
       github: "https://github.com/Solanki028/serene-zen-booking",
       demo: "https://veloraaspa.netlify.app/",
       featured: true,
-      color: 'from-emerald-500 to-teal-500'
+      color: 'from-red-700 to-red-950'
     },
-
     {
       title: "ILP: Internship Learning Platform",
       description: "A comprehensive Learning Management System (LMS) designed to bridge the gap between students and mentors. Features role-based access control, interactive course management, automated PDF certification, and a secure admin dashboard for total platform oversight.",
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Education/Learning themed image
+      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT Auth", "PDFKit"],
       category: "web",
       github: "https://github.com/Solanki028/TDD-intersnhip-learning-platform",
-      demo: "https://mytutorx.netlify.app/", // Replace if you have a different deployment URL
+      demo: "https://mytutorx.netlify.app/",
       featured: true,
-      color: 'from-indigo-500 to-purple-500'
+      color: 'from-red-600 to-black'
     },
-
-
-
     {
       title: "TaskFlow: AI-Powered Trello Clone",
       description: "A modern, full-stack task management platform with intelligent AI recommendations. Features drag-and-drop Kanban boards, real-time collaboration, and smart suggestions that analyze card content to recommend due dates, list movements, and related task groupings.",
@@ -55,9 +51,8 @@ export default function Projects() {
       github: "https://github.com/Solanki028/TaskFlow",
       demo: "https://trellox.netlify.app/",
       featured: false,
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-red-500 to-red-700'
     },
-
     {
       title: 'Flix-Chill Video Streaming Platform',
       description: 'Netflix-inspired video streaming platform built with MERN stack. Features user authentication, video playback, content management, and responsive UI design with Material-UI components.',
@@ -67,13 +62,12 @@ export default function Projects() {
       github: 'https://github.com/Solanki028/Netflix_',
       demo: 'https://flixchillv1.netlify.app/',
       featured: false,
-      color: 'from-red-500 to-pink-500'
+      color: 'from-red-700 to-red-950'
     },
-
     {
       title: 'JK Designs Portfolio',
       description: 'A premium, high-performance portfolio for a creative design studio. Features a fully custom Admin Dashboard for managing site content and images in real-time, dynamic multi-image carousels, and a sleek dark-mode aesthetic with red accents, all optimized for SEO and speed.',
-      image: '/images/jk_digital.png', // One of the branded images we generated
+      image: '/images/jk_digital.png',
       tech: ['Next.js', 'React', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB'],
       category: 'web',
       github: 'https://github.com/Solanki028/client-porfolio',
@@ -90,7 +84,7 @@ export default function Projects() {
       github: 'https://github.com/Solanki028/InsiderJobs',
       demo: '#',
       featured: false,
-      color: 'from-orange-500 to-red-500'
+      color: 'from-red-500 to-red-800'
     },
     {
       title: 'Expense Tracker App',
@@ -101,7 +95,7 @@ export default function Projects() {
       github: 'https://github.com/Solanki028/Expense-Tracker',
       demo: '#',
       featured: false,
-      color: 'from-green-500 to-emerald-500'
+      color: 'from-red-600 to-zinc-800'
     },
     {
       title: 'Weather Detection Platform',
@@ -112,7 +106,7 @@ export default function Projects() {
       github: 'https://github.com/Solanki028/weather-app-react',
       demo: '#',
       featured: false,
-      color: 'from-yellow-500 to-orange-500'
+      color: 'from-red-400 to-red-600'
     },
     {
       title: 'Modern Todo Application',
@@ -123,13 +117,13 @@ export default function Projects() {
       github: 'https://github.com/Solanki028/Todo-App-react',
       demo: '#',
       featured: false,
-      color: 'from-purple-500 to-indigo-500'
+      color: 'from-red-800 to-black'
     }
   ];
 
   const filters = [
-    { id: 'all', label: 'All Projects', icon: Globe, color: 'from-violet-500 to-purple-500' },
-    { id: 'web', label: 'Web Apps', icon: Code, color: 'from-blue-500 to-cyan-500' },
+    { id: 'all', label: 'All Projects', icon: Globe, color: 'from-red-600 to-red-900' },
+    { id: 'web', label: 'Web Apps', icon: Code, color: 'from-red-500 to-red-700' },
   ];
 
   const filteredProjects = activeFilter === 'all'
@@ -139,26 +133,26 @@ export default function Projects() {
   const featuredProjects = projects.filter(project => project.featured);
 
   return (
-    <section ref={ref} id="projects" className="py-32 relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950">
+    <section ref={ref} id="projects" className="py-32 relative overflow-hidden bg-gradient-to-br from-black via-zinc-950 to-red-950/20">
       {/* Enhanced Background Effects */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:120px_120px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(229,9,20,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(229,9,20,0.03)_1px,transparent_1px)] bg-[size:120px_120px]" />
 
-      {/* Floating Geometric Elements */}
-      <div className="absolute top-20 right-20 w-32 h-32 border border-violet-500/20 rotate-45 animate-spin-slow" />
-      <div className="absolute bottom-32 left-20 w-24 h-24 border border-blue-500/20 rounded-full animate-pulse" />
-      <div className="absolute top-1/2 left-10 w-16 h-16 border border-cyan-500/20 rotate-12 animate-bounce-subtle" />
+      {/* Floating Geometric Elements - Red/Black */}
+      <div className="absolute top-20 right-20 w-32 h-32 border border-red-500/20 rotate-45 animate-spin-slow" />
+      <div className="absolute bottom-32 left-20 w-24 h-24 border border-red-800/20 rounded-full animate-pulse" />
+      <div className="absolute top-1/2 left-10 w-16 h-16 border border-red-400/20 rotate-12 animate-bounce-subtle" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Enhanced Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6">
-              <span className="bg-gradient-to-r from-violet-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-gradient-x bg-[length:200%_200%]">
+              <span className="bg-gradient-to-r from-red-500 via-red-600 to-red-400 bg-clip-text text-transparent animate-gradient-x bg-[length:200%_200%]">
                 Featured Projects
               </span>
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-violet-500 via-blue-500 to-cyan-500 mx-auto rounded-full mb-6" />
-            <p className="text-slate-300 text-xl max-w-3xl mx-auto leading-relaxed">
+            <div className="w-32 h-1 bg-gradient-to-r from-red-600 via-red-500 to-red-400 mx-auto rounded-full mb-6" />
+            <p className="text-zinc-400 text-xl max-w-3xl mx-auto leading-relaxed">
               Showcasing innovative solutions and creative implementations across various technologies
             </p>
           </div>
@@ -167,17 +161,17 @@ export default function Projects() {
           <div className="mb-20">
             <div className={`text-center mb-12 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
               <h3 className="text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
-                <Star className="w-8 h-8 text-yellow-400" />
+                <Star className="w-8 h-8 text-red-500" />
                 Spotlight Projects
               </h3>
-              <p className="text-slate-400">My most innovative and impactful work</p>
+              <p className="text-zinc-400">My most innovative and impactful work</p>
             </div>
 
             <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
               {featuredProjects.map((project, index) => (
                 <div
                   key={project.title}
-                  className={`group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:border-violet-400/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-violet-500/20 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'
+                  className={`group relative bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-3xl overflow-hidden hover:border-red-500/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-500/20 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'
                     }`}
                   style={{
                     animationDelay: `${index * 0.2}s`,
@@ -194,10 +188,10 @@ export default function Projects() {
                     />
 
                     {/* Overlay Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
                     {/* Featured Badge */}
-                    <div className="absolute top-4 left-4 px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full">
+                    <div className="absolute top-4 left-4 px-3 py-1 bg-gradient-to-r from-red-600 to-red-500 rounded-full">
                       <Star className="w-4 h-4 text-white" />
                     </div>
 
@@ -208,7 +202,7 @@ export default function Projects() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-3 bg-slate-900/90 rounded-full hover:bg-violet-500/20 transition-all duration-300 backdrop-blur-sm"
+                          className="p-3 bg-black/90 rounded-full hover:bg-red-500/20 transition-all duration-300 backdrop-blur-sm"
                           title={`View ${project.title} on GitHub`}
                         >
                           <Github className="w-5 h-5 text-white" />
@@ -219,7 +213,7 @@ export default function Projects() {
                           href={project.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-3 bg-slate-900/90 rounded-full hover:bg-emerald-500/20 transition-all duration-300 backdrop-blur-sm"
+                          className="p-3 bg-black/90 rounded-full hover:bg-red-500/20 transition-all duration-300 backdrop-blur-sm"
                           title={`View ${project.title} Live Demo`}
                         >
                           <ExternalLink className="w-5 h-5 text-white" />
@@ -228,8 +222,8 @@ export default function Projects() {
                     </div>
 
                     {/* Category Badge */}
-                    <div className="absolute bottom-4 left-4 px-3 py-1 bg-slate-900/80 backdrop-blur-sm rounded-full border border-white/10">
-                      <span className="text-violet-400 text-sm font-medium capitalize">
+                    <div className="absolute bottom-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-sm rounded-full border border-white/10">
+                      <span className="text-red-400 text-sm font-medium capitalize">
                         {project.category}
                       </span>
                     </div>
@@ -237,10 +231,10 @@ export default function Projects() {
 
                   {/* Project Content */}
                   <div className="p-8">
-                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-violet-300 transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-red-400 transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-slate-400 mb-6 leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
+                    <p className="text-zinc-400 mb-6 leading-relaxed group-hover:text-zinc-300 transition-colors duration-300">
                       {project.description}
                     </p>
 
@@ -249,13 +243,13 @@ export default function Projects() {
                       {project.tech.slice(0, 4).map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-3 py-1 bg-slate-800/50 text-slate-300 text-sm rounded-full border border-slate-700 hover:border-violet-400/50 hover:text-violet-300 transition-colors duration-300"
+                          className="px-3 py-1 bg-zinc-800/50 text-zinc-300 text-sm rounded-full border border-zinc-700 hover:border-red-500/50 hover:text-red-300 transition-colors duration-300"
                         >
                           {tech}
                         </span>
                       ))}
                       {project.tech.length > 4 && (
-                        <span className="px-3 py-1 bg-slate-700/50 text-slate-400 text-sm rounded-full">
+                        <span className="px-3 py-1 bg-zinc-700/50 text-zinc-400 text-sm rounded-full">
                           +{project.tech.length - 4}
                         </span>
                       )}
@@ -302,8 +296,8 @@ export default function Projects() {
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
                 className={`group inline-flex items-center space-x-3 px-6 py-4 rounded-2xl transition-all duration-500 font-semibold ${activeFilter === filter.id
-                  ? `bg-gradient-to-r ${filter.color} text-white shadow-lg shadow-violet-500/25`
-                  : 'bg-white/5 backdrop-blur-lg border border-white/10 text-slate-300 hover:bg-white/10 hover:border-violet-400/30 hover:text-white'
+                  ? `bg-gradient-to-r ${filter.color} text-white shadow-lg shadow-red-500/25`
+                  : 'bg-zinc-900/40 backdrop-blur-lg border border-white/10 text-zinc-300 hover:bg-white/10 hover:border-red-400/30 hover:text-white'
                   }`}
               >
                 <filter.icon className="w-5 h-5" />
@@ -317,7 +311,7 @@ export default function Projects() {
             {filteredProjects.map((project, index) => (
               <div
                 key={project.title}
-                className={`group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-violet-400/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-violet-500/10 ${isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'
+                className={`group bg-zinc-900/40 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-red-400/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-red-500/10 ${isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'
                   }`}
                 style={{
                   animationDelay: `${index * 150}ms`,
@@ -332,7 +326,7 @@ export default function Projects() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
                   {/* Action Buttons */}
                   <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -341,7 +335,7 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 bg-slate-900/90 rounded-full hover:bg-violet-500/20 transition-all duration-300 backdrop-blur-sm"
+                        className="p-2 bg-black/90 rounded-full hover:bg-red-500/20 transition-all duration-300 backdrop-blur-sm"
                         title={`View ${project.title} on GitHub`}
                       >
                         <Github className="w-4 h-4 text-white" />
@@ -352,7 +346,7 @@ export default function Projects() {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 bg-slate-900/90 rounded-full hover:bg-emerald-500/20 transition-all duration-300 backdrop-blur-sm"
+                        className="p-2 bg-black/90 rounded-full hover:bg-red-500/20 transition-all duration-300 backdrop-blur-sm"
                         title={`View ${project.title} Live Demo`}
                       >
                         <ExternalLink className="w-4 h-4 text-white" />
@@ -361,8 +355,8 @@ export default function Projects() {
                   </div>
 
                   {/* Category Badge */}
-                  <div className="absolute bottom-4 left-4 px-3 py-1 bg-slate-900/80 backdrop-blur-sm rounded-full border border-white/10">
-                    <span className="text-violet-400 text-xs font-medium capitalize">
+                  <div className="absolute bottom-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-sm rounded-full border border-white/10">
+                    <span className="text-red-400 text-xs font-medium capitalize">
                       {project.category}
                     </span>
                   </div>
@@ -370,10 +364,10 @@ export default function Projects() {
 
                 {/* Project Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-3 line-clamp-1 group-hover:text-violet-300 transition-colors duration-300">
+                  <h3 className="text-xl font-semibold text-white mb-3 line-clamp-1 group-hover:text-red-300 transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-slate-400 mb-4 text-sm leading-relaxed line-clamp-3 group-hover:text-slate-300 transition-colors duration-300">
+                  <p className="text-zinc-400 mb-4 text-sm leading-relaxed line-clamp-3 group-hover:text-zinc-300 transition-colors duration-300">
                     {project.description}
                   </p>
 
@@ -382,13 +376,13 @@ export default function Projects() {
                     {project.tech.slice(0, 3).map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 bg-slate-800/50 text-slate-400 text-xs rounded-full border border-slate-700 hover:border-violet-400/50 hover:text-violet-300 transition-colors duration-300"
+                        className="px-2 py-1 bg-zinc-800/50 text-zinc-400 text-xs rounded-full border border-zinc-700 hover:border-red-400/50 hover:text-red-300 transition-colors duration-300"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.tech.length > 3 && (
-                      <span className="px-2 py-1 bg-slate-700/50 text-slate-500 text-xs rounded-full">
+                      <span className="px-2 py-1 bg-zinc-700/50 text-zinc-500 text-xs rounded-full">
                         +{project.tech.length - 3}
                       </span>
                     )}
@@ -400,17 +394,17 @@ export default function Projects() {
 
           {/* View More Section */}
           <div className="text-center mt-16">
-            <div className={`bg-gradient-to-r from-violet-500/10 to-blue-500/10 backdrop-blur-xl border border-violet-400/20 rounded-3xl p-8 max-w-2xl mx-auto ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '1s' }}>
-              <Code className="w-12 h-12 text-violet-400 mx-auto mb-4" />
+            <div className={`bg-gradient-to-r from-red-500/10 to-red-900/10 backdrop-blur-xl border border-red-400/20 rounded-3xl p-8 max-w-2xl mx-auto ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '1s' }}>
+              <Code className="w-12 h-12 text-red-400 mx-auto mb-4" />
               <h4 className="text-2xl font-bold text-white mb-4">Want to See More?</h4>
-              <p className="text-slate-300 mb-6">
+              <p className="text-zinc-300 mb-6">
                 Explore my complete portfolio with additional projects, experiments, and contributions
               </p>
               <a
                 href="https://github.com/Solanki028?tab=repositories"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-500 hover:to-blue-500 text-white font-semibold rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 text-white font-semibold rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25"
               >
                 <Github className="w-5 h-5" />
                 <span>View All Projects on GitHub</span>
@@ -421,7 +415,7 @@ export default function Projects() {
       </div>
 
       {/* Bottom Gradient Line */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/50 to-transparent" />
     </section>
   );
 }
