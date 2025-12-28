@@ -163,10 +163,9 @@ export default function About() {
                     I've brought ideas to life through real-world projects that deliver impactful digital solutions.
                   </p>
                   <p>
-                    I'm driven by curiosity, committed to continuous learning, and eager to contribute to
-                    <span className="text-red-400 font-semibold"> innovative products</span> that make a difference.
-                    My approach combines technical excellence with creative problem-solving to deliver
-                    exceptional user experiences.
+                    Thriving in <span className="text-red-400 font-semibold">fast-paced startup environments</span>,
+                    I excel at taking full ownership of projects from concept to deployment. My ability to execute solo
+                    allows me to turn complex requirements into scalable, production-ready solutions with speed and precision.
                   </p>
                 </div>
               </div>
