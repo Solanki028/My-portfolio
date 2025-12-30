@@ -43,6 +43,17 @@ export default function Projects() {
       color: 'from-red-600 to-black'
     },
     {
+      title: 'NWB Fintech Infrastructure',
+      description: 'A comprehensive, enterprise-grade fintech platform demonstrating next-generation payment solutions. Features include advanced UPI collections, real-time analytics dashboards, global card processing simulations, and banking-as-a-service modules. Built with a focus on high-performance animations, premium UI/UX, and responsive design.',
+      image: 'https://vaultpayy.netlify.app/nwb.png',
+      tech: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Shadcn UI', 'Recharts', 'Vite'],
+      category: 'web',
+      github: 'https://github.com/Solanki028/crimson-flow',
+      demo: 'https://vaultpayy.netlify.app/',
+      featured: true,
+      color: 'from-blue-600 to-indigo-900'
+    },
+    {
       title: "TaskFlow: AI-Powered Trello Clone",
       description: "A modern, full-stack task management platform with intelligent AI recommendations. Features drag-and-drop Kanban boards, real-time collaboration, and smart suggestions that analyze card content to recommend due dates, list movements, and related task groupings.",
       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
@@ -183,7 +194,7 @@ export default function Projects() {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="w-full h-full object-cover object-left-top group-hover:scale-110 transition-transform duration-700"
                       loading="lazy"
                     />
 
@@ -323,7 +334,7 @@ export default function Projects() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover object-left-top group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
