@@ -12,13 +12,25 @@ export default function Projects() {
     {
       title: 'Fully Dynamic Blog Website',
       description: 'A sophisticated, modern blog platform featuring personalized email subscriptions, intelligent user interest tracking based on likes, comments, and reading time, plus a content paywall system for non-subscribers. Includes a multilingual admin dashboard with rich text editor.',
-      image: 'https://w3layouts.b-cdn.net//wp-content/uploads/2022/07/Blog-Store-Website-Template-768x480.jpg',
+      image: 'https://cdn.dribbble.com/userupload/17310275/file/original-fbd24572fb98ec395057d4ea6ccbfb40.png?format=webp&resize=400x300&vertical=center',
       tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'Brevo API', 'node-cron'],
       category: 'web',
       github: 'https://github.com/Solanki028/Astroxhub-Blogs',
       demo: 'https://www.innvibs.com',
       featured: true,
       color: 'from-red-600 to-red-900'
+    },
+
+    {
+      title: "Task Generator AI",
+      description: "An intelligent project planning tool that uses AI to generate comprehensive specifications, user stories, and engineering tasks from a simple id. Features a drag-and-drop interface, real-time status checks, and markdown export functionality.",
+      image: "/images/task ai.png", // High-tech AI abstract image
+      tech: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "OpenAI / Gemini"],
+      category: "web",
+      github: "https://github.com/Solanki028/Task-Generator-AI",
+      demo: "https://taskaiflow.netlify.app/",
+      featured: true,
+      color: "from-violet-600 to-indigo-900"
     },
     {
       title: "Velora Spa & Massage",
@@ -31,6 +43,8 @@ export default function Projects() {
       featured: true,
       color: 'from-red-700 to-red-950'
     },
+
+
     {
       title: "ILP: Internship Learning Platform",
       description: "A comprehensive Learning Management System (LMS) designed to bridge the gap between students and mentors. Features role-based access control, interactive course management, automated PDF certification, and a secure admin dashboard for total platform oversight.",
