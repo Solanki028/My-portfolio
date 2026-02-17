@@ -3,57 +3,58 @@
 @tailwind utilities;
 
 :root {
-  /* Premium Modern Color Scheme - Z Black & Red */
+  /* Premium Modern Color Scheme - Z Black & Yellow */
   --bg-primary: #000000;
   --bg-secondary: #0a0a0a;
   --bg-tertiary: #111111;
   --bg-card: #0f0f0f;
   /* Matte Black */
 
-  /* Enhanced Accent Colors - Premium Red */
-  --accent-primary: #E50914;
-  /* Premium Red */
-  --accent-secondary: #B20710;
-  /* Darker Red */
-  --accent-tertiary: #FF1E1E;
-  /* Bright Red */
-  --accent-glow: rgba(229, 9, 20, 0.6);
+  /* Enhanced Accent Colors - Premium Yellow/Gold */
+  --accent-primary: #FCC200;
+  /* Golden Yellow */
+  --accent-secondary: #E6A800;
+  /* Darker Gold */
+  --accent-tertiary: #FFD700;
+  /* Pure Gold */
+  --accent-glow: rgba(252, 194, 0, 0.6);
 
-  /* Extended Color Palette - Monochrome & Red */
-  --accent-violet: #E50914;
-  /* Replaced with Red */
-  --accent-blue: #B20710;
-  /* Replaced with Dark Red */
-  --accent-cyan: #FF1E1E;
-  /* Replaced with Bright Red */
+  /* Extended Color Palette - Monochrome & Yellow */
+  --accent-violet: #FCC200;
+  /* Replaced with Yellow */
+  --accent-blue: #E6A800;
+  /* Replaced with Dark Gold */
+  --accent-cyan: #FFD700;
+  /* Replaced with Pure Gold */
   --accent-emerald: #333333;
   /* Dark Gray */
   --accent-orange: #666666;
   /* Gray */
-  --accent-pink: #E50914;
-  /* Red */
+  --accent-pink: #FCC200;
+  /* Yellow */
 
   /* Text Colors */
   --text-primary: #ffffff;
   --text-secondary: #a0a0a0;
   --text-muted: #525252;
-  --text-accent: #ffcccc;
+  --text-accent: #FFF5CC;
 
-  /* Modern Gradients - Red & Black */
-  --gradient-primary: linear-gradient(135deg, #E50914, #B20710, #7d040a);
-  --gradient-secondary: linear-gradient(135deg, #FF1E1E, #E50914, #B20710);
-  --gradient-accent: linear-gradient(135deg, #E50914, #FF1E1E, #B20710);
+  /* Modern Gradients - Yellow & Black */
+  /* Modern Gradients - Yellow & Black (Replaced with Solid Colors) */
+  --gradient-primary: #FCC200;
+  --gradient-secondary: #FFD700;
+  --gradient-accent: #E6A800;
 
   /* Borders & Surfaces */
   --border-subtle: rgba(255, 255, 255, 0.1);
-  --border-accent: rgba(229, 9, 20, 0.4);
+  --border-accent: rgba(252, 194, 0, 0.4);
   --surface-glass: rgba(10, 10, 10, 0.8);
   --surface-card: rgba(15, 15, 15, 0.9);
 
   /* Enhanced Shadows */
-  --shadow-glow: 0 0 80px rgba(229, 9, 20, 0.4);
+  --shadow-glow: 0 0 80px rgba(252, 194, 0, 0.4);
   --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.8);
-  --shadow-hover: 0 16px 64px rgba(229, 9, 20, 0.25);
+  --shadow-hover: 0 16px 64px rgba(252, 194, 0, 0.25);
 }
 
 * {
@@ -87,12 +88,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gradient-primary);
+  background: var(--accent-primary);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gradient-secondary);
+  background: var(--accent-secondary);
 }
 
 /* Enhanced Selection */
@@ -260,12 +261,12 @@ body {
   0%,
   100% {
     border-color: var(--accent-primary);
-    box-shadow: 0 0 30px rgba(229, 9, 20, 0.3);
+    box-shadow: 0 0 30px rgba(252, 194, 0, 0.3);
   }
 
   50% {
     border-color: var(--accent-secondary);
-    box-shadow: 0 0 50px rgba(180, 7, 16, 0.4);
+    box-shadow: 0 0 50px rgba(230, 168, 0, 0.4);
   }
 }
 
@@ -390,8 +391,8 @@ body {
 
 /* Modern Gradient Text */
 .gradient-text {
-  background: var(--gradient-primary);
-  background-size: 200% 200%;
+  background: var(--accent-primary);
+  background-size: 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -399,8 +400,8 @@ body {
 }
 
 .gradient-text-warm {
-  background: var(--gradient-accent);
-  background-size: 200% 200%;
+  background: var(--accent-secondary);
+  background-size: 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -408,7 +409,7 @@ body {
 }
 
 .gradient-text-static {
-  background: var(--gradient-primary);
+  background: var(--accent-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -458,7 +459,7 @@ body {
 
 /* Enhanced Buttons */
 .btn-primary {
-  background: var(--gradient-primary);
+  background: var(--accent-primary);
   color: white;
   padding: 16px 32px;
   border-radius: 16px;
@@ -501,26 +502,26 @@ body {
 }
 
 .btn-secondary:hover {
-  background: rgba(229, 9, 20, 0.1);
+  background: rgba(252, 194, 0, 0.1);
   border-color: var(--accent-primary);
   transform: translateY(-2px);
   box-shadow: 0 8px 32px var(--accent-glow);
 }
 
 .btn-warm {
-  background: var(--gradient-accent);
+  background: var(--accent-secondary);
   color: var(--bg-primary);
   padding: 16px 32px;
   border-radius: 16px;
   font-weight: 600;
   border: none;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 32px rgba(255, 30, 30, 0.3);
+  box-shadow: 0 8px 32px rgba(252, 194, 0, 0.3);
 }
 
 .btn-warm:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 64px rgba(255, 30, 30, 0.4);
+  box-shadow: 0 16px 64px rgba(252, 194, 0, 0.4);
 }
 
 /* Modern Borders */
@@ -542,7 +543,7 @@ body {
 }
 
 .glow-warm {
-  box-shadow: 0 0 80px rgba(255, 30, 30, 0.5);
+  box-shadow: 0 0 80px rgba(252, 194, 0, 0.5);
 }
 
 .text-glow {
@@ -623,13 +624,13 @@ body {
 /* Enhanced Background Patterns */
 .bg-grid {
   background-image:
-    linear-gradient(rgba(229, 9, 20, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(229, 9, 20, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(252, 194, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(252, 194, 0, 0.05) 1px, transparent 1px);
   background-size: 80px 80px;
 }
 
 .bg-dots {
-  background-image: radial-gradient(rgba(229, 9, 20, 0.2) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(252, 194, 0, 0.2) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
@@ -638,11 +639,7 @@ body {
 }
 
 .bg-gradient-hero {
-  background:
-    radial-gradient(ellipse at 20% 20%, rgba(229, 9, 20, 0.2) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(180, 7, 16, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, rgba(100, 0, 0, 0.1) 0%, transparent 70%),
-    var(--bg-primary);
+  background: var(--bg-primary);
 }
 
 /* Tech-themed styles */
@@ -664,7 +661,7 @@ body {
 }
 
 .tech-gradient {
-  background: var(--gradient-primary);
+  background: var(--accent-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -683,7 +680,7 @@ body {
 }
 
 .tech-button:hover {
-  background: rgba(229, 9, 20, 0.1);
+  background: rgba(252, 194, 0, 0.1);
   border-color: var(--accent-primary);
   box-shadow: 0 8px 32px var(--accent-glow);
   transform: translateY(-2px);

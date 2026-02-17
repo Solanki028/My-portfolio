@@ -18,7 +18,7 @@ export default function Projects() {
       github: 'https://github.com/Solanki028/Astroxhub-Blogs',
       demo: 'https://www.innvibs.com',
       featured: true,
-      color: 'from-red-600 to-red-900'
+      color: 'bg-yellow-600'
     },
 
     {
@@ -30,7 +30,19 @@ export default function Projects() {
       github: "https://github.com/Solanki028/Task-Generator-AI",
       demo: "https://taskaiflow.netlify.app/",
       featured: true,
-      color: "from-violet-600 to-indigo-900"
+      color: "bg-violet-600"
+    },
+
+    {
+      title: 'Smart Bookmark App',
+      description: 'A production-ready bookmark manager featuring instant Google OAuth, real-time data synchronization across devices, and optimistic UI updates for a snappy user experience. Built with a focus on clean architecture, secure row-level data access (RLS), and a modern dashboard interface.',
+      image: '/images/app.png', // You might need to add/create this image or link to a screenshot
+      tech: ['Next.js 14', 'TypeScript', 'Supabase Auth', 'PostgreSQL', 'Tailwind CSS', 'Realtime', 'Lucide React'],
+      category: 'web',
+      github: 'https://github.com/Solanki028/Smart-bookmark-app',
+      demo: 'https://smart-bookmark-app-eosin.vercel.app/',
+      featured: true,
+      color: 'bg-gray-800'
     },
     {
       title: "Velora Spa & Massage",
@@ -41,7 +53,7 @@ export default function Projects() {
       github: "https://github.com/Solanki028/serene-zen-booking",
       demo: "https://veloraaspa.netlify.app/",
       featured: true,
-      color: 'from-red-700 to-red-950'
+      color: 'bg-yellow-700'
     },
 
 
@@ -54,7 +66,7 @@ export default function Projects() {
       github: "https://github.com/Solanki028/TDD-intersnhip-learning-platform",
       demo: "https://mytutorx.netlify.app/",
       featured: true,
-      color: 'from-red-600 to-black'
+      color: 'bg-yellow-600'
     },
     {
       title: 'NWB Fintech Infrastructure',
@@ -65,7 +77,7 @@ export default function Projects() {
       github: 'https://github.com/Solanki028/crimson-flow',
       demo: 'https://vaultpayy.netlify.app/',
       featured: true,
-      color: 'from-blue-600 to-indigo-900'
+      color: 'bg-blue-800'
     },
     {
       title: "TaskFlow: AI-Powered Trello Clone",
@@ -76,7 +88,7 @@ export default function Projects() {
       github: "https://github.com/Solanki028/TaskFlow",
       demo: "https://trellox.netlify.app/",
       featured: false,
-      color: 'from-red-500 to-red-700'
+      color: 'bg-yellow-500'
     },
     {
       title: 'Flix-Chill Video Streaming Platform',
@@ -87,7 +99,7 @@ export default function Projects() {
       github: 'https://github.com/Solanki028/Netflix_',
       demo: 'https://flixchillv1.netlify.app/',
       featured: false,
-      color: 'from-red-700 to-red-950'
+      color: 'bg-yellow-700'
     },
     {
       title: 'JK Designs Portfolio',
@@ -98,7 +110,7 @@ export default function Projects() {
       github: 'https://github.com/Solanki028/client-porfolio',
       demo: 'https://zencraftx.netlify.app/',
       featured: false,
-      color: 'from-red-600 to-red-900'
+      color: 'bg-yellow-600'
     },
     {
       title: 'Insider Jobs Portal',
@@ -109,7 +121,7 @@ export default function Projects() {
       github: 'https://github.com/Solanki028/InsiderJobs',
       demo: '#',
       featured: false,
-      color: 'from-red-500 to-red-800'
+      color: 'bg-yellow-500'
     },
     {
       title: 'Expense Tracker App',
@@ -120,7 +132,7 @@ export default function Projects() {
       github: 'https://github.com/Solanki028/Expense-Tracker',
       demo: '#',
       featured: false,
-      color: 'from-red-600 to-zinc-800'
+      color: 'bg-zinc-800'
     },
     {
       title: 'Weather Detection Platform',
@@ -131,7 +143,7 @@ export default function Projects() {
       github: 'https://github.com/Solanki028/weather-app-react',
       demo: '#',
       featured: false,
-      color: 'from-red-400 to-red-600'
+      color: 'bg-yellow-400'
     },
     {
       title: 'Modern Todo Application',
@@ -142,13 +154,13 @@ export default function Projects() {
       github: 'https://github.com/Solanki028/Todo-App-react',
       demo: '#',
       featured: false,
-      color: 'from-red-800 to-black'
+      color: 'bg-yellow-800'
     }
   ];
 
   const filters = [
-    { id: 'all', label: 'All Projects', icon: Globe, color: 'from-red-600 to-red-900' },
-    { id: 'web', label: 'Web Apps', icon: Code, color: 'from-red-500 to-red-700' },
+    { id: 'all', label: 'All Projects', icon: Globe, color: 'bg-yellow-600' },
+    { id: 'web', label: 'Web Apps', icon: Code, color: 'bg-yellow-500' },
   ];
 
   const filteredProjects = activeFilter === 'all'
@@ -158,25 +170,26 @@ export default function Projects() {
   const featuredProjects = projects.filter(project => project.featured);
 
   return (
-    <section ref={ref} id="projects" className="py-32 relative overflow-hidden bg-gradient-to-br from-black via-zinc-950 to-red-950/20">
+    <section ref={ref} id="projects" className="py-32 relative overflow-hidden bg-black">
       {/* Enhanced Background Effects */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(229,9,20,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(229,9,20,0.03)_1px,transparent_1px)] bg-[size:120px_120px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(252,194,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(252,194,0,0.03)_1px,transparent_1px)] bg-[size:120px_120px]" />
 
       {/* Floating Geometric Elements - Red/Black */}
-      <div className="absolute top-20 right-20 w-32 h-32 border border-red-500/20 rotate-45 animate-spin-slow" />
-      <div className="absolute bottom-32 left-20 w-24 h-24 border border-red-800/20 rounded-full animate-pulse" />
-      <div className="absolute top-1/2 left-10 w-16 h-16 border border-red-400/20 rotate-12 animate-bounce-subtle" />
+      <div className="absolute top-20 right-20 w-32 h-32 border border-yellow-500/20 rotate-45 animate-spin-slow" />
+      <div className="absolute bottom-32 left-20 w-24 h-24 border border-yellow-800/20 rounded-full animate-pulse" />
+      <div className="absolute top-1/2 left-10 w-16 h-16 border border-yellow-400/20 rotate-12 animate-bounce-subtle" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Enhanced Section Header */}
+          {/* Enhanced Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6">
-              <span className="bg-gradient-to-r from-red-500 via-red-600 to-red-400 bg-clip-text text-transparent animate-gradient-x bg-[length:200%_200%]">
+              <span className="text-yellow-500">
                 Featured Projects
               </span>
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-red-600 via-red-500 to-red-400 mx-auto rounded-full mb-6" />
+            <div className="w-32 h-1 bg-yellow-500 mx-auto rounded-full mb-6" />
             <p className="text-zinc-400 text-xl max-w-3xl mx-auto leading-relaxed">
               Showcasing innovative solutions and creative implementations across various technologies
             </p>
@@ -186,7 +199,7 @@ export default function Projects() {
           <div className="mb-20">
             <div className={`text-center mb-12 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
               <h3 className="text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
-                <Star className="w-8 h-8 text-red-500" />
+                <Star className="w-8 h-8 text-yellow-500" />
                 Spotlight Projects
               </h3>
               <p className="text-zinc-400">My most innovative and impactful work</p>
@@ -196,7 +209,7 @@ export default function Projects() {
               {featuredProjects.map((project, index) => (
                 <div
                   key={project.title}
-                  className={`group relative bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-3xl overflow-hidden hover:border-red-500/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-500/20 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'
+                  className={`group relative bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-3xl overflow-hidden hover:border-yellow-500/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-yellow-500/20 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'
                     }`}
                   style={{
                     animationDelay: `${index * 0.2}s`,
@@ -213,10 +226,10 @@ export default function Projects() {
                     />
 
                     {/* Overlay Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                    <div className="absolute inset-0 bg-black/60" />
 
                     {/* Featured Badge */}
-                    <div className="absolute top-4 left-4 px-3 py-1 bg-gradient-to-r from-red-600 to-red-500 rounded-full">
+                    <div className="absolute top-4 left-4 px-3 py-1 bg-yellow-600 rounded-full">
                       <Star className="w-4 h-4 text-white" />
                     </div>
 
@@ -227,7 +240,7 @@ export default function Projects() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-3 bg-black/90 rounded-full hover:bg-red-500/20 transition-all duration-300 backdrop-blur-sm"
+                          className="p-3 bg-black/90 rounded-full hover:bg-yellow-500/20 transition-all duration-300 backdrop-blur-sm"
                           title={`View ${project.title} on GitHub`}
                         >
                           <Github className="w-5 h-5 text-white" />
@@ -238,7 +251,7 @@ export default function Projects() {
                           href={project.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-3 bg-black/90 rounded-full hover:bg-red-500/20 transition-all duration-300 backdrop-blur-sm"
+                          className="p-3 bg-black/90 rounded-full hover:bg-yellow-500/20 transition-all duration-300 backdrop-blur-sm"
                           title={`View ${project.title} Live Demo`}
                         >
                           <ExternalLink className="w-5 h-5 text-white" />
@@ -248,7 +261,7 @@ export default function Projects() {
 
                     {/* Category Badge */}
                     <div className="absolute bottom-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-sm rounded-full border border-white/10">
-                      <span className="text-red-400 text-sm font-medium capitalize">
+                      <span className="text-yellow-400 text-sm font-medium capitalize">
                         {project.category}
                       </span>
                     </div>
@@ -256,7 +269,7 @@ export default function Projects() {
 
                   {/* Project Content */}
                   <div className="p-8">
-                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-red-400 transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-yellow-400 transition-colors duration-300">
                       {project.title}
                     </h3>
                     <p className="text-zinc-400 mb-6 leading-relaxed group-hover:text-zinc-300 transition-colors duration-300">
@@ -268,7 +281,7 @@ export default function Projects() {
                       {project.tech.slice(0, 4).map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-3 py-1 bg-zinc-800/50 text-zinc-300 text-sm rounded-full border border-zinc-700 hover:border-red-500/50 hover:text-red-300 transition-colors duration-300"
+                          className="px-3 py-1 bg-zinc-800/50 text-zinc-300 text-sm rounded-full border border-zinc-700 hover:border-yellow-500/50 hover:text-yellow-300 transition-colors duration-300"
                         >
                           {tech}
                         </span>
@@ -287,7 +300,7 @@ export default function Projects() {
                           href={project.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r ${project.color} text-white font-medium rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-lg`}
+                          className={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 ${project.color} text-white font-medium rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-lg`}
                         >
                           <Eye className="w-4 h-4" />
                           <span>Live Demo</span>
@@ -308,7 +321,7 @@ export default function Projects() {
                   </div>
 
                   {/* Glow Effect */}
-                  <div className={`absolute inset-0 bg-gradient-to-r ${project.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500 -z-10`} />
+                  <div className={`absolute inset-0 ${project.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500 -z-10`} />
                 </div>
               ))}
             </div>
@@ -321,8 +334,8 @@ export default function Projects() {
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
                 className={`group inline-flex items-center space-x-3 px-6 py-4 rounded-2xl transition-all duration-500 font-semibold ${activeFilter === filter.id
-                  ? `bg-gradient-to-r ${filter.color} text-white shadow-lg shadow-red-500/25`
-                  : 'bg-zinc-900/40 backdrop-blur-lg border border-white/10 text-zinc-300 hover:bg-white/10 hover:border-red-400/30 hover:text-white'
+                  ? `${filter.color} text-white shadow-lg shadow-yellow-500/25`
+                  : 'bg-zinc-900/40 backdrop-blur-lg border border-white/10 text-zinc-300 hover:bg-white/10 hover:border-yellow-400/30 hover:text-white'
                   }`}
               >
                 <filter.icon className="w-5 h-5" />
@@ -336,7 +349,7 @@ export default function Projects() {
             {filteredProjects.map((project, index) => (
               <div
                 key={project.title}
-                className={`group bg-zinc-900/40 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-red-400/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-red-500/10 ${isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'
+                className={`group bg-zinc-900/40 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-yellow-400/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-yellow-500/10 ${isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'
                   }`}
                 style={{
                   animationDelay: `${index * 150}ms`,
@@ -360,7 +373,7 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 bg-black/90 rounded-full hover:bg-red-500/20 transition-all duration-300 backdrop-blur-sm"
+                        className="p-2 bg-black/90 rounded-full hover:bg-yellow-500/20 transition-all duration-300 backdrop-blur-sm"
                         title={`View ${project.title} on GitHub`}
                       >
                         <Github className="w-4 h-4 text-white" />
@@ -371,7 +384,7 @@ export default function Projects() {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 bg-black/90 rounded-full hover:bg-red-500/20 transition-all duration-300 backdrop-blur-sm"
+                        className="p-2 bg-black/90 rounded-full hover:bg-yellow-500/20 transition-all duration-300 backdrop-blur-sm"
                         title={`View ${project.title} Live Demo`}
                       >
                         <ExternalLink className="w-4 h-4 text-white" />
@@ -381,7 +394,7 @@ export default function Projects() {
 
                   {/* Category Badge */}
                   <div className="absolute bottom-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-sm rounded-full border border-white/10">
-                    <span className="text-red-400 text-xs font-medium capitalize">
+                    <span className="text-yellow-400 text-xs font-medium capitalize">
                       {project.category}
                     </span>
                   </div>
@@ -389,7 +402,7 @@ export default function Projects() {
 
                 {/* Project Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-3 line-clamp-1 group-hover:text-red-300 transition-colors duration-300">
+                  <h3 className="text-xl font-semibold text-white mb-3 line-clamp-1 group-hover:text-yellow-300 transition-colors duration-300">
                     {project.title}
                   </h3>
                   <p className="text-zinc-400 mb-4 text-sm leading-relaxed line-clamp-3 group-hover:text-zinc-300 transition-colors duration-300">
@@ -401,7 +414,7 @@ export default function Projects() {
                     {project.tech.slice(0, 3).map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 bg-zinc-800/50 text-zinc-400 text-xs rounded-full border border-zinc-700 hover:border-red-400/50 hover:text-red-300 transition-colors duration-300"
+                        className="px-2 py-1 bg-zinc-800/50 text-zinc-400 text-xs rounded-full border border-zinc-700 hover:border-yellow-400/50 hover:text-yellow-300 transition-colors duration-300"
                       >
                         {tech}
                       </span>
@@ -419,8 +432,8 @@ export default function Projects() {
 
           {/* View More Section */}
           <div className="text-center mt-16">
-            <div className={`bg-gradient-to-r from-red-500/10 to-red-900/10 backdrop-blur-xl border border-red-400/20 rounded-3xl p-8 max-w-2xl mx-auto ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '1s' }}>
-              <Code className="w-12 h-12 text-red-400 mx-auto mb-4" />
+            <div className={`bg-yellow-500/10 backdrop-blur-xl border border-yellow-400/20 rounded-3xl p-8 max-w-2xl mx-auto ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '1s' }}>
+              <Code className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
               <h4 className="text-2xl font-bold text-white mb-4">Want to See More?</h4>
               <p className="text-zinc-300 mb-6">
                 Explore my complete portfolio with additional projects, experiments, and contributions
@@ -429,7 +442,7 @@ export default function Projects() {
                 href="https://github.com/Solanki028?tab=repositories"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 text-white font-semibold rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-yellow-600 hover:bg-yellow-500 text-black font-semibold rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25"
               >
                 <Github className="w-5 h-5" />
                 <span>View All Projects on GitHub</span>
@@ -440,7 +453,7 @@ export default function Projects() {
       </div>
 
       {/* Bottom Gradient Line */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/50 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-yellow-500/50" />
     </section>
   );
 }

@@ -28,14 +28,14 @@ export default function ParticlesBackground() {
         this.radius = Math.random() * 3 + 1;
         this.opacity = Math.random() * 0.8 + 0.2;
 
-        // Premium Red & Black aesthetic
+        // Premium Yellow & Black aesthetic
         const colors = [
-          'rgba(229, 9, 20,',   // Premium Red
-          'rgba(180, 7, 16,',   // Darker Red
-          'rgba(255, 30, 30,',  // Bright Red
+          'rgba(252, 194, 0,',   // Premium Yellow
+          'rgba(230, 168, 0,',   // Darker Yellow
+          'rgba(255, 215, 0,',   // Bright Yellow
           'rgba(60, 60, 60,',   // Dark Gray (Matte)
           'rgba(100, 100, 100,', // Light Gray
-          'rgba(255, 0, 50,',   // Neon Red
+          'rgba(255, 223, 0,',   // Neon Yellow
         ];
 
         this.color = colors[Math.floor(Math.random() * colors.length)];
@@ -89,15 +89,11 @@ export default function ParticlesBackground() {
         ctx.fillStyle = this.color + this.opacity + ')';
         ctx.fill();
 
-        // Add glow effect
+        // Add glow effect (simplified)
         if (Number.isFinite(this.x) && Number.isFinite(this.y) && Number.isFinite(this.currentRadius)) {
-          const gradient = ctx.createRadialGradient(
-            this.x, this.y, 0,
-            this.x, this.y, Math.max(0, this.currentRadius * 3)
-          );
-          gradient.addColorStop(0, this.color + (this.opacity * 0.5) + ')');
-          gradient.addColorStop(1, this.color + '0)');
-          ctx.fillStyle = gradient;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, Math.max(0, this.currentRadius * 2), 0, Math.PI * 2);
+          ctx.fillStyle = this.color + (this.opacity * 0.3) + ')';
           ctx.fill();
         }
         ctx.restore();
@@ -129,15 +125,8 @@ export default function ParticlesBackground() {
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
 
-            // Red Gradient line
-            const gradient = ctx.createLinearGradient(
-              particles[i].x, particles[i].y,
-              particles[j].x, particles[j].y
-            );
-            gradient.addColorStop(0, `rgba(229, 9, 20, ${opacity})`);   // Premium Red
-            gradient.addColorStop(0.5, `rgba(180, 7, 16, ${opacity})`); // Darker Red
-            gradient.addColorStop(1, `rgba(255, 30, 30, ${opacity})`);  // Bright Red
-            ctx.strokeStyle = gradient;
+            // Yellow line
+            ctx.strokeStyle = `rgba(252, 194, 0, ${opacity})`;   // Premium Yellow
             ctx.lineWidth = 1;
             ctx.stroke();
             ctx.restore();

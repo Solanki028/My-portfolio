@@ -63,19 +63,19 @@ export default function Header() {
             onClick={() => scrollToSection('#home')}
             className="group flex items-center gap-3 hover:scale-105 transition-all duration-300"
           >
-            <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-red-600 via-red-500 to-red-700 flex items-center justify-center shadow-lg shadow-red-500/25 group-hover:shadow-red-500/40 transition-all duration-300">
-              <span className="text-white font-bold text-lg">PS</span>
+            <div className="relative w-12 h-12 rounded-2xl bg-yellow-500 flex items-center justify-center shadow-lg shadow-yellow-500/25 group-hover:shadow-yellow-500/40 transition-all duration-300">
+              <span className="text-black font-bold text-lg">PS</span>
 
               {/* Animated background glow */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-red-600 via-red-500 to-red-700 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300 -z-10" />
+              <div className="absolute inset-0 rounded-2xl bg-yellow-400 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300 -z-10" />
 
               {/* Floating particles effect */}
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-400 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-red-600 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-yellow-600 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             </div>
 
             <div className="hidden sm:block">
-              <span className="text-lg font-semibold bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent group-hover:from-red-200 group-hover:to-red-200 transition-all duration-300">
+              <span className="text-lg font-semibold text-white group-hover:text-yellow-200 transition-all duration-300">
                 Portfolio
               </span>
             </div>
@@ -90,7 +90,7 @@ export default function Header() {
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
                   className={`group relative px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${isActive
-                    ? 'text-red-500 bg-white/5 border border-red-500/20'
+                    ? 'text-yellow-500 bg-white/5 border border-yellow-500/20'
                     : 'text-zinc-400 hover:text-white hover:bg-white/5'
                     }`}
                   style={{
@@ -104,11 +104,11 @@ export default function Header() {
 
                   {/* Active indicator */}
                   {isActive && (
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-red-500 to-red-400 rounded-full animate-pulse" />
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-yellow-500 rounded-full animate-pulse" />
                   )}
 
                   {/* Hover glow effect */}
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-red-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+                  <div className="absolute inset-0 rounded-xl bg-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
                 </button>
               );
             })}
@@ -118,26 +118,26 @@ export default function Header() {
           <div className="hidden md:block">
             <button
               onClick={() => scrollToSection('#contact')}
-              className="group relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 text-white text-sm font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25 before:absolute before:inset-0 before:rounded-xl before:bg-white/20 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300"
+              className="group relative inline-flex items-center gap-2 px-6 py-3 bg-yellow-600 hover:bg-yellow-500 text-black text-sm font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 before:absolute before:inset-0 before:rounded-xl before:bg-white/20 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300"
             >
               <Sparkles className="w-4 h-4" />
               <span>Hire Me</span>
 
               {/* Animated background */}
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-red-600 to-red-800 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 -z-10" />
+              <div className="absolute inset-0 rounded-xl bg-yellow-500 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 -z-10" />
             </button>
           </div>
 
           {/* Enhanced Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden relative w-12 h-12 rounded-xl bg-white/5 backdrop-blur-lg border border-white/10 flex items-center justify-center text-zinc-300 hover:text-red-500 hover:border-red-500/30 hover:bg-white/10 transition-all duration-300 group"
+            className="md:hidden relative w-12 h-12 rounded-xl bg-white/5 backdrop-blur-lg border border-white/10 flex items-center justify-center text-zinc-300 hover:text-yellow-500 hover:border-yellow-500/30 hover:bg-white/10 transition-all duration-300 group"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
 
             {/* Menu button glow effect */}
-            <div className="absolute inset-0 rounded-xl bg-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+            <div className="absolute inset-0 rounded-xl bg-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
           </button>
         </nav>
 
@@ -154,7 +154,7 @@ export default function Header() {
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
                   className={`group w-full text-left px-4 py-4 rounded-xl text-sm font-medium transition-all duration-300 ${isActive
-                    ? 'bg-gradient-to-r from-red-500/20 to-red-500/10 text-red-500 border border-red-500/30'
+                    ? 'bg-yellow-500/20 text-yellow-500 border border-yellow-500/30'
                     : 'text-zinc-300 hover:bg-white/10 hover:text-white border border-transparent hover:border-white/10'
                     }`}
                   style={{
@@ -172,7 +172,7 @@ export default function Header() {
             {/* Mobile CTA */}
             <button
               onClick={() => scrollToSection('#contact')}
-              className="w-full mt-6 inline-flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-red-600 to-red-800 text-white text-sm font-semibold rounded-xl hover:from-red-500 hover:to-red-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-red-500/25"
+              className="w-full mt-6 inline-flex items-center justify-center gap-2 px-6 py-4 bg-yellow-600 text-black text-sm font-semibold rounded-xl hover:bg-yellow-500 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-yellow-500/25"
             >
               <Sparkles className="w-5 h-5" />
               <span>Let's Work Together</span>
@@ -184,7 +184,7 @@ export default function Header() {
       {/* Enhanced Scroll Progress Indicator */}
       <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-zinc-800/50">
         <div
-          className="h-full bg-gradient-to-r from-red-500 via-red-600 to-red-700 transition-all duration-300 ease-out shadow-lg shadow-red-500/50"
+          className="h-full bg-yellow-500 transition-all duration-300 ease-out shadow-lg shadow-yellow-500/50"
           style={{
             width: `${scrollProgress}%`
           }}
