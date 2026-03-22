@@ -1,14 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Header from '@/components/Header';
+import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
 import Skills from '@/components/Skills';
-import Projects from '@/components/Projects';
+import FeaturedProjects from '@/components/FeaturedProjects';
 import Contact from '@/components/Contact';
-import ParticlesBackground from '@/components/ParticlesBackground';
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -18,15 +17,14 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen">
-      <ParticlesBackground />
-      <Header />
+    <div className="min-h-screen bg-background">
+      <Navbar />
       <main>
         <Hero />
         <About />
         <Experience />
         <Skills />
-        <Projects />
+        <FeaturedProjects />
         <Contact />
       </main>
     </div>
