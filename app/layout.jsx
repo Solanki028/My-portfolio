@@ -14,7 +14,7 @@ export const metadata = {
     siteName: 'Priyanshu Solanki Portfolio',
     images: [
       {
-        url: 'https://priyanshuxfolio.netlify.app/images/me pic.png',
+        url: 'https://priyanshuxfolio.netlify.app/images/me-pic.png',
         width: 1200,
         height: 630,
         alt: 'Priyanshu Solanki - Full Stack Developer',
@@ -27,7 +27,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Priyanshu Solanki - Full Stack Developer',
     description: 'Focused on code that feels smooth, UI that speaks clearly, and tech that scales. MERN, AI workflows, and zero fluff — just real work.',
-    images: ['https://priyanshuxfolio.netlify.app/images/me pic.png'],
+    images: ['https://priyanshuxfolio.netlify.app/images/me-pic.png'],
     creator: '@your-twitter-handle', // Replace with your Twitter handle if you have one
   },
   robots: {
