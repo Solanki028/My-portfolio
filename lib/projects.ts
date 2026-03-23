@@ -45,6 +45,66 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: "aspar-ecommerce-platform",
+    title: "Aspar E-Commerce Platform",
+    description: "A full-stack, production-ready e-commerce platform offering a seamless shopping experience and a comprehensive admin dashboard.",
+    problem: "Managing an online store requires balancing a high-performance customer storefront with a complex, secure administrative system for inventory, orders, and user management.",
+    solution: "Built a modern full-stack application using Next.js 14 and Express.js, featuring advanced product discovery, persistent cart functionality, secure JWT authentication, and full CRUD admin capabilities.",
+    tech: [
+      "Next.js 14",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "Redux Toolkit"
+    ],
+    github: "https://github.com/Solanki028/Electronext--E-commerce-website ",
+    live: "https://aspar-electronics-application.vercel.app/", // Used your innvibs domain based on previous deployments
+    featured: true,
+  },
+  {
+    id: "astroxadv-legal-platform",
+    title: "Astroxadv | Premier Law Firm Portal",
+    description: "A highly optimized, full-stack law firm web application featuring dynamic practice areas, corporate blogging, client testimonials, and a secure custom administrative dashboard.",
+    problem: "Creating a high-performance, authoritative online presence for a legal firm that requires instant page load speeds, flawless SEO, and an easy-to-use secure backend for non-technical staff to manage their legal content.",
+    solution: "Architected a custom MERN-stack solution leveraging Next.js App Router with Server-Side Rendering (SSR) for maximum performance, coupled with a robust Node.js/Express backend featuring JWT authentication and Cloudinary integration for seamless media management.",
+    tech: [
+      "Next.js",
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Cloudinary"
+    ],
+    github: "https://github.com/Solanki028/Astroxadv-law-firm-associate",
+    live: "https://astroxadv-law.netlify.app/",
+    featured: true,
+  },
+
+  {
+    id: "luxemarket-ecommerce-platform",
+    title: "LuxeMarket Premium E-Commerce",
+    description: "A fully dynamic, scalable, production-ready e-commerce platform offering a seamless shopping experience with a modern storefront and full admin controls.",
+    problem: "Delivering a fast, highly interactive shopping experience while securely managing product inventory, orders, user authentication, and media uploads on the backend.",
+    solution: "Developed a modern full-stack application leveraging Next.js App Router for optimal frontend performance, Zustand for lightweight state management, and a robust Express/MongoDB backend featuring JWT authentication and Cloudinary integration.",
+    tech: [
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "Zustand",
+      "shadcn/ui"
+    ],
+    github: "", // Update with your actual repo
+    live: "https://luxemarket-app.vercel.app/", // Update with your actual live URL
+    featured: true,
+  },
+
+
+  {
     id: "nwb-fintech",
     title: "NWB Fintech Infrastructure",
     description: "A comprehensive, enterprise-grade fintech platform demonstrating next-generation payment solutions and real-time analytics.",
