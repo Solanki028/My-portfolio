@@ -1,146 +1,148 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { staggerContainer, fadeInUp } from "@/lib/animations";
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { staggerContainer, fadeUp } from "@/lib/animations";
+import { Mail, Github, Linkedin, ArrowUpRight, ArrowRight, Send, CheckCircle } from "lucide-react";
+
+const contactLinks = [
+  {
+    label: "Email",
+    value: "Priyanshu.solankii@outlook.com",
+    href: "mailto:Priyanshu.solankii@outlook.com",
+  },
+  {
+    label: "LinkedIn",
+    value: "in/priyanshu-solanki",
+    href: "https://www.linkedin.com/in/priyanshu-solanki/",
+  },
+  {
+    label: "GitHub",
+    value: "github.com/Solanki028",
+    href: "https://github.com/Solanki028",
+  },
+];
 
 export default function Contact() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-    
-    // Simulate API call
+    setStatus("sending");
     setTimeout(() => {
-      setSubmitStatus("success");
-      setIsSubmitting(false);
-      (e.target as HTMLFormElement).reset();
-    }, 1500);
+      setStatus("sent");
+    }, 1200);
   };
 
   return (
-    <section id="contact" className="py-24 relative bg-background border-t border-border/50">
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-          className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16"
-        >
-          {/* Left Column - Contact Info */}
-          <div className="flex flex-col">
-            <motion.div variants={fadeInUp} className="mb-8">
-              <span className="text-primary font-semibold tracking-wider uppercase text-sm">
-                Get In Touch
-              </span>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-2 mb-4">
-                Let's build something <br className="hidden md:block"/> amazing together.
-              </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                I'm always open to new opportunities, freelance projects, or technical consulting. Drop a message and I'll get back to you within 24 hours.
-              </p>
-            </motion.div>
+    <section id="contact" className="py-32 bg-[#0B0B0B] border-t border-[#1A1A1A]">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid lg:grid-cols-12 gap-16">
 
-            <motion.div variants={fadeInUp} className="space-y-6 mt-4">
-              <a href="mailto:Priyanshusolankii@outlook.com" className="flex items-center gap-4 p-4 rounded-xl border border-transparent hover:border-border hover:bg-card transition-all">
-                <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground">Email</h4>
-                  <p className="text-sm text-muted-foreground">Priyanshusolankii@outlook.com</p>
-                </div>
-              </a>
-              
-              <a href="https://wa.me/919996973755" target="_blank" rel="noreferrer" className="flex items-center gap-4 p-4 rounded-xl border border-transparent hover:border-border hover:bg-card transition-all">
-                <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground">WhatsApp</h4>
-                  <p className="text-sm text-muted-foreground">+91 9996973755</p>
-                </div>
-              </a>
-              
-              <div className="flex items-center gap-4 p-4 rounded-xl border border-transparent hover:border-border hover:bg-card transition-all">
-                <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground">Location</h4>
-                  <p className="text-sm text-muted-foreground">Gurugram, India</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Right Column - Form */}
-          <motion.div 
-            variants={fadeInUp} 
-            className="p-8 rounded-3xl bg-card border border-border shadow-sm"
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="lg:col-span-5"
           >
-            <h3 className="text-2xl font-bold text-foreground mb-6">Send a Message</h3>
-            
-            {submitStatus === 'success' && (
-              <div className="mb-6 p-4 rounded-lg bg-green-500/10 border border-green-500/20 text-green-500 flex items-center gap-3">
-                <CheckCircle className="w-5 h-5" />
-                <span className="font-medium">Message sent successfully!</span>
-              </div>
-            )}
-            
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Name</label>
-                <input 
-                  type="text" 
-                  required
-                  placeholder="John Doe"
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-muted-foreground"
-                />
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Email</label>
-                <input 
-                  type="email" 
-                  required
-                  placeholder="john@example.com"
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-muted-foreground"
-                />
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Message</label>
-                <textarea 
-                  required
-                  rows={4}
-                  placeholder="Tell me about your project or inquiry..."
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-muted-foreground resize-none"
-                />
-              </div>
-              
-              <Button type="submit" disabled={isSubmitting} className="w-full h-12 rounded-xl text-base font-semibold">
-                {isSubmitting ? (
-                  <span className="flex items-center gap-2">
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Sending...
-                  </span>
-                ) : (
-                  <span className="flex items-center gap-2">
-                    <Send className="w-4 h-4" />
-                    Send Message
-                  </span>
-                )}
-              </Button>
-            </form>
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#4D4D4D] mb-4 block">
+              Get in Touch
+            </span>
+            <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-8">
+              Let&apos;s build.
+            </motion.h2>
+            <motion.p variants={fadeUp} className="text-[#737373] text-lg leading-relaxed mb-12">
+              Currently accepting new projects and consulting engagements.
+              I typically respond within 12 hours.
+            </motion.p>
+
+            <div className="space-y-4">
+              {contactLinks.map((link, i) => (
+                <motion.div key={link.label} variants={fadeUp}>
+                  <Link
+                    href={link.href}
+                    target="_blank"
+                    className="group flex flex-col p-4 rounded-xl border border-[#1A1A1A] bg-[#0E0E0E] hover:border-[#262626] transition-all"
+                  >
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#4D4D4D] group-hover:text-white transition-colors">
+                        {link.label}
+                      </span>
+                      <ArrowUpRight className="w-3.5 h-3.5 text-[#222] group-hover:text-white transition-all transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </div>
+                    <span className="text-[13px] font-medium text-[#737373] group-hover:text-white transition-colors">
+                      {link.value}
+                    </span>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
-        </motion.div>
+
+          {/* Right: Premium Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-7"
+          >
+            <div className="p-10 rounded-2xl border border-[#1A1A1A] bg-[#0E0E0E] shadow-2xl relative overflow-hidden">
+              {/* Decorative subtle pulse */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/[0.02] rounded-full blur-3xl pointer-events-none" />
+
+              {status === "sent" ? (
+                <div className="flex flex-col items-center justify-center py-20 text-center">
+                  <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-6">
+                    <CheckCircle className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Message Transmitted</h3>
+                  <p className="text-[#4D4D4D] text-sm">Synchronizing with inbox now...</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-bold uppercase tracking-widest text-[#4D4D4D]">Name</label>
+                        <input
+                          type="text" required placeholder="Project Partner"
+                          className="w-full bg-[#111] border border-[#1A1A1A] rounded-lg px-4 py-3 text-[13px] text-white focus:outline-none focus:border-[#333] transition-colors"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-bold uppercase tracking-widest text-[#4D4D4D]">Email</label>
+                        <input
+                          type="email" required placeholder="contact@domain.com"
+                          className="w-full bg-[#111] border border-[#1A1A1A] rounded-lg px-4 py-3 text-[13px] text-white focus:outline-none focus:border-[#333] transition-colors"
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-[#4D4D4D]">Inquiry</label>
+                      <textarea
+                        rows={4} required placeholder="What are we building?"
+                        className="w-full bg-[#111] border border-[#1A1A1A] rounded-lg px-4 py-3 text-[13px] text-white focus:outline-none focus:border-[#333] transition-colors resize-none"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={status === "sending"}
+                    className="w-full h-12 bg-white text-black text-[13px] font-bold rounded-xl hover:bg-[#E5E5E5] transition-all flex items-center justify-center gap-2 group disabled:opacity-50"
+                  >
+                    {status === "sending" ? "Processing..." : (
+                      <>Establish Connection <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /></>
+                    )}
+                  </button>
+                </form>
+              )}
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

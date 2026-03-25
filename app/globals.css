@@ -4,78 +4,66 @@
 
 @layer base {
   :root {
-    --background: 0 0% 4%; /* #0a0a0a */
-    --foreground: 0 0% 98%; /* #fafafa */
-    
-    --card: 0 0% 6%; /* #0f0f0f */
+    --background: 0 0% 4.3%; /* #0B0B0B */
+    --foreground: 0 0% 98%;
+    --card: 0 0% 6.7%;
     --card-foreground: 0 0% 98%;
-    
-    --popover: 0 0% 4%;
+    --popover: 0 0% 6.7%;
     --popover-foreground: 0 0% 98%;
-    
-    --primary: 252 56% 57%; /* Soft violet/indigo #7c3aed */
-    --primary-foreground: 0 0% 100%;
-    
-    --secondary: 0 0% 10%; /* #1a1a1a */
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 4.3%;
+    --secondary: 0 0% 9%;
     --secondary-foreground: 0 0% 98%;
-    
-    --muted: 0 0% 16.5%; /* #2a2a2a */
-    --muted-foreground: 0 0% 63.9%;
-    
-    --accent: 0 0% 10%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 9%;
     --accent-foreground: 0 0% 98%;
-    
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    
-    --border: 0 0% 16.5%; /* #2a2a2a */
-    --input: 0 0% 16.5%; /* #2a2a2a */
-    --ring: 252 56% 57%;
-    
-    --radius: 0.5rem;
+    --border: 0 0% 13%;
+    --input: 0 0% 12%;
+    --ring: 0 0% 98%;
+    --radius: 0.75rem;
   }
 }
 
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #0B0B0B;
   }
-}
-
-/* Base resets & utilities for cinematic SaaS feel */
-::selection {
-  background: hsl(var(--primary) / 0.3);
-  color: hsl(var(--foreground));
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tighter;
+  }
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: hsl(var(--background));
-}
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted));
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--border));
+::selection {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
 }
 
-/* Glassmorphism helpers */
-.glass {
-  @apply bg-background/60 backdrop-blur-md border border-border/50;
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0B0B0B; }
+::-webkit-scrollbar-thumb { background: #1A1A1A; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #262626; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
-.glass-card {
-  @apply bg-card/60 backdrop-blur-md border border-border/50 shadow-sm transition-all duration-300;
-}
-.glass-card:hover {
-  @apply border-primary/30 shadow-md shadow-primary/5;
+.cursor-blink { animation: blink 1s step-end infinite; }
+
+.glass-panel {
+  @apply bg-[#111111] border border-[#1F1F1F] shadow-2xl;
 }
