@@ -1,12 +1,25 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import FeaturedProject from "@/components/FeaturedProject";
-import Projects from "@/components/Projects";
-import Skills from "@/components/Skills";
-import Experience from "@/components/Experience";
-import About from "@/components/About";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import dynamic from "next/dynamic";
+
+// Dynamic imports for below-the-fold components
+const Projects = dynamic(() => import("@/components/Projects"), { 
+  loading: () => <div className="h-96 bg-[#0B0B0B]" /> 
+});
+const Skills = dynamic(() => import("@/components/Skills"), { 
+  loading: () => <div className="h-96 bg-[#0B0B0B]" /> 
+});
+const Experience = dynamic(() => import("@/components/Experience"), { 
+  loading: () => <div className="h-96 bg-[#0B0B0B]" /> 
+});
+const About = dynamic(() => import("@/components/About"), { 
+  loading: () => <div className="h-96 bg-[#0B0B0B]" /> 
+});
+const Contact = dynamic(() => import("@/components/Contact"), { 
+  loading: () => <div className="h-96 bg-[#0B0B0B]" /> 
+});
 
 export default function Home() {
   return (

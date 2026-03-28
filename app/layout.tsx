@@ -57,6 +57,8 @@ export const metadata: Metadata = {
   },
 };
 
+import LazyMotionProvider from "@/components/providers/LazyMotionProvider";
+
 export default function RootLayout({
   children,
 }: {
@@ -67,9 +69,11 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-[#0B0B0B] text-foreground antialiased selection:bg-white/10 selection:text-white`}
       >
-        <div className="relative min-h-screen flex flex-col">
-          {children}
-        </div>
+        <LazyMotionProvider>
+          <div className="relative min-h-screen flex flex-col">
+            {children}
+          </div>
+        </LazyMotionProvider>
       </body>
     </html>
   );

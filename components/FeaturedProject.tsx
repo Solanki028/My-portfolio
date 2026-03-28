@@ -104,7 +104,8 @@ export default function FeaturedProject() {
                       fill
                       className="object-contain"
                       priority
-                      quality={100}
+                      quality={85}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                     />
                   </div>
                 ) : (

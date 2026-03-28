@@ -64,7 +64,8 @@ export default function Projects() {
                           alt={project.title}
                           fill
                           className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                          quality={100}
+                          quality={80}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                         />
                       </div>
                   ) : (
