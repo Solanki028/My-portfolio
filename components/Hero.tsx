@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Terminal as TerminalIcon } from "lucide-react";
 import { staggerContainer, fadeUp } from "@/lib/animations";
 
@@ -40,7 +40,7 @@ function TerminalWidget() {
       </div>
       <div className="p-6 font-mono text-[13px] leading-relaxed space-y-2 min-h-[220px]">
         {TERMINAL_LINES.slice(0, visible).map((line, i) => (
-          <motion.p
+          <m.p
             key={i}
             initial={{ opacity: 0, x: -5 }}
             animate={{ opacity: 1, x: 0 }}
@@ -49,10 +49,10 @@ function TerminalWidget() {
           >
             <span className="opacity-30 mr-2">$</span>
             {line.text}
-          </motion.p>
+          </m.p>
         ))}
         {visible < TERMINAL_LINES.length && (
-          <motion.span 
+          <m.span 
             animate={{ opacity: [1, 0] }}
             transition={{ duration: 0.8, repeat: Infinity }}
             className="inline-block w-1.5 h-[15px] bg-white align-middle ml-1" 
@@ -74,35 +74,35 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-6 w-full">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
-          <motion.div
+          <m.div
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
             className="lg:col-span-7 flex flex-col"
           >
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-2.5 mb-8 px-3 py-1 rounded-full border border-[#1A1A1A] bg-[#111] w-fit">
+            <m.div variants={fadeUp} className="inline-flex items-center gap-2.5 mb-8 px-3 py-1 rounded-full border border-[#1A1A1A] bg-[#111] w-fit">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
               <span className="text-[11px] font-bold uppercase tracking-widest text-[#737373]">Available for select projects</span>
-            </motion.div>
+            </m.div>
 
-            <motion.h1
+            <m.h1
               variants={fadeUp}
               className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.95] text-white mb-8"
             >
               I engineer <br />
               <span className="text-white">scalable SaaS</span> <br />
               products.
-            </motion.h1>
+            </m.h1>
 
-            <motion.p variants={fadeUp} className="text-[#737373] text-lg md:text-xl leading-relaxed mb-12 max-w-xl">
+            <m.p variants={fadeUp} className="text-[#737373] text-lg md:text-xl leading-relaxed mb-12 max-w-xl">
               Full-stack engineer building production-grade web applications. 
               Converting complex problems into seamless digital experiences with clean architecture.
-            </motion.p>
+            </m.p>
 
-            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4 mb-12">
+            <m.div variants={fadeUp} className="flex flex-wrap items-center gap-4 mb-12">
               <Link
                 href="#projects"
                 className="inline-flex items-center gap-2.5 h-12 px-8 bg-white text-black text-[14px] font-bold rounded-lg hover:bg-[#E5E5E5] transition-all group shadow-xl"
@@ -116,9 +116,9 @@ export default function Hero() {
               >
                 Let&apos;s Talk
               </Link>
-            </motion.div>
+            </m.div>
 
-            <motion.div variants={fadeUp} className="flex items-center gap-8 pt-8 border-t border-[#1A1A1A]">
+            <m.div variants={fadeUp} className="flex items-center gap-8 pt-8 border-t border-[#1A1A1A]">
               <div className="flex flex-col gap-1">
                 <span className="text-[10px] uppercase tracking-[0.2em] text-[#4D4D4D] font-bold">Connect</span>
                 <div className="flex gap-4">
@@ -135,11 +135,11 @@ export default function Hero() {
                 <span className="text-[10px] uppercase tracking-[0.2em] text-[#4D4D4D] font-bold">Tech Stack</span>
                 <span className="text-[13px] text-[#A3A3A3] font-medium">Next.js · TypeScript · AI</span>
               </div>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
 
           {/* Right: Premium Visualization */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: [0.25, 0.4, 0.25, 1], delay: 0.2 }}
@@ -147,7 +147,7 @@ export default function Hero() {
           >
              <div className="absolute -top-20 -right-20 w-[500px] h-[500px] bg-white/[0.01] rounded-full blur-[120px] pointer-events-none" />
              <TerminalWidget />
-          </motion.div>
+          </m.div>
 
         </div>
       </div>

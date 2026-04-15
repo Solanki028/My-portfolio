@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { staggerContainer, fadeUp } from "@/lib/animations";
 import {
   Code2, Server, Cloud, Wrench,
@@ -72,7 +72,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-32 bg-[#0B0B0B] border-t border-[#1A1A1A]">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
+        <m.div
            initial={{ opacity: 0, y: 20 }}
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
@@ -85,11 +85,11 @@ export default function Skills() {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">
             Core Competencies.
           </h2>
-        </motion.div>
+        </m.div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-x-16 lg:gap-y-20">
           {skillGroups.map((group, groupIndex) => (
-            <motion.div
+            <m.div
               key={group.label}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -109,7 +109,7 @@ export default function Skills() {
 
               <div className="grid grid-cols-2 gap-3">
                 {group.skills.map((skill, skillIndex) => (
-                  <motion.div
+                  <m.div
                     key={skill.name}
                     whileHover={{ scale: 1.02, x: 5 }}
                     className="flex items-center justify-between p-4 rounded-xl border border-[#1A1A1A] bg-[#0E0E0E] group transition-all duration-300"
@@ -125,10 +125,10 @@ export default function Skills() {
                     <span className="text-[8px] uppercase tracking-widest text-[#222] font-bold group-hover:text-[#444] transition-colors">
                       {skill.level}
                     </span>
-                  </motion.div>
+                  </m.div>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

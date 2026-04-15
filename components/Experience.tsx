@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { staggerContainer, fadeUp } from "@/lib/animations";
 import { MapPin, Briefcase } from "lucide-react";
 
@@ -48,7 +48,7 @@ export default function Experience() {
   return (
     <section id="experience" className="py-32 bg-[#0B0B0B] border-t border-[#1A1A1A]">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
+        <m.div
            initial={{ opacity: 0, y: 20 }}
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
@@ -61,11 +61,11 @@ export default function Experience() {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">
             Experience.
           </h2>
-        </motion.div>
+        </m.div>
 
         <div className="space-y-12">
           {experiences.map((exp, index) => (
-            <motion.div
+            <m.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -109,7 +109,7 @@ export default function Experience() {
                     ))}
                  </ul>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

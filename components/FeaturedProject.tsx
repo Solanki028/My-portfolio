@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ExternalLink, Github, ArrowRight, CheckCircle2 } from "lucide-react";
 import { staggerContainer, fadeUp } from "@/lib/animations";
 import { projects } from "@/lib/projects";
@@ -14,7 +14,7 @@ export default function FeaturedProject() {
   return (
     <section id="featured" className="py-32 bg-[#0B0B0B] border-t border-[#1A1A1A]">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -27,11 +27,11 @@ export default function FeaturedProject() {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">
             Engineering for Scale.
           </h2>
-        </motion.div>
+        </m.div>
 
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           {/* Content Left */}
-          <motion.div
+          <m.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -39,15 +39,15 @@ export default function FeaturedProject() {
             className="lg:col-span-5 space-y-8"
           >
             <div>
-              <motion.h3 variants={fadeUp} className="text-2xl font-bold text-white mb-4">
+              <m.h3 variants={fadeUp} className="text-2xl font-bold text-white mb-4">
                 {featured.title}
-              </motion.h3>
-              <motion.p variants={fadeUp} className="text-[#737373] text-base leading-relaxed mb-6">
+              </m.h3>
+              <m.p variants={fadeUp} className="text-[#737373] text-base leading-relaxed mb-6">
                 {featured.description}
-              </motion.p>
+              </m.p>
             </div>
 
-            <motion.div variants={fadeUp} className="space-y-4">
+            <m.div variants={fadeUp} className="space-y-4">
               <div className="p-4 bg-[#111] border border-[#1F1F1F] rounded-xl">
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#4D4D4D] mb-2">The Challenge</p>
                 <p className="text-sm text-[#A3A3A3] leading-relaxed italic">&quot;{featured.problem}&quot;</p>
@@ -56,17 +56,17 @@ export default function FeaturedProject() {
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#4D4D4D] mb-2">The Innovation</p>
                 <p className="text-sm text-[#A3A3A3] leading-relaxed">{featured.solution}</p>
               </div>
-            </motion.div>
+            </m.div>
 
-            <motion.div variants={fadeUp} className="flex flex-wrap gap-2">
+            <m.div variants={fadeUp} className="flex flex-wrap gap-2">
               {featured.tech.map((t) => (
                 <span key={t} className="px-3 py-1 bg-[#1A1A1A] text-[#737373] text-[11px] font-medium rounded-full border border-[#2A2A2A]">
                   {t}
                 </span>
               ))}
-            </motion.div>
+            </m.div>
 
-            <motion.div variants={fadeUp} className="flex items-center gap-4 pt-4">
+            <m.div variants={fadeUp} className="flex items-center gap-4 pt-4">
               <Link
                 href={featured.live}
                 target="_blank"
@@ -83,29 +83,29 @@ export default function FeaturedProject() {
                   Source <Github className="w-4 h-4" />
                 </Link>
               )}
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
 
           {/* Visual Right */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
             className="lg:col-span-7"
           >
-            <MockupFrame type="browser" title={featured.live.replace("https://", "")} className="hover:scale-[1.02] transition-transform duration-700">
-              <div className="relative aspect-video bg-[#0B0B0B] p-4 pb-0">
+            <MockupFrame type="browser" title={featured.live.replace("https://", "")} className="hover:scale-[1.01] transition-all duration-700 shadow-3xl">
+              <div className="relative aspect-[16/10] bg-[#0E0E0E] overflow-hidden">
                 {featured.image ? (
-                  <div className="relative w-full h-full rounded-t-xl overflow-hidden border border-[#1A1A1A] bg-white">
+                  <div className="absolute top-0 left-0 w-full h-fit transition-transform duration-[8s] ease-in-out group-hover:-translate-y-[calc(100%-600px)]">
                     <Image
                       src={featured.image}
                       alt={featured.title}
-                      fill
-                      className="object-contain"
+                      width={1200}
+                      height={1800}
+                      className="w-full h-auto brightness-[1.02] contrast-[1.02]"
                       priority
-                      quality={85}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+                      quality={95}
                     />
                   </div>
                 ) : (
@@ -117,7 +117,7 @@ export default function FeaturedProject() {
                 )}
               </div>
             </MockupFrame>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

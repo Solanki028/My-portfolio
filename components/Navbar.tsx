@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { X, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { label: "Work", href: "/#projects" },
+  { label: "Projects", href: "/projects" },
   { label: "Skills", href: "/#skills" },
   { label: "Experience", href: "/#experience" },
   { label: "About", href: "/#about" },
@@ -58,7 +59,7 @@ export default function Navbar() {
 
       <AnimatePresence>
         {menuOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
@@ -84,7 +85,7 @@ export default function Navbar() {
                 Contact
               </Link>
             </nav>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </>

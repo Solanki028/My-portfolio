@@ -2,7 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { staggerContainer, fadeUp } from "@/lib/animations";
 import { projects } from "@/lib/projects";
 import { MockupFrame } from "@/components/ui/MockupFrame";
@@ -16,7 +16,7 @@ export default function ProjectsPage() {
       <Navbar />
       <main className="flex-1 pt-24 pb-32 bg-[#0B0B0B]">
         <div className="max-w-6xl mx-auto px-6">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -34,11 +34,11 @@ export default function ProjectsPage() {
             <p className="text-[#737373] text-lg max-w-2xl leading-relaxed">
               A comprehensive archive of production-grade applications, experiments, and architectural patterns developed throughout my career.
             </p>
-          </motion.div>
+          </m.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-16">
             {projects.map((project, index) => (
-              <motion.div
+              <m.div
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -51,14 +51,14 @@ export default function ProjectsPage() {
                   title={project.id + ".sh"} 
                   className="mb-8 hover:border-[#333] transition-colors"
                 >
-                <div className="relative aspect-[16/10] bg-[#0E0E0E] overflow-hidden p-3 pb-0">
+                <div className="relative aspect-[2.2/1] bg-[#0A0A0A] overflow-hidden">
                   {project.image ? (
-                    <div className="relative w-full h-full rounded-t-lg overflow-hidden border border-[#1A1A1A]">
+                    <div className="relative w-full h-full overflow-hidden">
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
-                        className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                        className="object-contain brightness-[1.05] contrast-[1.05]"
                         quality={100}
                       />
                     </div>
@@ -106,7 +106,7 @@ export default function ProjectsPage() {
                     )}
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>

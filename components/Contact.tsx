@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { staggerContainer, fadeUp } from "@/lib/animations";
 import { Mail, Github, Linkedin, ArrowUpRight, ArrowRight, Send, CheckCircle } from "lucide-react";
 
@@ -40,7 +40,7 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-16">
 
-          <motion.div
+          <m.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -50,17 +50,17 @@ export default function Contact() {
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#4D4D4D] mb-4 block">
               Get in Touch
             </span>
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-8">
+            <m.h2 variants={fadeUp} className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-8">
               Let&apos;s build.
-            </motion.h2>
-            <motion.p variants={fadeUp} className="text-[#737373] text-lg leading-relaxed mb-12">
+            </m.h2>
+            <m.p variants={fadeUp} className="text-[#737373] text-lg leading-relaxed mb-12">
               Currently accepting new projects and consulting engagements.
               I typically respond within 12 hours.
-            </motion.p>
+            </m.p>
 
             <div className="space-y-4">
               {contactLinks.map((link, i) => (
-                <motion.div key={link.label} variants={fadeUp}>
+                <m.div key={link.label} variants={fadeUp}>
                   <Link
                     href={link.href}
                     target="_blank"
@@ -76,13 +76,13 @@ export default function Contact() {
                       {link.value}
                     </span>
                   </Link>
-                </motion.div>
+                </m.div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Right: Premium Form */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -140,7 +140,7 @@ export default function Contact() {
                 </form>
               )}
             </div>
-          </motion.div>
+          </m.div>
 
         </div>
       </div>

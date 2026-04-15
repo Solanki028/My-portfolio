@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { staggerContainer, fadeUp } from "@/lib/animations";
 
 export default function About() {
@@ -9,34 +9,34 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           
-          <motion.div
+          <m.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             className="lg:col-span-7"
           >
-            <motion.span variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#4D4D4D] mb-4 block">
+            <m.span variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#4D4D4D] mb-4 block">
               The Perspective
-            </motion.span>
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-8">
+            </m.span>
+            <m.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-8">
               Builder mindset. <br />
               Product approach.
-            </motion.h2>
+            </m.h2>
             
             <div className="space-y-6 text-lg text-[#737373] leading-relaxed max-w-2xl">
-              <motion.p variants={fadeUp}>
+              <m.p variants={fadeUp}>
                 I don’t just write code; I build solutions that drive products forward. 
                 With a background in full-stack engineering and a deep focus on the 
                 <span className="text-white font-semibold"> Next.js & AI ecosystem</span>, I help startups and companies bridge the gap between complex requirements and high-performance applications.
-              </motion.p>
-              <motion.p variants={fadeUp}>
+              </m.p>
+              <m.p variants={fadeUp}>
                 My philosophy is simple: <span className="text-white">Shipping is a feature.</span> I prioritize clean architecture, exceptional UX, and measurable impact over everything else. Whether it&apos;s architecting a SaaS dashboard or integrating LLMs into existing workflows, I build for scale and speed.
-              </motion.p>
+              </m.p>
             </div>
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -55,7 +55,7 @@ export default function About() {
                  </div>
                ))}
             </div>
-          </motion.div>
+          </m.div>
 
         </div>
       </div>
