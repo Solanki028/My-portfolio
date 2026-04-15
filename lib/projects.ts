@@ -41,17 +41,18 @@ export const projects: Project[] = [
   },
 
   {
-    id: "spafort-wellness",
-    title: "SpaFort Wellness & Massage",
-    description: "A high-end, production-grade wellness platform with an integrated booking engine and professional aesthetic.",
-    problem: "High-end spas require a digital experience that matches their physical atmosphere while providing seamless scheduling.",
-    solution: "Built a performant full-stack application with a minimalist, luxury-focused UI and a secure appointments system.",
-    tech: ["Next.js 14", "Express.js", "MongoDB", "Tailwind CSS", "Framer Motion", "Node.js"],
-    github: "https://github.com/Solanki028/serene-zen-booking",
-    live: "https://veloraaspa.netlify.app/",
-    featured: false,
-    image: "/images/spafort.png",
+    id: "travelx-booking",
+    title: "TravelX Booking Engine",
+    description: "A premium, full-stack travel booking platform providing seamless intercity bus ticketing and comprehensive domestic and international flight reservations.",
+    problem: "Travelers often face fragmented, overly complex interfaces and slow processing times when attempting to compare pricing and secure multi-modal transit options on legacy platforms.",
+    solution: "Engineered a responsive Next.js frontend with an intuitive multi-tab search widget, backed by a robust RESTful Node.js API, MongoDB database, and a secure internal Admin Portal for managing transport inventory.",
+    tech: ["Next.js 15", "TypeScript", "Tailwind CSS 4.0", "Node.js", "Express.js", "MongoDB"],
+    github: "https://github.com/Solanki028/F-B-booking-platform",
+    live: "https://f-b-booking-platform-one.vercel.app",
+    featured: true,
+    image: "/images/image copy.png", // Update this with your actual image path later
   },
+
 
   {
     id: "veridian-wealth",
