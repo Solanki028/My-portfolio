@@ -80,6 +80,31 @@ export const projects: Project[] = [
     image: "/images/astroxadv.png",
   },
   {
+    id: "kooltour-app",
+    title: "KOOLTour & Travels Portal",
+    description: "A premium, full-featured travel and tourism platform designed to provide immersive destination discovery and streamlined booking experiences.",
+    problem: "Travelers often struggle with fragmented destination information and impersonal booking processes, making it difficult to plan specialized or bespoke journeys.",
+    solution: "Developed a comprehensive portal with curated travel categories (Spiritual, Adventure, Honeymoon, etc.), detailed multi-day itineraries, and a custom journey design engine to bridge the gap between inspiration and booking.",
+    tech: ["HTML5", "Vanilla CSS", "JavaScript", "PHP (Mailer)", "Netlify"],
+    github: "https://github.com/Solanki028/KOOLTour-and-Tourist-app",
+    live: "https://kooltour.netlify.app/", // Replace with your actual Netlify URL once deployed
+    featured: true,
+    image: "/images/kooltour.png", // Update with a screenshot of your home page later
+  },
+  {
+    id: "trinath-mental-health",
+    title: "Trinath Mental Health Counseling Portal",
+    description: "A premium mental health counseling platform connecting users with professional therapists, offering curated mental wellness resources, personalized session booking, and educational workshops.",
+    problem: "Mental health seekers often face barriers in accessing quality counseling, fragmented resources, and impersonal booking experiences that hinder their path to wellness.",
+    solution: "Built a comprehensive mental health portal with therapist profiles, AI-curated content, seamless session booking, blog-based mental health education, and interactive workshops to provide holistic mental wellness support.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lenis", "Lucide Icons"],
+    github: "https://github.com/Solanki028/Trinath-mental-health-App", // Replace with your GitHub URL
+    live: "https://trinath-mental-health-app.vercel.app/", // Replace with your actual deployment URL
+    featured: true,
+    image: "/images/trinath.png", // Update with a screenshot of your home page
+  },
+
+  {
     id: "task-generator-ai",
     title: "Task Generator AI",
     description: "An intelligent project planning tool that uses AI to generate comprehensive specifications, user stories, and engineering tasks.",
@@ -91,6 +116,19 @@ export const projects: Project[] = [
     featured: true,
     image: "/images/task ai.png",
   },
+  {
+    id: "meraki-tracker",
+    title: "Meraki Client Tracker",
+    description: "A minimalist, high-velocity internal management tool built for small teams to centralize client workflows and eliminate communication fragmentation.",
+    problem: "Small teams often face 'management chaos' by relying on scattered WhatsApp threads, unmaintained spreadsheets, and memory, leading to operational friction and unreliable task tracking.",
+    solution: "Engineered a focused daily-use platform that strips away the complexity of traditional project management tools. It provides instant visibility into client-specific projects and tasks with a zero-friction status management system.",
+    tech: ["Next.js (App Router)", "TypeScript", "Tailwind CSS", "ShadCN UI", "Supabase"],
+    github: "https://github.com/Solanki028/meraki-tool",
+    live: "https://meraki-tool.vercel.app/", // Update with your actual Vercel URL
+    featured: true,
+    image: "/images/meraki.png", // Update with your actual image path later
+  },
+
 
   {
     id: "smart-bookmark-app",
