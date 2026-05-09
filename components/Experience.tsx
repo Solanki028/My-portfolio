@@ -32,6 +32,20 @@ const experiences = [
     ],
   },
   {
+    company: "Brightspark Institute",
+    role: "Full Stack Developer",
+    period: "Jul 2023 — Dec 2023 (6 months)",
+    location: "Bhiwadi, Rajasthan · Remote",
+    impact: [
+      "Engineered and maintained an educational platform serving 500+ students, achieving 100% digital transformation of academic workflows.",
+      "Developed scalable web applications using the MERN stack, enhancing user experience and engagement by 40%.",
+      "Integrated third-party APIs for payments, email automation, and analytics to streamline operations.",
+      "Designed dynamic modules including course enrollment, results dashboards, attendance trackers, and homework management.",
+      "Led development of secure student portals with custom dashboards for personalized performance insights and real-time announcements.",
+      "Deployed backend services on cloud-based environments ensuring 99.9% uptime and seamless scaling."
+    ],
+  },
+  {
     company: "Freelance Full-Stack Developer",
     role: "Self-Employed",
     period: "Mar 2024 — Present",

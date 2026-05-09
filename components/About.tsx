@@ -8,7 +8,7 @@ export default function About() {
     <section id="about" className="py-32 bg-[#0B0B0B] border-t border-[#1A1A1A]">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-16 items-start">
-          
+
           <m.div
             variants={staggerContainer}
             initial="hidden"
@@ -23,11 +23,11 @@ export default function About() {
               Builder mindset. <br />
               Product approach.
             </m.h2>
-            
+
             <div className="space-y-6 text-lg text-[#737373] leading-relaxed max-w-2xl">
               <m.p variants={fadeUp}>
-                I don’t just write code; I build solutions that drive products forward. 
-                With a background in full-stack engineering and a deep focus on the 
+                I don’t just write code; I build solutions that drive products forward.
+                With a background in full-stack engineering and a deep focus on the
                 <span className="text-white font-semibold"> Next.js & AI ecosystem</span>, I help startups and companies bridge the gap between complex requirements and high-performance applications.
               </m.p>
               <m.p variants={fadeUp}>
@@ -44,16 +44,16 @@ export default function About() {
             className="lg:col-span-5 pt-12 lg:pt-20"
           >
             <div className="p-8 rounded-2xl border border-[#1A1A1A] bg-[#0E0E0E] space-y-8">
-               {[
-                 { label: "Core Focus", val: "Product-Led Engineering" },
-                 { label: "Expertise", val: "Full Stack AI & SaaS" },
-                 { label: "Velocity", val: "20+ Initial Products Shipped" }
-               ].map(stat => (
-                 <div key={stat.label}>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#4D4D4D] mb-1">{stat.label}</p>
-                    <p className="text-xl font-bold text-white tracking-tight">{stat.val}</p>
-                 </div>
-               ))}
+              {[
+                { label: "Core Focus", val: "Product-Led Engineering" },
+                { label: "Expertise", val: "Full Stack AI & SaaS" },
+                { label: "Velocity", val: "35+ Initial Products Shipped" }
+              ].map(stat => (
+                <div key={stat.label}>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#4D4D4D] mb-1">{stat.label}</p>
+                  <p className="text-xl font-bold text-white tracking-tight">{stat.val}</p>
+                </div>
+              ))}
             </div>
           </m.div>
 

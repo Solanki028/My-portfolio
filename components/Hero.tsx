@@ -11,7 +11,7 @@ const TERMINAL_LINES = [
   { text: "Status: Scanning architecture...", color: "text-[#4D4D4D]" },
   { text: "Detected: Next.js + TypeScript + Node.js", color: "text-[#22C55E]" },
   { text: "Engine: Production Mode [STABLE]", color: "text-[#22C55E]" },
-  { text: "Experience: 1.5+ Years in Product Engineering", color: "text-[#22C55E]" },
+  { text: "Experience: 2 Years in Product Engineering", color: "text-[#22C55E]" },
   { text: "Focus: Scalable SaaS & AI Integration", color: "text-white" },
   { text: "> Ready to build.", color: "text-white font-bold" },
 ];
@@ -52,10 +52,10 @@ function TerminalWidget() {
           </m.p>
         ))}
         {visible < TERMINAL_LINES.length && (
-          <m.span 
+          <m.span
             animate={{ opacity: [1, 0] }}
             transition={{ duration: 0.8, repeat: Infinity }}
-            className="inline-block w-1.5 h-[15px] bg-white align-middle ml-1" 
+            className="inline-block w-1.5 h-[15px] bg-white align-middle ml-1"
           />
         )}
       </div>
@@ -67,13 +67,13 @@ export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden bg-[#0B0B0B]">
       {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} 
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}
       />
 
       <div className="max-w-6xl mx-auto px-6 w-full">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
-          
+
           <m.div
             variants={staggerContainer}
             initial="hidden"
@@ -98,7 +98,7 @@ export default function Hero() {
             </m.h1>
 
             <m.p variants={fadeUp} className="text-[#737373] text-lg md:text-xl leading-relaxed mb-12 max-w-xl">
-              Full-stack engineer building production-grade web applications. 
+              Full-stack engineer building production-grade web applications.
               Converting complex problems into seamless digital experiences with clean architecture.
             </m.p>
 
@@ -107,7 +107,7 @@ export default function Hero() {
                 href="#projects"
                 className="inline-flex items-center gap-2.5 h-12 px-8 bg-white text-black text-[14px] font-bold rounded-lg hover:bg-[#E5E5E5] transition-all group shadow-xl"
               >
-                View Work 
+                View Work
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
@@ -145,8 +145,8 @@ export default function Hero() {
             transition={{ duration: 1, ease: [0.25, 0.4, 0.25, 1], delay: 0.2 }}
             className="lg:col-span-5 hidden lg:flex justify-end relative"
           >
-             <div className="absolute -top-20 -right-20 w-[500px] h-[500px] bg-white/[0.01] rounded-full blur-[120px] pointer-events-none" />
-             <TerminalWidget />
+            <div className="absolute -top-20 -right-20 w-[500px] h-[500px] bg-white/[0.01] rounded-full blur-[120px] pointer-events-none" />
+            <TerminalWidget />
           </m.div>
 
         </div>
