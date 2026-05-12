@@ -13,7 +13,18 @@ export interface Project {
 
 export const projects: Project[] = [
 
-
+  {
+    id: "trinath-mental-health",
+    title: "Trinath Mental Health Counseling Portal",
+    description: "A premium mental health counseling platform connecting users with professional therapists, offering curated mental wellness resources, personalized session booking, and educational workshops.",
+    problem: "Mental health seekers often face barriers in accessing quality counseling, fragmented resources, and impersonal booking experiences that hinder their path to wellness.",
+    solution: "Built a comprehensive mental health portal with therapist profiles, AI-curated content, seamless session booking, blog-based mental health education, and interactive workshops to provide holistic mental wellness support.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lenis", "Lucide Icons"],
+    github: "https://github.com/Solanki028/Trinath-mental-health-App", // Replace with your GitHub URL
+    live: "https://trinath-mental-health-app.vercel.app/", // Replace with your actual deployment URL
+    featured: true,
+    image: "/images/trinath.png", // Update with a screenshot of your home page
+  },
   {
     id: "nwb-fintech",
     title: "NWB Fintech Infrastructure",
@@ -28,6 +39,20 @@ export const projects: Project[] = [
   },
 
   {
+    id: "travelx-booking",
+    title: "TravelX Booking Engine",
+    description: "A premium, full-stack travel booking platform providing seamless intercity bus ticketing and comprehensive domestic and international flight reservations.",
+    problem: "Travelers often face fragmented, overly complex interfaces and slow processing times when attempting to compare pricing and secure multi-modal transit options on legacy platforms.",
+    solution: "Engineered a responsive Next.js frontend with an intuitive multi-tab search widget, backed by a robust RESTful Node.js API, MongoDB database, and a secure internal Admin Portal for managing transport inventory.",
+    tech: ["Next.js 15", "TypeScript", "Tailwind CSS 4.0", "Node.js", "Express.js", "MongoDB"],
+    github: "https://github.com/Solanki028/F-B-booking-platform",
+    live: "https://f-b-booking-platform-one.vercel.app",
+    featured: true,
+    image: "/images/image copy.png", // Update this with your actual image path later
+  },
+
+
+  {
     id: "blog-platform",
     title: "Fully Dynamic Blog Website",
     description: "A sophisticated, modern blog platform featuring personalized email subscriptions, intelligent user interest tracking, and a content paywall system.",
@@ -40,18 +65,7 @@ export const projects: Project[] = [
     image: "/images/innvibs.png",
   },
 
-  {
-    id: "travelx-booking",
-    title: "TravelX Booking Engine",
-    description: "A premium, full-stack travel booking platform providing seamless intercity bus ticketing and comprehensive domestic and international flight reservations.",
-    problem: "Travelers often face fragmented, overly complex interfaces and slow processing times when attempting to compare pricing and secure multi-modal transit options on legacy platforms.",
-    solution: "Engineered a responsive Next.js frontend with an intuitive multi-tab search widget, backed by a robust RESTful Node.js API, MongoDB database, and a secure internal Admin Portal for managing transport inventory.",
-    tech: ["Next.js 15", "TypeScript", "Tailwind CSS 4.0", "Node.js", "Express.js", "MongoDB"],
-    github: "https://github.com/Solanki028/F-B-booking-platform",
-    live: "https://f-b-booking-platform-one.vercel.app",
-    featured: true,
-    image: "/images/image copy.png", // Update this with your actual image path later
-  },
+
 
 
   {
@@ -91,18 +105,7 @@ export const projects: Project[] = [
     featured: true,
     image: "/images/kooltour.png", // Update with a screenshot of your home page later
   },
-  {
-    id: "trinath-mental-health",
-    title: "Trinath Mental Health Counseling Portal",
-    description: "A premium mental health counseling platform connecting users with professional therapists, offering curated mental wellness resources, personalized session booking, and educational workshops.",
-    problem: "Mental health seekers often face barriers in accessing quality counseling, fragmented resources, and impersonal booking experiences that hinder their path to wellness.",
-    solution: "Built a comprehensive mental health portal with therapist profiles, AI-curated content, seamless session booking, blog-based mental health education, and interactive workshops to provide holistic mental wellness support.",
-    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lenis", "Lucide Icons"],
-    github: "https://github.com/Solanki028/Trinath-mental-health-App", // Replace with your GitHub URL
-    live: "https://trinath-mental-health-app.vercel.app/", // Replace with your actual deployment URL
-    featured: true,
-    image: "/images/trinath.png", // Update with a screenshot of your home page
-  },
+
 
   {
     id: "task-generator-ai",

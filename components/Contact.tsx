@@ -36,10 +36,31 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 bg-[#0B0B0B] border-t border-[#1A1A1A]">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-12 gap-16">
+    <section id="contact" className="section-spacing bg-[#FCF9F5] relative">
+      <div className="section-divider" />
 
+      <div className="container-premium pt-10">
+        {/* Large CTA Statement */}
+        <m.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-20 text-center"
+        >
+          <h2 className="font-heading text-display font-bold text-[#000000] mb-6">
+            Let&apos;s build something
+            <br />
+            <span className="text-black/60">meaningful.</span>
+          </h2>
+          <p className="text-body-lg text-black/60 max-w-lg mx-auto">
+            Currently accepting new projects and consulting engagements.
+            I typically respond within 12 hours.
+          </p>
+        </m.div>
+
+        <div className="grid lg:grid-cols-12 gap-16 lg:gap-20">
+          {/* Left: Contact Links */}
           <m.div
             variants={staggerContainer}
             initial="hidden"
@@ -47,16 +68,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="lg:col-span-5"
           >
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#4D4D4D] mb-4 block">
-              Get in Touch
-            </span>
-            <m.h2 variants={fadeUp} className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-8">
-              Let&apos;s build.
-            </m.h2>
-            <m.p variants={fadeUp} className="text-[#737373] text-lg leading-relaxed mb-12">
-              Currently accepting new projects and consulting engagements.
-              I typically respond within 12 hours.
-            </m.p>
+            <span className="label-eyebrow mb-8 block">Get in Touch</span>
 
             <div className="space-y-4">
               {contactLinks.map((link, i) => (
@@ -64,15 +76,15 @@ export default function Contact() {
                   <Link
                     href={link.href}
                     target="_blank"
-                    className="group flex flex-col p-4 rounded-xl border border-[#1A1A1A] bg-[#0E0E0E] hover:border-[#262626] transition-all"
+                    className="group flex flex-col p-6 rounded-2xl border border-black/[0.06] bg-white hover:border-black/[0.12] hover:bg-white transition-all duration-500"
                   >
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#4D4D4D] group-hover:text-white transition-colors">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-eyebrow font-semibold text-black/40 group-hover:text-black/60 transition-colors duration-300">
                         {link.label}
                       </span>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-[#222] group-hover:text-white transition-all transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      <ArrowUpRight className="w-4 h-4 text-[#000000]/[0.08] group-hover:text-[#000000] transition-all duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </div>
-                    <span className="text-[13px] font-medium text-[#737373] group-hover:text-white transition-colors">
+                    <span className="text-body-sm font-medium text-black/60 group-hover:text-[#000000] transition-colors duration-300">
                       {link.value}
                     </span>
                   </Link>
@@ -81,67 +93,95 @@ export default function Contact() {
             </div>
           </m.div>
 
-          {/* Right: Premium Form */}
+          {/* Right: Form */}
           <m.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
             className="lg:col-span-7"
           >
-            <div className="p-10 rounded-2xl border border-[#1A1A1A] bg-[#0E0E0E] shadow-2xl relative overflow-hidden">
-              {/* Decorative subtle pulse */}
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/[0.02] rounded-full blur-3xl pointer-events-none" />
+            <div className="p-10 md:p-12 rounded-3xl border border-black/[0.08] bg-white relative overflow-hidden">
+              {/* Ambient glow */}
+              <div className="absolute -top-20 -right-20 w-60 h-60 bg-white rounded-full blur-[100px] pointer-events-none" />
 
               {status === "sent" ? (
-                <div className="flex flex-col items-center justify-center py-20 text-center">
-                  <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-6">
-                    <CheckCircle className="w-8 h-8 text-white" />
+                <m.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex flex-col items-center justify-center py-20 text-center"
+                >
+                  <div className="w-16 h-16 rounded-full bg-black/[0.03] flex items-center justify-center mb-8">
+                    <CheckCircle className="w-8 h-8 text-[#000000]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Message Transmitted</h3>
-                  <p className="text-[#4D4D4D] text-sm">Synchronizing with inbox now...</p>
-                </div>
+                  <h3 className="font-heading text-2xl font-semibold text-[#000000] mb-3">
+                    Message transmitted
+                  </h3>
+                  <p className="text-body-sm text-black/60">
+                    Synchronizing with inbox now...
+                  </p>
+                </m.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-8">
-                  <div className="space-y-4">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-bold uppercase tracking-widest text-[#4D4D4D]">Name</label>
+                <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
+                  <div className="space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div className="space-y-3">
+                        <label className="text-eyebrow font-semibold text-black/50">
+                          Name
+                        </label>
                         <input
-                          type="text" required placeholder="Project Partner"
-                          className="w-full bg-[#111] border border-[#1A1A1A] rounded-lg px-4 py-3 text-[13px] text-white focus:outline-none focus:border-[#333] transition-colors"
+                          type="text"
+                          required
+                          placeholder="Your name"
+                          className="w-full bg-white border border-black/[0.08] rounded-xl px-5 py-3.5 text-body-sm text-[#000000] placeholder:text-black/30 focus:outline-none focus:border-black/[0.15] focus:bg-black/[0.03] transition-all duration-300"
                         />
                       </div>
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-bold uppercase tracking-widest text-[#4D4D4D]">Email</label>
+                      <div className="space-y-3">
+                        <label className="text-eyebrow font-semibold text-black/50">
+                          Email
+                        </label>
                         <input
-                          type="email" required placeholder="contact@domain.com"
-                          className="w-full bg-[#111] border border-[#1A1A1A] rounded-lg px-4 py-3 text-[13px] text-white focus:outline-none focus:border-[#333] transition-colors"
+                          type="email"
+                          required
+                          placeholder="you@company.com"
+                          className="w-full bg-white border border-black/[0.08] rounded-xl px-5 py-3.5 text-body-sm text-[#000000] placeholder:text-black/30 focus:outline-none focus:border-black/[0.15] focus:bg-black/[0.03] transition-all duration-300"
                         />
                       </div>
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-bold uppercase tracking-widest text-[#4D4D4D]">Inquiry</label>
+                    <div className="space-y-3">
+                      <label className="text-eyebrow font-semibold text-black/50">
+                        Tell me about your project
+                      </label>
                       <textarea
-                        rows={4} required placeholder="What are we building?"
-                        className="w-full bg-[#111] border border-[#1A1A1A] rounded-lg px-4 py-3 text-[13px] text-white focus:outline-none focus:border-[#333] transition-colors resize-none"
+                        rows={5}
+                        required
+                        placeholder="What are we building?"
+                        className="w-full bg-white border border-black/[0.08] rounded-xl px-5 py-3.5 text-body-sm text-[#000000] placeholder:text-black/30 focus:outline-none focus:border-black/[0.15] focus:bg-black/[0.03] transition-all duration-300 resize-none"
                       />
                     </div>
                   </div>
+
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="w-full h-12 bg-white text-black text-[13px] font-bold rounded-xl hover:bg-[#E5E5E5] transition-all flex items-center justify-center gap-2 group disabled:opacity-50"
+                    className="btn-primary w-full !h-14 text-[15px] group disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {status === "sending" ? "Processing..." : (
-                      <>Establish Connection <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /></>
+                    {status === "sending" ? (
+                      <span className="flex items-center gap-2">
+                        <span className="w-4 h-4 border-2 border-[#0D0D0D]/20 border-t-[#0D0D0D] rounded-full animate-spin" />
+                        Processing...
+                      </span>
+                    ) : (
+                      <>
+                        Send Message
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </>
                     )}
                   </button>
                 </form>
               )}
             </div>
           </m.div>
-
         </div>
       </div>
     </section>

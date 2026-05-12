@@ -3,42 +3,50 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { m } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Terminal as TerminalIcon } from "lucide-react";
-import { staggerContainer, fadeUp } from "@/lib/animations";
+import {
+  ArrowRight,
+  Github,
+  Linkedin,
+  Sparkles,
+  Terminal as TerminalIcon,
+} from "lucide-react";
+import { fadeUp, staggerContainer } from "@/lib/animations";
 
 const TERMINAL_LINES = [
-  { text: "Initializing portfolio.sh...", color: "text-[#4D4D4D]" },
-  { text: "Status: Scanning architecture...", color: "text-[#4D4D4D]" },
-  { text: "Detected: Next.js + TypeScript + Node.js", color: "text-[#22C55E]" },
-  { text: "Engine: Production Mode [STABLE]", color: "text-[#22C55E]" },
-  { text: "Experience: 2 Years in Product Engineering", color: "text-[#22C55E]" },
-  { text: "Focus: Scalable SaaS & AI Integration", color: "text-white" },
-  { text: "> Ready to build.", color: "text-white font-bold" },
+  { text: "Initializing portfolio.sh...", color: "text-white/40" },
+  { text: "Status: Scanning architecture...", color: "text-white/40" },
+  { text: "Detected: Next.js + TypeScript + Node.js", color: "text-[#C5FF52]" },
+  { text: "Engine: Production Mode [STABLE]", color: "text-[#C5FF52]" },
+  { text: "Experience: 2 years of Product Building", color: "text-[#C5FF52]" },
+  { text: "Focus: Scalable SaaS & AI Integration", color: "text-white/90" },
+  { text: "> Ready to build.", color: "text-white font-semibold" },
 ];
 
 function TerminalWidget() {
   const [visible, setVisible] = useState(0);
 
   useEffect(() => {
-    const intervals = TERMINAL_LINES.map((_, i) => {
-      return setTimeout(() => setVisible(i + 1), 600 + i * 450);
-    });
+    const intervals = TERMINAL_LINES.map((_, i) =>
+      setTimeout(() => setVisible(i + 1), 600 + i * 450)
+    );
+
     return () => intervals.forEach(clearTimeout);
   }, []);
 
   return (
-    <div className="w-full max-w-[440px] rounded-xl border border-[#1A1A1A] bg-[#0E0E0E] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-      <div className="flex items-center justify-between px-4 py-3 border-b border-[#1A1A1A] bg-[#111]">
-        <div className="flex gap-1.5">
-          <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
-          <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
-          <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
+    <div className="w-full overflow-hidden rounded-[18px] border border-white/10 bg-[#121212] shadow-[0_28px_70px_-24px_rgba(0,0,0,0.45)]">
+      <div className="flex items-center justify-between border-b border-white/5 bg-[#1A1A1A] px-5 py-3.5">
+        <div className="flex gap-2">
+          <div className="h-3 w-3 rounded-full bg-[#FF5F56]" />
+          <div className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
+          <div className="h-3 w-3 rounded-full bg-[#27C93F]" />
         </div>
-        <div className="flex items-center gap-2 text-[10px] text-[#4D4D4D] font-mono uppercase tracking-widest">
-          <TerminalIcon className="w-3 h-3" /> priyanshu.sh
+        <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-white/40">
+          <TerminalIcon className="h-3 w-3" /> priyanshu.sh
         </div>
       </div>
-      <div className="p-6 font-mono text-[13px] leading-relaxed space-y-2 min-h-[220px]">
+
+      <div className="min-h-[210px] space-y-2.5 p-5 font-mono text-[12px] leading-[1.75] sm:p-6 sm:text-[13px]">
         {TERMINAL_LINES.slice(0, visible).map((line, i) => (
           <m.p
             key={i}
@@ -47,7 +55,7 @@ function TerminalWidget() {
             transition={{ duration: 0.2 }}
             className={line.color}
           >
-            <span className="opacity-30 mr-2">$</span>
+            <span className="mr-3 text-[#C5FF52] opacity-30">$</span>
             {line.text}
           </m.p>
         ))}
@@ -55,7 +63,7 @@ function TerminalWidget() {
           <m.span
             animate={{ opacity: [1, 0] }}
             transition={{ duration: 0.8, repeat: Infinity }}
-            className="inline-block w-1.5 h-[15px] bg-white align-middle ml-1"
+            className="ml-1 inline-block h-[15px] w-2 align-middle bg-[#C5FF52]"
           />
         )}
       </div>
@@ -65,90 +73,135 @@ function TerminalWidget() {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden bg-[#0B0B0B]">
-      {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}
+    <section className="relative min-h-[100svh] overflow-hidden bg-[#FCF9F5]">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.35]"
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(0,0,0,0.1) 1.5px, transparent 1.5px)",
+          backgroundSize: "30px 30px",
+        }}
       />
 
-      <div className="max-w-6xl mx-auto px-6 w-full">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
+      <div className="absolute inset-x-0 top-[72px] h-16 rotate-[-2deg] scale-x-110 border-y border-black/10 bg-[#C5FF52]" />
+      <div className="absolute -left-10 top-[20%] hidden h-24 w-48 rotate-[-10deg] border-2 border-black bg-[#FF6B6B] shadow-[8px_8px_0_#121212] md:block" />
+      <div className="absolute -right-8 bottom-[18%] hidden h-24 w-56 rotate-[8deg] border-2 border-black bg-[#5CE1E6] shadow-[-8px_8px_0_#121212] md:block" />
 
+      <div className="container-premium relative z-10 flex min-h-[100svh] w-full items-center pb-5 pt-[82px] sm:pb-8 sm:pt-[86px]">
+        <div className="grid w-full items-center gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(300px,380px)] lg:gap-8">
           <m.div
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="lg:col-span-7 flex flex-col"
+            className="relative z-10 flex min-w-0 flex-col items-start"
           >
-            <m.div variants={fadeUp} className="inline-flex items-center gap-2.5 mb-8 px-3 py-1 rounded-full border border-[#1A1A1A] bg-[#111] w-fit">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-              </span>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#737373]">Available for select projects</span>
+            <m.div
+              variants={fadeUp}
+              className="mb-4 inline-flex items-center gap-2 rounded-full border-2 border-black bg-white px-3.5 py-2 text-[10px] font-black uppercase tracking-[0.12em] text-[#121212] shadow-[5px_5px_0_#121212] sm:mb-5 sm:px-4 sm:text-[11px] sm:tracking-[0.14em]"
+            >
+              <Sparkles className="h-4 w-4 text-[#FF6B6B]" />
+              Full-stack dev energy
             </m.div>
 
             <m.h1
               variants={fadeUp}
-              className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.95] text-white mb-8"
+              className="max-w-[980px] font-heading text-[clamp(2.75rem,10vw,8.5rem)] font-black uppercase leading-[0.82] tracking-normal text-[#121212]"
             >
-              I engineer <br />
-              <span className="text-white">scalable SaaS</span> <br />
-              products.
+              Builds
+              <br />
+              digital
+              <br />
+              <span className="relative inline-block">
+                <span className="relative z-10">products</span>
+                <span className="absolute inset-x-0 bottom-[0.04em] z-0 h-[0.22em] bg-[#C5FF52]" />
+              </span>
+              <br />
+              <span className="text-black/25">that ship.</span>
             </m.h1>
 
-            <m.p variants={fadeUp} className="text-[#737373] text-lg md:text-xl leading-relaxed mb-12 max-w-xl">
-              Full-stack engineer building production-grade web applications.
-              Converting complex problems into seamless digital experiences with clean architecture.
+            <m.p
+              variants={fadeUp}
+              className="mt-4 max-w-[650px] text-[clamp(0.95rem,2vw,1.25rem)] font-medium leading-relaxed text-black/65 sm:mt-5"
+            >
+              Full-stack engineer converting complex problems into seamless
+              digital experiences with clean architecture and production-grade
+              code.
             </m.p>
 
-            <m.div variants={fadeUp} className="flex flex-wrap items-center gap-4 mb-12">
+            <m.div
+              variants={fadeUp}
+              className="mt-5 flex flex-wrap items-center gap-2.5 sm:mt-7 sm:gap-4"
+            >
               <Link
                 href="#projects"
-                className="inline-flex items-center gap-2.5 h-12 px-8 bg-white text-black text-[14px] font-bold rounded-lg hover:bg-[#E5E5E5] transition-all group shadow-xl"
+                className="btn-primary group !h-11 !rounded-[16px] !bg-[#121212] !px-5 !text-[13px] shadow-[6px_6px_0_#C5FF52] sm:!h-14 sm:!px-8 sm:!text-[15px]"
               >
                 View Work
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="#contact"
-                className="inline-flex items-center h-12 px-8 border border-[#1A1A1A] bg-transparent text-white text-[14px] font-bold rounded-lg hover:bg-[#111] transition-all"
+                className="btn-ghost !h-11 !rounded-[16px] !border-2 !border-black !bg-white !px-5 !text-[13px] shadow-[6px_6px_0_#121212] sm:!h-14 sm:!px-8 sm:!text-[15px]"
               >
-                Let&apos;s Talk
+                Contact Me
               </Link>
             </m.div>
 
-            <m.div variants={fadeUp} className="flex items-center gap-8 pt-8 border-t border-[#1A1A1A]">
-              <div className="flex flex-col gap-1">
-                <span className="text-[10px] uppercase tracking-[0.2em] text-[#4D4D4D] font-bold">Connect</span>
-                <div className="flex gap-4">
-                  <Link href="https://github.com/Solanki028" target="_blank" className="text-[#737373] hover:text-white transition-colors">
-                    <Github className="w-5 h-5" />
+            <m.div
+              variants={fadeUp}
+              className="mt-5 flex w-full max-w-[650px] flex-col gap-3 border-t-2 border-black/10 pt-4 sm:mt-7 sm:flex-row sm:items-center sm:gap-7 sm:pt-5"
+            >
+              <div className="flex flex-col gap-2.5">
+                <span className="text-eyebrow font-black text-black/40">
+                  Connect
+                </span>
+                <div className="flex gap-5">
+                  <Link
+                    href="https://github.com/Solanki028"
+                    target="_blank"
+                    className="-ml-2 rounded-lg p-2 text-black/60 transition-all duration-300 hover:bg-[#121212] hover:text-[#C5FF52]"
+                    aria-label="GitHub profile"
+                  >
+                    <Github className="h-5 w-5" />
                   </Link>
-                  <Link href="https://linkedin.com/in/priyanshu-solanki" target="_blank" className="text-[#737373] hover:text-white transition-colors">
-                    <Linkedin className="w-5 h-5" />
+                  <Link
+                    href="https://linkedin.com/in/priyanshu-solanki"
+                    target="_blank"
+                    className="rounded-lg p-2 text-black/60 transition-all duration-300 hover:bg-[#121212] hover:text-[#C5FF52]"
+                    aria-label="LinkedIn profile"
+                  >
+                    <Linkedin className="h-5 w-5" />
                   </Link>
                 </div>
               </div>
-              <div className="w-px h-10 bg-[#1A1A1A]" />
-              <div className="flex flex-col gap-1">
-                <span className="text-[10px] uppercase tracking-[0.2em] text-[#4D4D4D] font-bold">Tech Stack</span>
-                <span className="text-[13px] text-[#A3A3A3] font-medium">Next.js · TypeScript · AI</span>
+
+              <div className="hidden h-12 w-px bg-black/10 sm:block" />
+
+              <div className="flex flex-col gap-2.5">
+                <span className="text-eyebrow font-black text-black/40">
+                  Tech Stack
+                </span>
+                <span className="w-fit rounded-[14px] border-2 border-black bg-[#C5FF52] px-4 py-2 text-body-sm font-black text-[#121212] shadow-[4px_4px_0_#121212]">
+                  Next.js / TypeScript / AI
+                </span>
               </div>
             </m.div>
           </m.div>
 
-          {/* Right: Premium Visualization */}
           <m.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: [0.25, 0.4, 0.25, 1], delay: 0.2 }}
-            className="lg:col-span-5 hidden lg:flex justify-end relative"
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{
+              duration: 1,
+              ease: [0.25, 0.4, 0.25, 1],
+              delay: 0.2,
+            }}
+            className="hidden min-w-0 lg:block"
           >
-            <div className="absolute -top-20 -right-20 w-[500px] h-[500px] bg-white/[0.01] rounded-full blur-[120px] pointer-events-none" />
-            <TerminalWidget />
+            <div className="relative rotate-[2deg] border-2 border-black bg-[#FCF9F5] p-3 shadow-[10px_10px_0_#121212] transition-transform duration-500 ease-out hover:rotate-0">
+              <TerminalWidget />
+            </div>
           </m.div>
-
         </div>
       </div>
     </section>

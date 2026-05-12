@@ -14,128 +14,135 @@ export default function Projects() {
   const displayProjects = projects.slice(0, 3);
 
   return (
-    <section id="projects" className="py-32 bg-[#0B0B0B] border-t border-[#1A1A1A]">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="projects" className="section-spacing bg-[#FCF9F5] relative">
+      {/* Section Divider */}
+      <div className="section-divider" />
+
+      <div className="container-premium pt-10">
+        {/* Section Header */}
         <m.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-6"
+          className="flex flex-col md:flex-row md:items-end justify-between mb-28 gap-8"
         >
-          <div className="max-w-xl">
-            <m.span variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#4D4D4D] mb-4 block">
+          <div className="max-w-2xl">
+            <m.span
+              variants={fadeUp}
+              className="label-eyebrow mb-5 block"
+            >
               Selected Works
             </m.span>
-            <m.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold tracking-tighter text-white">
-              Engineering Excellence.
+            <m.h2
+              variants={fadeUp}
+              className="font-heading text-display-sm font-bold text-[#000000]"
+            >
+              Real results.
+              <br />
+              Real case studies.
             </m.h2>
           </div>
           <m.div variants={fadeUp}>
-            <Link 
-              href="/projects" 
-              className="group inline-flex items-center gap-2 text-[13px] font-bold text-[#737373] hover:text-white transition-colors"
+            <Link
+              href="/projects"
+              className="group inline-flex items-center gap-2.5 text-body-sm font-semibold text-black/60 hover:text-[#000000] transition-colors duration-300"
             >
               View All Projects
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
             </Link>
           </m.div>
         </m.div>
 
-        <div className="space-y-32">
+        {/* Projects List */}
+        <div className="flex flex-col pb-32">
           {displayProjects.map((project, index) => (
             <m.div
               key={project.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
-              className={cn(
-                "flex flex-col gap-12 lg:gap-20 items-center",
-                index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
-              )}
+              transition={{ duration: 0.9, ease: [0.25, 0.4, 0.25, 1] }}
+              className="sticky top-24 z-10 w-full mb-8 lg:mb-12"
             >
-              {/* Visual Side */}
-              <div className="w-full lg:w-[60%]">
-                <MockupFrame 
-                  type="browser" 
-                  title={project.id.replace(/-/g, " ") + ".sh"} 
-                  className="shadow-3xl hover:scale-[1.01] transition-all duration-700"
-                >
-                  <div className="relative aspect-[2.2/1] bg-[#0A0A0A] overflow-hidden">
-                    {project.image ? (
-                          <div className="relative w-full h-full overflow-hidden">
-                            <Image
-                              src={project.image}
-                              alt={project.title}
-                              fill
-                              className="object-contain brightness-[1.05] contrast-[1.05]"
-                              quality={100}
-                              priority={index === 0}
-                              sizes="(max-width: 1024px) 100vw, 800px"
-                            />
-                          </div>
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-[#111] text-[#222] font-mono text-xs italic">
-                        [UI Preview]
-                      </div>
+              <div className="bg-[#121212] border border-white/10 rounded-[2rem] lg:rounded-[3rem] p-8 md:p-12 lg:p-16 flex flex-col gap-10 lg:gap-14 shadow-2xl relative overflow-hidden group transition-all duration-500">
+                
+                {/* Subtle Glow Effect */}
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#C5FF52]/5 rounded-full blur-[140px] pointer-events-none group-hover:bg-[#C5FF52]/10 transition-colors duration-700" />
+
+                {/* Header Section */}
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 relative z-10">
+                  <div className="flex flex-col gap-6">
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-3">
+                      {project.tech.slice(0, 3).map((t) => (
+                        <span
+                          key={t}
+                          className="px-5 py-2 bg-transparent text-white/90 text-[13px] font-medium rounded-full border border-white/20 hover:border-white/40 transition-colors cursor-default"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="font-heading text-5xl md:text-6xl lg:text-7xl font-normal text-white tracking-[-0.03em]">
+                      {project.title}
+                    </h3>
+                  </div>
+
+                  {/* Explore Button */}
+                  <div className="flex flex-col gap-4 items-start md:items-end shrink-0 mt-4 md:mt-0">
+                    <Link
+                      href={project.live}
+                      target="_blank"
+                      className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white text-[15px] font-medium transition-all duration-300 backdrop-blur-md"
+                    >
+                      Explore project
+                      <ExternalLink className="w-4 h-4 text-white/70" />
+                    </Link>
+                    
+                    {project.github && (
+                       <Link
+                         href={project.github}
+                         target="_blank"
+                         className="inline-flex items-center gap-2 text-[14px] text-white/40 hover:text-white transition-colors px-4"
+                       >
+                         <Github className="w-4 h-4" />
+                         Source code
+                       </Link>
                     )}
                   </div>
-                </MockupFrame>
-              </div>
-
-              {/* Content Side */}
-              <div className="w-full lg:w-[45%] space-y-8">
-                <div>
-                  <h3 className="text-3xl font-bold text-white mb-4 tracking-tighter">
-                    {project.title}
-                  </h3>
-                  <p className="text-lg text-[#737373] leading-relaxed">
-                    {project.description}
-                  </p>
                 </div>
-                
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="p-5 bg-[#111] border border-[#1F1F1F] rounded-2xl">
-                    <p className="text-[10px] font-bold text-[#4D4D4D] uppercase tracking-widest mb-2">Challenge</p>
-                    <p className="text-[13px] text-[#A3A3A3] leading-relaxed italic line-clamp-3">
-                      &quot;{project.problem}&quot;
-                    </p>
+
+                {/* Description */}
+                <p className="text-white/50 max-w-3xl text-lg md:text-xl leading-relaxed relative z-10 -mt-4">
+                  {project.description}
+                </p>
+
+                {/* Visual Section */}
+                <div className="w-full relative z-10 mt-4 border border-white/10 rounded-xl overflow-hidden bg-[#1A1A1A]">
+                  <div className="relative aspect-[16/9] w-full">
+                    {project.image ? (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover group-hover:scale-[1.02] transition-transform duration-1000 ease-out"
+                        quality={100}
+                        sizes="(max-width: 1024px) 100vw, 1200px"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-white/20 font-mono">
+                        [Project Visual]
+                      </div>
+                    )}
+                    
+                    {/* Gradient overlay for blending */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#121212]/40 to-transparent pointer-events-none" />
                   </div>
-                  <div className="p-5 bg-[#111] border border-[#1F1F1F] rounded-2xl">
-                    <p className="text-[10px] font-bold text-[#4D4D4D] uppercase tracking-widest mb-2">Outcome</p>
-                    <p className="text-[13px] text-[#A3A3A3] leading-relaxed line-clamp-3">
-                      {project.solution}
-                    </p>
-                  </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((t) => (
-                    <span key={t} className="px-3 py-1 bg-[#1A1A1A] text-[#737373] text-[11px] font-medium rounded-full border border-[#2A2A2A]">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-6 pt-4">
-                  <Link
-                    href={project.live}
-                    target="_blank"
-                    className="group inline-flex items-center gap-2 h-12 px-8 bg-white text-black text-[14px] font-bold rounded-xl hover:bg-[#E5E5E5] transition-all"
-                  >
-                    Launch <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                  </Link>
-                  {project.github && (
-                    <Link
-                      href={project.github}
-                      target="_blank"
-                      className="inline-flex items-center gap-2 text-[14px] font-bold text-[#737373] hover:text-white transition-colors"
-                    >
-                      <Github className="w-5 h-5" /> <span>Source</span>
-                    </Link>
-                  )}
-                </div>
               </div>
             </m.div>
           ))}

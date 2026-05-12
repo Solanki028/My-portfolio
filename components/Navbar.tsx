@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { AnimatePresence, m } from "framer-motion";
-import { X, Menu } from "lucide-react";
+import { X, Menu, CornerDownRight, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -16,38 +16,53 @@ const navLinks = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
       <header
-        className="fixed top-0 inset-x-0 z-50 bg-[#0B0B0B] border-b border-[#1A1A1A]"
+        className={cn(
+          "fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[calc(100%-2rem)] max-w-[850px]",
+          scrolled ? "top-4" : "top-6"
+        )}
       >
-        <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-          <Link href="/" className="font-bold text-base tracking-tighter text-white">
-            Priyanshu<span className="text-[#4D4D4D]">.sh</span>
+        <div className="bg-[#1A1A1A] border border-white/10 rounded-full px-6 py-2.5 flex items-center justify-between shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] backdrop-blur-xl">
+          {/* Logo */}
+          <Link href="/" className="relative group pl-2">
+            <span className="font-heading text-lg font-bold tracking-tight text-white">
+              Priyanshu<span className="text-[#C5FF52] group-hover:text-white transition-colors duration-300">.sh</span>
+            </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-10">
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-[13px] font-medium text-[#737373] hover:text-white transition-colors duration-200"
+                className="text-[14px] font-medium text-[#A1A1AA] hover:text-white transition-colors duration-300 py-2"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
+          {/* Desktop CTA + Mobile Toggle */}
           <div className="flex items-center gap-4">
             <Link
               href="/#contact"
-              className="hidden md:inline-flex items-center h-8 px-4 text-[13px] font-semibold bg-white text-black rounded-lg hover:bg-[#E5E5E5] transition-colors"
+              className="hidden md:inline-flex items-center justify-center gap-2 bg-white/[0.08] hover:bg-white/[0.15] border border-white/10 text-white transition-colors duration-300 rounded-[14px] h-[42px] px-5 text-[14px] font-medium"
             >
-              Contact
+              <CornerDownRight className="w-4 h-4 text-white" /> Say hi
             </Link>
             <button
-              className="md:hidden text-[#737373] hover:text-white transition-colors p-1"
+              className="md:hidden text-[#A1A1AA] hover:text-white transition-colors p-1.5"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
@@ -57,33 +72,49 @@ export default function Navbar() {
         </div>
       </header>
 
+      {/* Mobile Overlay */}
       <AnimatePresence>
         {menuOpen && (
           <m.div
-            initial={{ opacity: 0, y: -4 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -4 }}
-            transition={{ duration: 0.15 }}
-            className="fixed inset-0 z-40 bg-[#0B0B0B] pt-20 px-6 flex flex-col md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-[#FCF9F5] flex flex-col md:hidden"
           >
-            <nav className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <Link
+            <div className="h-[72px]" />
+            <nav className="flex flex-col px-8 pt-8 flex-1">
+              {navLinks.map((link, i) => (
+                <m.div
                   key={link.label}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="py-4 text-xl font-semibold text-[#737373] hover:text-white transition-colors border-b border-[#1A1A1A]"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.08, duration: 0.4 }}
                 >
-                  {link.label}
-                </Link>
+                  <Link
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="block py-5 text-3xl font-heading font-semibold text-black/60 hover:text-[#000000] transition-colors border-b border-black/[0.08]"
+                  >
+                    {link.label}
+                  </Link>
+                </m.div>
               ))}
-              <Link
-                href="/#contact"
-                onClick={() => setMenuOpen(false)}
-                className="mt-8 flex items-center justify-center h-12 text-base font-bold bg-white text-black rounded-xl"
+              <m.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="mt-auto pb-12"
               >
-                Contact
-              </Link>
+                <Link
+                  href="/#contact"
+                  onClick={() => setMenuOpen(false)}
+                  className="btn-primary w-full text-base"
+                >
+                  Let&apos;s Talk
+                  <ArrowUpRight className="w-4 h-4" />
+                </Link>
+              </m.div>
             </nav>
           </m.div>
         )}

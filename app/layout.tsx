@@ -1,8 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800", "900"],
+  variable: "--font-heading",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://priyanshu.sh"),
@@ -65,9 +76,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${inter.variable} ${interTight.variable}`}>
       <body
-        className={`${inter.className} bg-[#0B0B0B] text-foreground antialiased selection:bg-white/10 selection:text-white`}
+        className={`${inter.className} bg-[#FCF9F5] text-[#000000] antialiased selection:bg-[#C5FF52] selection:text-black`}
       >
         <LazyMotionProvider>
           <div className="relative min-h-screen flex flex-col">

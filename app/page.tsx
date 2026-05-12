@@ -19,6 +19,9 @@ const About = dynamic(() => import("@/components/About"), {
 const Contact = dynamic(() => import("@/components/Contact"), { 
   loading: () => <div className="h-96 bg-[#0B0B0B]" /> 
 });
+const MarqueeBanner = dynamic(() => import("@/components/MarqueeBanner"), { 
+  loading: () => <div className="h-32 bg-[#0B0B0B]" /> 
+});
 
 export default function Home() {
   return (
@@ -26,10 +29,11 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <About />
         <Projects />
+        <MarqueeBanner />
         <Skills />
         <Experience />
-        <About />
         <Contact />
       </main>
       <Footer />
