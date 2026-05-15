@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { m } from "framer-motion";
 import {
@@ -8,202 +8,301 @@ import {
   Github,
   Linkedin,
   Sparkles,
-  Terminal as TerminalIcon,
+  ChevronRight,
+  Play,
+  Mail,
 } from "lucide-react";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
-const TERMINAL_LINES = [
-  { text: "Initializing portfolio.sh...", color: "text-white/40" },
-  { text: "Status: Scanning architecture...", color: "text-white/40" },
-  { text: "Detected: Next.js + TypeScript + Node.js", color: "text-[#C5FF52]" },
-  { text: "Engine: Production Mode [STABLE]", color: "text-[#C5FF52]" },
-  { text: "Experience: 2 years of Product Building", color: "text-[#C5FF52]" },
-  { text: "Focus: Scalable SaaS & AI Integration", color: "text-white/90" },
-  { text: "> Ready to build.", color: "text-white font-semibold" },
-];
+const TYPING_WORDS = ["innovative.", "scalable.", "AI-powered.", "beautiful."];
 
-function TerminalWidget() {
-  const [visible, setVisible] = useState(0);
-
-  useEffect(() => {
-    const intervals = TERMINAL_LINES.map((_, i) =>
-      setTimeout(() => setVisible(i + 1), 600 + i * 450)
-    );
-
-    return () => intervals.forEach(clearTimeout);
-  }, []);
-
+function AnimatedGradientBg() {
   return (
-    <div className="w-full overflow-hidden rounded-[18px] border border-white/10 bg-[#121212] shadow-[0_28px_70px_-24px_rgba(0,0,0,0.45)]">
-      <div className="flex items-center justify-between border-b border-white/5 bg-[#1A1A1A] px-5 py-3.5">
-        <div className="flex gap-2">
-          <div className="h-3 w-3 rounded-full bg-[#FF5F56]" />
-          <div className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
-          <div className="h-3 w-3 rounded-full bg-[#27C93F]" />
-        </div>
-        <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-white/40">
-          <TerminalIcon className="h-3 w-3" /> priyanshu.sh
-        </div>
-      </div>
-
-      <div className="min-h-[210px] space-y-2.5 p-5 font-mono text-[12px] leading-[1.75] sm:p-6 sm:text-[13px]">
-        {TERMINAL_LINES.slice(0, visible).map((line, i) => (
-          <m.p
-            key={i}
-            initial={{ opacity: 0, x: -5 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.2 }}
-            className={line.color}
-          >
-            <span className="mr-3 text-[#C5FF52] opacity-30">$</span>
-            {line.text}
-          </m.p>
-        ))}
-        {visible < TERMINAL_LINES.length && (
-          <m.span
-            animate={{ opacity: [1, 0] }}
-            transition={{ duration: 0.8, repeat: Infinity }}
-            className="ml-1 inline-block h-[15px] w-2 align-middle bg-[#C5FF52]"
-          />
-        )}
-      </div>
+    <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 bg-[#0a0a0f]" />
+      <div className="absolute size-[500px] rounded-full bg-gradient-to-r from-violet-500/30 via-fuchsia-500/20 to-pink-500/30 blur-[120px]" />
+      <div className="absolute left-1/3 top-1/4 size-[400px] rounded-full bg-gradient-to-r from-cyan-500/25 via-blue-500/20 to-violet-500/25 blur-[100px]" />
+      <div className="absolute bottom-1/4 right-1/4 size-[350px] rounded-full bg-gradient-to-r from-emerald-500/20 via-teal-500/15 to-cyan-500/20 blur-[80px]" />
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIvPjwvZz48L2c+PC9zdmc+')] opacity-40" />
     </div>
   );
 }
 
-export default function Hero() {
+function FloatingOrbs() {
+  const orbs = [
+    { size: "w-32 h-32", color: "bg-gradient-to-br from-violet-500 to-fuchsia-500", delay: 0, x: "10%", y: "20%" },
+    { size: "w-24 h-24", color: "bg-gradient-to-br from-cyan-400 to-blue-500", delay: 0.5, x: "75%", y: "15%" },
+    { size: "w-20 h-20", color: "bg-gradient-to-br from-pink-500 to-rose-500", delay: 1, x: "80%", y: "70%" },
+    { size: "w-16 h-16", color: "bg-gradient-to-br from-emerald-400 to-teal-500", delay: 1.5, x: "15%", y: "75%" },
+    { size: "w-12 h-12", color: "bg-gradient-to-br from-amber-400 to-orange-500", delay: 2, x: "50%", y: "85%" },
+  ];
+
   return (
-    <section className="relative min-h-[100svh] overflow-hidden bg-[#FCF9F5]">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.35]"
-        style={{
-          backgroundImage:
-            "radial-gradient(rgba(0,0,0,0.1) 1.5px, transparent 1.5px)",
-          backgroundSize: "30px 30px",
-        }}
-      />
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {orbs.map((orb, i) => (
+        <m.div
+          key={i}
+          animate={{
+            y: [0, -30, 0],
+            x: [0, 15, 0],
+            scale: [1, 1.1, 1],
+            opacity: [0.6, 0.8, 0.6],
+          }}
+          transition={{
+            duration: 8 + i,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: orb.delay,
+          }}
+          className={`absolute ${orb.size} rounded-full ${orb.color} blur-[60px] opacity-60`}
+          style={{ left: orb.x, top: orb.y }}
+        />
+      ))}
+    </div>
+  );
+}
 
-      <div className="absolute inset-x-0 top-[72px] h-16 rotate-[-2deg] scale-x-110 border-y border-black/10 bg-[#C5FF52]" />
-      <div className="absolute -left-10 top-[20%] hidden h-24 w-48 rotate-[-10deg] border-2 border-black bg-[#FF6B6B] shadow-[8px_8px_0_#121212] md:block" />
-      <div className="absolute -right-8 bottom-[18%] hidden h-24 w-56 rotate-[8deg] border-2 border-black bg-[#5CE1E6] shadow-[-8px_8px_0_#121212] md:block" />
+function TypingText() {
+  const [wordIndex, setWordIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
 
-      <div className="container-premium relative z-10 flex min-h-[100svh] w-full items-center pb-5 pt-[82px] sm:pb-8 sm:pt-[86px]">
-        <div className="grid w-full items-center gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(300px,380px)] lg:gap-8">
-          <m.div
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-            className="relative z-10 flex min-w-0 flex-col items-start"
-          >
-            <m.div
-              variants={fadeUp}
-              className="mb-4 inline-flex items-center gap-2 rounded-full border-2 border-black bg-white px-3.5 py-2 text-[10px] font-black uppercase tracking-[0.12em] text-[#121212] shadow-[5px_5px_0_#121212] sm:mb-5 sm:px-4 sm:text-[11px] sm:tracking-[0.14em]"
-            >
-              <Sparkles className="h-4 w-4 text-[#FF6B6B]" />
-              Full-stack dev energy
-            </m.div>
+  useEffect(() => {
+    const currentWord = TYPING_WORDS[wordIndex];
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting) {
+          if (displayedText.length < currentWord.length) {
+            setDisplayedText(currentWord.slice(0, displayedText.length + 1));
+          } else {
+            setTimeout(() => setIsDeleting(true), 2000);
+          }
+        } else {
+          if (displayedText.length > 0) {
+            setDisplayedText(displayedText.slice(0, -1));
+          } else {
+            setIsDeleting(false);
+            setWordIndex((prev) => (prev + 1) % TYPING_WORDS.length);
+          }
+        }
+      },
+      isDeleting ? 80 : 150
+    );
 
-            <m.h1
-              variants={fadeUp}
-              className="max-w-[980px] font-heading text-[clamp(2.75rem,10vw,8.5rem)] font-black uppercase leading-[0.82] tracking-normal text-[#121212]"
-            >
-              Builds
-              <br />
-              digital
-              <br />
-              <span className="relative inline-block">
-                <span className="relative z-10">products</span>
-                <span className="absolute inset-x-0 bottom-[0.04em] z-0 h-[0.22em] bg-[#C5FF52]" />
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, wordIndex]);
+
+  return (
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400">
+      {displayedText}
+      <span className="inline-block h-[1em] w-[3px] animate-pulse bg-gradient-to-b from-violet-400 to-pink-400 ml-1 align-middle" />
+    </span>
+  );
+}
+
+function GlassCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return (
+    <div
+      className={`backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl shadow-2xl shadow-black/20 ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
+
+function StatusBadge() {
+  return (
+    <GlassCard className="group inline-flex items-center gap-3 px-4 py-2.5">
+      <span className="relative flex h-2.5 w-2.5">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
+      </span>
+      <span className="text-[12px] font-medium text-white/80">Available for work</span>
+      <ChevronRight className="h-4 w-4 text-white/40 transition-transform group-hover:translate-x-1" />
+    </GlassCard>
+  );
+}
+
+function SocialButton({ href, icon: Icon, label }: { href: string; icon: any; label: string }) {
+  return (
+    <m.a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{ scale: 1.1, y: -2 }}
+      whileTap={{ scale: 0.95 }}
+      className="group flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white/60 backdrop-blur-sm transition-all hover:border-violet-500/50 hover:bg-violet-500/10 hover:text-violet-400"
+      aria-label={label}
+    >
+      <Icon className="h-5 w-5" />
+    </m.a>
+  );
+}
+
+function TechBadge({ name }: { name: string }) {
+  return (
+    <m.span
+      whileHover={{ scale: 1.05, y: -2 }}
+      className="inline-flex items-center gap-1.5 rounded-full border border-violet-500/30 bg-gradient-to-r from-violet-500/10 to-fuchsia-500/10 px-3.5 py-1.5 text-[12px] font-medium text-white/80 backdrop-blur-sm"
+    >
+      <span className="h-1.5 w-1.5 rounded-full bg-violet-400" />
+      {name}
+    </m.span>
+  );
+}
+
+function StatsRow() {
+  const stats = [
+    { value: "2", label: "Years building" },
+    { value: "35+", label: "Projects shipped" },
+    { value: "100%", label: "Passion" },
+  ];
+
+  return (
+    <div className="flex flex-wrap items-center gap-6">
+      {stats.map((stat, i) => (
+        <m.div
+          key={stat.label}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 + i * 0.1 }}
+          className="flex flex-col"
+        >
+          <span className="text-2xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+            {stat.value}
+          </span>
+          <span className="text-[11px] text-white/40">{stat.label}</span>
+        </m.div>
+      ))}
+    </div>
+  );
+}
+
+ 
+
+export default function Hero() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.4, 0.25, 1] as const,
+      },
+    },
+  };
+
+  return (
+    <section className="relative min-h-[100svh] overflow-hidden">
+      <AnimatedGradientBg />
+      <FloatingOrbs />
+
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute size-[600px] rounded-full border border-violet-500/10" />
+        <div className="absolute size-[450px] rounded-full border border-fuchsia-500/10" />
+        <div className="absolute size-[300px] rounded-full border border-pink-500/10" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
+        <m.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex min-h-[100svh] flex-col items-center justify-center py-20 text-center"
+        >
+          <m.div variants={itemVariants} className="mb-6">
+            <StatusBadge />
+          </m.div>
+
+          <m.div variants={itemVariants} className="mb-4">
+            <h1 className="text-[clamp(2.5rem,8vw,6rem)] font-bold leading-[1.1] tracking-tight">
+              <span className="bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
+                I build
               </span>
               <br />
-              <span className="text-black/25">that ship.</span>
-            </m.h1>
-
-            <m.p
-              variants={fadeUp}
-              className="mt-4 max-w-[650px] text-[clamp(0.95rem,2vw,1.25rem)] font-medium leading-relaxed text-black/65 sm:mt-5"
-            >
-              Full-stack engineer converting complex problems into seamless
-              digital experiences with clean architecture and production-grade
-              code.
-            </m.p>
-
-            <m.div
-              variants={fadeUp}
-              className="mt-5 flex flex-wrap items-center gap-2.5 sm:mt-7 sm:gap-4"
-            >
-              <Link
-                href="#projects"
-                className="btn-primary group !h-11 !rounded-[16px] !bg-[#121212] !px-5 !text-[13px] shadow-[6px_6px_0_#C5FF52] sm:!h-14 sm:!px-8 sm:!text-[15px]"
-              >
-                View Work
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <Link
-                href="#contact"
-                className="btn-ghost !h-11 !rounded-[16px] !border-2 !border-black !bg-white !px-5 !text-[13px] shadow-[6px_6px_0_#121212] sm:!h-14 sm:!px-8 sm:!text-[15px]"
-              >
-                Contact Me
-              </Link>
-            </m.div>
-
-            <m.div
-              variants={fadeUp}
-              className="mt-5 flex w-full max-w-[650px] flex-col gap-3 border-t-2 border-black/10 pt-4 sm:mt-7 sm:flex-row sm:items-center sm:gap-7 sm:pt-5"
-            >
-              <div className="flex flex-col gap-2.5">
-                <span className="text-eyebrow font-black text-black/40">
-                  Connect
-                </span>
-                <div className="flex gap-5">
-                  <Link
-                    href="https://github.com/Solanki028"
-                    target="_blank"
-                    className="-ml-2 rounded-lg p-2 text-black/60 transition-all duration-300 hover:bg-[#121212] hover:text-[#C5FF52]"
-                    aria-label="GitHub profile"
-                  >
-                    <Github className="h-5 w-5" />
-                  </Link>
-                  <Link
-                    href="https://linkedin.com/in/priyanshu-solanki"
-                    target="_blank"
-                    className="rounded-lg p-2 text-black/60 transition-all duration-300 hover:bg-[#121212] hover:text-[#C5FF52]"
-                    aria-label="LinkedIn profile"
-                  >
-                    <Linkedin className="h-5 w-5" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="hidden h-12 w-px bg-black/10 sm:block" />
-
-              <div className="flex flex-col gap-2.5">
-                <span className="text-eyebrow font-black text-black/40">
-                  Tech Stack
-                </span>
-                <span className="w-fit rounded-[14px] border-2 border-black bg-[#C5FF52] px-4 py-2 text-body-sm font-black text-[#121212] shadow-[4px_4px_0_#121212]">
-                  Next.js / TypeScript / AI
-                </span>
-              </div>
-            </m.div>
+              <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">
+                <TypingText />
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
+                digital experiences
+              </span>
+            </h1>
           </m.div>
+
+          <m.p
+            variants={itemVariants}
+            className="mb-8 max-w-xl text-[clamp(0.95rem,2vw,1.1rem)] leading-relaxed text-white/50"
+          >
+            Full-stack engineer crafting scalable SaaS products with cutting-edge AI integration.
+            Based in India, building for the world.
+          </m.p>
 
           <m.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{
-              duration: 1,
-              ease: [0.25, 0.4, 0.25, 1],
-              delay: 0.2,
-            }}
-            className="hidden min-w-0 lg:block"
+            variants={itemVariants}
+            className="mb-10 flex flex-wrap items-center justify-center gap-4"
           >
-            <div className="relative rotate-[2deg] border-2 border-black bg-[#FCF9F5] p-3 shadow-[10px_10px_0_#121212] transition-transform duration-500 ease-out hover:rotate-0">
-              <TerminalWidget />
+            <m.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                href="#projects"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-7 py-4 text-[14px] font-semibold text-white shadow-lg shadow-violet-500/25 transition-all hover:shadow-violet-500/40 hover:shadow-xl"
+              >
+                <Play className="h-4 w-4" />
+                Explore Projects
+              </Link>
+            </m.div>
+            <m.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                href="#contact"
+                className="group inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/5 px-7 py-4 text-[14px] font-semibold text-white backdrop-blur-sm transition-all hover:border-white/30 hover:bg-white/10"
+              >
+                <Mail className="h-4 w-4" />
+                Get in Touch
+              </Link>
+            </m.div>
+          </m.div>
+
+          <m.div variants={itemVariants} className="mb-12">
+            <div className="mb-4 flex items-center justify-center gap-3">
+              <SocialButton href="https://github.com/Solanki028" icon={Github} label="GitHub" />
+              <SocialButton href="https://linkedin.com/in/priyanshu-solanki" icon={Linkedin} label="LinkedIn" />
             </div>
           </m.div>
-        </div>
+
+          <m.div variants={itemVariants} className="mb-10">
+            <StatsRow />
+          </m.div>
+
+          <m.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-2">
+            {["Next.js", "TypeScript", "React", "Node.js", "PostgreSQL", "AI/ML"].map(
+              (tech, i) => (
+                <m.div
+                  key={tech}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.8 + i * 0.05 }}
+                >
+                  <TechBadge name={tech} />
+                </m.div>
+              )
+            )}
+          </m.div>
+        </m.div>
       </div>
+
+       
     </section>
   );
 }
