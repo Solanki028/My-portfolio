@@ -1,9 +1,9 @@
 "use client";
 
-import { m } from "framer-motion";
+import { m, Variants } from "framer-motion";
 import Image from "next/image";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
     opacity: 1, 

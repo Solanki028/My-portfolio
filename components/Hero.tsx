@@ -1,10 +1,10 @@
 "use client";
 
-import { m } from "framer-motion";
+import { m, Variants } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
     opacity: 1, 
@@ -13,7 +13,7 @@ const fadeUp = {
   }
 };
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,

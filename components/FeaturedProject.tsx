@@ -117,8 +117,8 @@ export default function FeaturedProject() {
               className="hover:scale-[1.01] transition-all duration-700"
             >
               <div className="relative aspect-[16/10] bg-[#FCF9F5] overflow-hidden">
-                {featured.image ? (
-                  <div className="absolute top-0 left-0 w-full h-fit transition-transform duration-[8s] ease-in-out group-hover:-translate-y-[calc(100%-600px)]">
+                 {featured.image ? (
+                  <div className="absolute top-0 left-0 w-full h-fit transition-transform duration-[8000ms] ease-in-out group-hover:-translate-y-[calc(100%-600px)]">
                     <Image
                       src={featured.image}
                       alt={featured.title}
