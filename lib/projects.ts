@@ -23,7 +23,7 @@ export const projects: Project[] = [
     github: "https://github.com/Solanki028/Trinath-mental-health-App", // Replace with your GitHub URL
     live: "https://trinath-mental-health-app.vercel.app/", // Replace with your actual deployment URL
     featured: true,
-    image: "/images/trinath.png", // Update with a screenshot of your home page
+    image: "/images/trinath.png", 
   },
   {
     id: "nwb-fintech",
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     github: "https://github.com/Solanki028/F-B-booking-platform",
     live: "https://f-b-booking-platform-one.vercel.app",
     featured: true,
-    image: "/images/image copy.png", // Update this with your actual image path later
+    image: "/images/image copy.png", 
   },
 
 

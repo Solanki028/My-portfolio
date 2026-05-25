@@ -1,139 +1,77 @@
 "use client";
 
 import { m } from "framer-motion";
-import { staggerContainer, fadeUp } from "@/lib/animations";
-import {
-  Code2, Server, Cloud, Wrench,
-  Atom, Wind, FileCode2, Activity, Layout,
-  Zap, Terminal, Network, Share2,
-  Database, Box, GitBranch, TestTube2, PenTool,
-  Bot, Brain, Link2, Wifi, Cpu, Globe, Layers,
-  ShieldCheck, Smartphone, CpuIcon
+import { 
+  Code2, Server, Brain, Cloud, 
+  Atom, Layout, FileCode2, Wind, Activity, Layers,
+  Terminal, Zap, Database, CpuIcon,
+  Link2, Bot, Globe, Box, GitBranch
 } from "lucide-react";
-import { cn } from "@/lib/utils";
 
-type Skill = { name: string; icon: React.ReactNode; level: string };
-type Group = { label: string; description: string; categoryIcon: React.ReactNode; skills: Skill[] };
-
-const skillGroups: Group[] = [
+const skillGroups = [
   {
-    label: "Frontend Architecture",
-    description: "Building immersive, high-performance interfaces.",
-    categoryIcon: <Code2 className="w-5 h-5 text-[#000000]" />,
-    skills: [
-      { name: "React", icon: <Atom className="w-4 h-4" />, level: "Expert" },
-      { name: "Next.js 14/15", icon: <Layout className="w-4 h-4" />, level: "Expert" },
-      { name: "TypeScript", icon: <FileCode2 className="w-4 h-4" />, level: "Expert" },
-      { name: "Tailwind CSS", icon: <Wind className="w-4 h-4" />, level: "Expert" },
-      { name: "Framer Motion", icon: <Activity className="w-4 h-4" />, level: "Advanced" },
-      { name: "shadcn/ui", icon: <Layers className="w-4 h-4" />, level: "Expert" },
-    ],
+    label: "Frontend",
+    skills: ["React", "Next.js", "TypeScript", "Tailwind", "Framer Motion"],
+    icon: <Code2 className="w-5 h-5" />
   },
   {
-    label: "Backend & Systems",
-    description: "Architecting resilient server-side logic.",
-    categoryIcon: <Server className="w-5 h-5 text-[#000000]" />,
-    skills: [
-      { name: "Node.js", icon: <CpuIcon className="w-4 h-4" />, level: "Expert" },
-      { name: "Express.js", icon: <Zap className="w-4 h-4" />, level: "Expert" },
-      { name: "Python / Django", icon: <Terminal className="w-4 h-4" />, level: "Advanced" },
-      { name: "PostgreSQL", icon: <Database className="w-4 h-4" />, level: "Advanced" },
-      { name: "MongoDB", icon: <Database className="w-4 h-4" />, level: "Expert" },
-      { name: "Redis", icon: <Activity className="w-4 h-4" />, level: "Intermediate" },
-    ],
+    label: "Backend",
+    skills: ["Node.js", "Express", "Python", "PostgreSQL", "MongoDB"],
+    icon: <Server className="w-5 h-5" />
   },
   {
-    label: "AI & Intelligence",
-    description: "Integrating LLMs and intelligent workflows.",
-    categoryIcon: <Brain className="w-5 h-5 text-[#000000]" />,
-    skills: [
-      { name: "LangChain", icon: <Link2 className="w-4 h-4" />, level: "Advanced" },
-      { name: "Vector DBs", icon: <Layers className="w-4 h-4" />, level: "Advanced" },
-      { name: "AI Agents", icon: <Bot className="w-4 h-4" />, level: "Advanced" },
-      { name: "OpenAI / Gemini", icon: <Globe className="w-4 h-4" />, level: "Expert" },
-      { name: "Function Calling", icon: <Terminal className="w-4 h-4" />, level: "Expert" },
-    ],
+    label: "AI & ML",
+    skills: ["LangChain", "Vector DBs", "AI Agents", "OpenAI", "Function Calling"],
+    icon: <Brain className="w-5 h-5" />
   },
   {
-    label: "DevOps & Infrastructure",
-    description: "Ensuring zero-downtime deployments.",
-    categoryIcon: <Cloud className="w-5 h-5 text-[#000000]" />,
-    skills: [
-      { name: "AWS / Google Cloud", icon: <Cloud className="w-4 h-4" />, level: "Advanced" },
-      { name: "Docker", icon: <Box className="w-4 h-4" />, level: "Advanced" },
-      { name: "Supabase", icon: <Zap className="w-4 h-4" />, level: "Advanced" },
-      { name: "CI / CD Pipelines", icon: <GitBranch className="w-4 h-4" />, level: "Expert" },
-      { name: "Vercel / Netlify", icon: <Globe className="w-4 h-4" />, level: "Expert" },
-    ],
-  },
+    label: "DevOps",
+    skills: ["AWS", "Docker", "Supabase", "CI/CD", "Vercel"],
+    icon: <Cloud className="w-5 h-5" />
+  }
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-spacing bg-[#FCF9F5] relative">
-      <div className="section-divider" />
+    <section id="skills" className="bg-black py-32 overflow-hidden">
+      <div className="container-premium">
+        <div className="mb-24 flex flex-col items-center text-center">
+          <m.span 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="font-serif italic text-2xl text-white/20 block mb-6"
+          >
+            Capabilities
+          </m.span>
+          <m.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="font-heading text-display-sm font-bold text-white"
+          >
+            The technical <span className="font-serif italic font-normal text-[#C5FF52]">toolkit</span>.
+          </m.h2>
+        </div>
 
-      <div className="container-premium pt-10">
-        {/* Header */}
-        <m.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-24"
-        >
-          <span className="label-eyebrow mb-5 block">Technical Stack</span>
-          <h2 className="font-heading text-display-sm font-bold text-[#000000] max-w-xl">
-            Core competencies
-            <span className="text-black/60">.</span>
-          </h2>
-        </m.div>
-
-        {/* Skills Grid */}
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-x-20 lg:gap-y-24">
-          {skillGroups.map((group, groupIndex) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {skillGroups.map((group, i) => (
             <m.div
               key={group.label}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: groupIndex * 0.1 }}
-              className="flex flex-col"
+              className="group flex flex-col p-8 rounded-3xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] hover:border-white/10 transition-all duration-500"
             >
-              {/* Category Header */}
-              <div className="flex items-start gap-5 mb-10">
-                <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-black/[0.03] border border-black/[0.08] shrink-0">
-                  {group.categoryIcon}
-                </div>
-                <div>
-                  <h3 className="font-heading text-xl font-semibold text-[#000000] mb-1.5">
-                    {group.label}
-                  </h3>
-                  <p className="text-body-sm text-black/60">{group.description}</p>
-                </div>
+              <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#C5FF52] text-black">
+                {group.icon}
               </div>
-
-              {/* Skill Items */}
-              <div className="grid grid-cols-2 gap-3">
+              <h3 className="mb-6 font-heading text-xl font-bold text-white">{group.label}</h3>
+              <div className="flex flex-col gap-3">
                 {group.skills.map((skill) => (
-                  <m.div
-                    key={skill.name}
-                    whileHover={{ scale: 1.02, x: 4 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex items-center justify-between p-4 rounded-xl border border-black/[0.06] bg-white group cursor-default transition-all duration-300 hover:border-black/[0.12] hover:bg-black/[0.03]"
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="text-black/40 group-hover:text-[#000000]/80 transition-colors duration-300">
-                        {skill.icon}
-                      </span>
-                      <span className="text-[13px] font-medium text-black/60 group-hover:text-[#000000] transition-colors duration-300">
-                        {skill.name}
-                      </span>
-                    </div>
-                    <span className="text-[8px] uppercase tracking-[0.15em] text-[#000000]/[0.08] font-bold group-hover:text-[#000000]/20 transition-colors duration-300">
-                      {skill.level}
-                    </span>
-                  </m.div>
+                  <div key={skill} className="flex items-center gap-3 text-sm text-white/40 group-hover:text-white/60 transition-colors">
+                    <div className="h-1 w-1 rounded-full bg-[#C5FF52]" />
+                    {skill}
+                  </div>
                 ))}
               </div>
             </m.div>

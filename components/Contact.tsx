@@ -3,26 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { m } from "framer-motion";
-import { staggerContainer, fadeUp } from "@/lib/animations";
-import { Mail, Github, Linkedin, ArrowUpRight, ArrowRight, Send, CheckCircle } from "lucide-react";
-
-const contactLinks = [
-  {
-    label: "Email",
-    value: "Priyanshu.solankii@outlook.com",
-    href: "mailto:Priyanshu.solankii@outlook.com",
-  },
-  {
-    label: "LinkedIn",
-    value: "in/priyanshu-solanki",
-    href: "https://www.linkedin.com/in/priyanshu-solanki/",
-  },
-  {
-    label: "GitHub",
-    value: "github.com/Solanki028",
-    href: "https://github.com/Solanki028",
-  },
-];
+import { Mail, Github, Linkedin, ArrowRight, CheckCircle } from "lucide-react";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
@@ -30,158 +11,81 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    setTimeout(() => {
-      setStatus("sent");
-    }, 1200);
+    setTimeout(() => setStatus("sent"), 1500);
   };
 
   return (
-    <section id="contact" className="section-spacing bg-[#FCF9F5] relative">
-      <div className="section-divider" />
+    <section id="contact" className="bg-[#FCF9F5] py-32">
+      <div className="container-premium">
+        <div className="grid lg:grid-cols-2 gap-20">
+          
+          <div>
+            <span className="font-serif italic text-2xl text-black/20 block mb-6">Connect</span>
+            <h2 className="font-heading text-display font-bold text-black mb-10 leading-none">
+              Let&apos;s build <br />
+              <span className="font-serif italic font-normal text-black/40">something meaningful.</span>
+            </h2>
+            <p className="text-body-lg text-black/60 max-w-md mb-12">
+              Available for new projects and consulting. I respond within 24 hours.
+            </p>
 
-      <div className="container-premium pt-10">
-        {/* Large CTA Statement */}
-        <m.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-20 text-center"
-        >
-          <h2 className="font-heading text-display font-bold text-[#000000] mb-6">
-            Let&apos;s build something
-            <br />
-            <span className="text-black/60">meaningful.</span>
-          </h2>
-          <p className="text-body-lg text-black/60 max-w-lg mx-auto">
-            Currently accepting new projects and consulting engagements.
-            I typically respond within 12 hours.
-          </p>
-        </m.div>
-
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-20">
-          {/* Left: Contact Links */}
-          <m.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="lg:col-span-5"
-          >
-            <span className="label-eyebrow mb-8 block">Get in Touch</span>
-
-            <div className="space-y-4">
-              {contactLinks.map((link, i) => (
-                <m.div key={link.label} variants={fadeUp}>
-                  <Link
-                    href={link.href}
-                    target="_blank"
-                    className="group flex flex-col p-6 rounded-2xl border border-black/[0.06] bg-white hover:border-black/[0.12] hover:bg-white transition-all duration-500"
-                  >
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-eyebrow font-semibold text-black/40 group-hover:text-black/60 transition-colors duration-300">
-                        {link.label}
-                      </span>
-                      <ArrowUpRight className="w-4 h-4 text-[#000000]/[0.08] group-hover:text-[#000000] transition-all duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </div>
-                    <span className="text-body-sm font-medium text-black/60 group-hover:text-[#000000] transition-colors duration-300">
-                      {link.value}
-                    </span>
-                  </Link>
-                </m.div>
+            <div className="flex flex-col gap-6">
+              {[
+                { icon: <Mail />, label: "Email", value: "Priyanshu.solankii@outlook.com", href: "mailto:Priyanshu.solankii@outlook.com" },
+                { icon: <Linkedin />, label: "LinkedIn", value: "in/priyanshu-solanki", href: "https://linkedin.com/in/priyanshu-solanki" },
+                { icon: <Github />, label: "GitHub", value: "Solanki028", href: "https://github.com/Solanki028" },
+              ].map((link) => (
+                <Link key={link.label} href={link.href} target="_blank" className="flex items-center gap-6 group">
+                   <div className="flex h-12 w-12 items-center justify-center rounded-full border border-black/5 bg-white transition-all group-hover:bg-black group-hover:text-white">
+                      {link.icon}
+                   </div>
+                   <div>
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-black/20">{link.label}</p>
+                      <p className="font-heading text-lg font-bold text-black">{link.value}</p>
+                   </div>
+                </Link>
               ))}
             </div>
-          </m.div>
+          </div>
 
-          {/* Right: Form */}
-          <m.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="lg:col-span-7"
-          >
-            <div className="p-10 md:p-12 rounded-3xl border border-black/[0.08] bg-white relative overflow-hidden">
-              {/* Ambient glow */}
-              <div className="absolute -top-20 -right-20 w-60 h-60 bg-white rounded-full blur-[100px] pointer-events-none" />
-
-              {status === "sent" ? (
-                <m.div
-                  initial={{ opacity: 0, scale: 0.95 }}
+          <div className="rounded-[2.5rem] bg-white p-10 shadow-2xl shadow-black/5 border border-black/5">
+             {status === "sent" ? (
+                <m.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="flex flex-col items-center justify-center py-20 text-center"
+                  className="flex h-full flex-col items-center justify-center text-center py-20"
                 >
-                  <div className="w-16 h-16 rounded-full bg-black/[0.03] flex items-center justify-center mb-8">
-                    <CheckCircle className="w-8 h-8 text-[#000000]" />
-                  </div>
-                  <h3 className="font-heading text-2xl font-semibold text-[#000000] mb-3">
-                    Message transmitted
-                  </h3>
-                  <p className="text-body-sm text-black/60">
-                    Synchronizing with inbox now...
-                  </p>
+                   <CheckCircle className="h-16 w-16 text-[#C5FF52] mb-6" />
+                   <h3 className="font-heading text-3xl font-bold text-black mb-4">Message Sent</h3>
+                   <p className="text-black/60">Thank you. I&apos;ll be in touch soon.</p>
                 </m.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
-                  <div className="space-y-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <div className="space-y-3">
-                        <label className="text-eyebrow font-semibold text-black/50">
-                          Name
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          placeholder="Your name"
-                          className="w-full bg-white border border-black/[0.08] rounded-xl px-5 py-3.5 text-body-sm text-[#000000] placeholder:text-black/30 focus:outline-none focus:border-black/[0.15] focus:bg-black/[0.03] transition-all duration-300"
-                        />
+             ) : (
+                <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="flex flex-col gap-3">
+                         <label className="text-[10px] font-bold uppercase tracking-widest text-black/40">Name</label>
+                         <input required type="text" className="h-14 rounded-2xl border border-black/5 bg-black/[0.02] px-6 text-sm focus:border-black focus:outline-none transition-colors" />
                       </div>
-                      <div className="space-y-3">
-                        <label className="text-eyebrow font-semibold text-black/50">
-                          Email
-                        </label>
-                        <input
-                          type="email"
-                          required
-                          placeholder="you@company.com"
-                          className="w-full bg-white border border-black/[0.08] rounded-xl px-5 py-3.5 text-body-sm text-[#000000] placeholder:text-black/30 focus:outline-none focus:border-black/[0.15] focus:bg-black/[0.03] transition-all duration-300"
-                        />
+                      <div className="flex flex-col gap-3">
+                         <label className="text-[10px] font-bold uppercase tracking-widest text-black/40">Email</label>
+                         <input required type="email" className="h-14 rounded-2xl border border-black/5 bg-black/[0.02] px-6 text-sm focus:border-black focus:outline-none transition-colors" />
                       </div>
-                    </div>
-                    <div className="space-y-3">
-                      <label className="text-eyebrow font-semibold text-black/50">
-                        Tell me about your project
-                      </label>
-                      <textarea
-                        rows={5}
-                        required
-                        placeholder="What are we building?"
-                        className="w-full bg-white border border-black/[0.08] rounded-xl px-5 py-3.5 text-body-sm text-[#000000] placeholder:text-black/30 focus:outline-none focus:border-black/[0.15] focus:bg-black/[0.03] transition-all duration-300 resize-none"
-                      />
-                    </div>
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={status === "sending"}
-                    className="btn-primary w-full !h-14 text-[15px] group disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {status === "sending" ? (
-                      <span className="flex items-center gap-2">
-                        <span className="w-4 h-4 border-2 border-[#0D0D0D]/20 border-t-[#0D0D0D] rounded-full animate-spin" />
-                        Processing...
-                      </span>
-                    ) : (
-                      <>
-                        Send Message
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </>
-                    )}
-                  </button>
+                   </div>
+                   <div className="flex flex-col gap-3">
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-black/40">Message</label>
+                      <textarea required rows={5} className="rounded-2xl border border-black/5 bg-black/[0.02] p-6 text-sm focus:border-black focus:outline-none transition-colors resize-none" />
+                   </div>
+                   <button 
+                     type="submit" 
+                     disabled={status === "sending"}
+                     className="h-16 rounded-full bg-black text-sm font-bold uppercase tracking-widest text-white transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50"
+                   >
+                      {status === "sending" ? "Sending..." : "Send Message"}
+                   </button>
                 </form>
-              )}
-            </div>
-          </m.div>
+             )}
+          </div>
+
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Inter_Tight } from "next/font/google";
+import { Inter, Inter_Tight, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -12,6 +12,13 @@ const interTight = Inter_Tight({
   subsets: ["latin"],
   weight: ["500", "600", "700", "800", "900"],
   variable: "--font-heading",
+  display: "swap",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-serif",
   display: "swap",
 });
 
@@ -69,6 +76,7 @@ export const metadata: Metadata = {
 };
 
 import LazyMotionProvider from "@/components/providers/LazyMotionProvider";
+import CustomCursor from "@/components/ui/CustomCursor";
 
 export default function RootLayout({
   children,
@@ -76,10 +84,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`scroll-smooth ${inter.variable} ${interTight.variable}`}>
+    <html lang="en" className={`scroll-smooth ${inter.variable} ${interTight.variable} ${cormorant.variable}`}>
       <body
         className={`${inter.className} bg-[#FCF9F5] text-[#000000] antialiased selection:bg-[#C5FF52] selection:text-black`}
       >
+        <CustomCursor />
         <LazyMotionProvider>
           <div className="relative min-h-screen flex flex-col">
             {children}

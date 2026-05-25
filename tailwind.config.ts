@@ -12,6 +12,7 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-body)', 'system-ui', 'sans-serif'],
         heading: ['var(--font-heading)', 'var(--font-body)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-serif)', 'serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',
