@@ -14,7 +14,7 @@ const experiences = [
   {
     company: "Astroxhub",
     role: "Full Stack Engineer",
-    period: "March 2025 - Present",
+    period: "jan 2025 - Present",
     location: "Gurgaon, India",
     tone: "bg-[#C5FF52]",
     summary: "Shipping production features across UI, APIs, auth, and database layers.",
